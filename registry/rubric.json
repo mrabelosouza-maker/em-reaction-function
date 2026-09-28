@@ -1,0 +1,68 @@
+{
+  "rubric_version": "1.0-generic",
+  "origin": "Generalização da rubrica 1.0 do projeto fomc_reaction_functions (registry/rubric.json). Dimensões idênticas; drivers adaptados para qualquer BC. Para o Fed, use a rubrica do próprio repositório (drivers oil_war/tariffs).",
+  "scale_note": "Score each speech ONLY from its own text. Use coarse values (integers or .5), never false precision. If the speech does not speak to a dimension, use null for that dimension (do NOT guess 0). Hawkish = leans toward tighter policy / more worried about inflation; dovish = leans toward easier policy / more worried about activity or employment.",
+  "dimensions": [
+    {
+      "id": "composite_hawk_dove",
+      "label": "Hawk-dove composite",
+      "scale": [-5, 5],
+      "anchors": {"-5": "strongly dovish (wants cuts now / very worried about activity or jobs)", "0": "balanced / on hold", "5": "strongly hawkish (wants holds-or-hikes / very worried about inflation)"},
+      "guide": "Overall lean of THIS speech's monetary-policy message. The headline number."
+    },
+    {
+      "id": "mandate_weight",
+      "label": "Mandate weighting",
+      "scale": [-5, 5],
+      "anchors": {"-5": "almost all weight on activity / employment / financial stability", "0": "balanced", "5": "almost all weight on price stability / inflation"},
+      "guide": "Which objective the speaker treats as binding. For single-mandate (inflation-targeting) banks read it as inflation vs the activity/output-gap considerations the bank weighs in practice."
+    },
+    {
+      "id": "inflation_conviction",
+      "label": "Inflation conviction",
+      "scale": [0, 5],
+      "anchors": {"0": "confident disinflation is essentially done / on track", "5": "worried inflation is persistent / re-accelerating / expectations de-anchoring"},
+      "guide": "How worried the speaker is that inflation will NOT return to target on its own."
+    },
+    {
+      "id": "labor_concern",
+      "label": "Activity / labor concern",
+      "scale": [0, 5],
+      "anchors": {"0": "relaxed, activity and labor solid", "5": "alarmed about recession / labor-market deterioration"},
+      "guide": "How worried the speaker is about weakening activity or jobs."
+    },
+    {
+      "id": "policy_stance_read",
+      "label": "Policy-stance read",
+      "scale": [0, 5],
+      "anchors": {"0": "policy is at/near neutral or even loose; little need to keep it tight", "5": "policy is clearly restrictive and should stay restrictive"},
+      "guide": "How restrictive the speaker judges the CURRENT stance to be (and implicitly how much room to cut)."
+    }
+  ],
+  "near_term_bias": {
+    "id": "near_term_bias",
+    "direction_enum": ["cut", "hold", "hike", "unclear"],
+    "pace_enum": ["urgent", "gradual", "patient", "data-dependent", "n/a"],
+    "guide": "The speaker's near-term inclination for the next move(s) and the pace they signal. Use unclear / n/a when the text gives no path."
+  },
+  "theme_flags": {
+    "id": "theme_flags",
+    "allowed": ["tariffs", "ai_productivity", "financial_stability", "fed_independence", "cb_independence", "balance_sheet_qt", "immigration", "fiscal", "housing", "dollar", "r_star", "fx_passthrough", "external_rates", "commodities", "food_prices", "credibility", "minimum_wage", "indexation"],
+    "guide": "Tag the policy-relevant themes the speaker leans on. Empty list if none stand out."
+  },
+  "drivers": {
+    "id": "drivers",
+    "guide": "Decompose WHY the speaker holds the stance they do IN THIS SPEECH. For each driver give an intensity 0-3 (0 = not a factor; 1 = mentioned; 2 = important; 3 = central) and a push in {hawkish, dovish, neutral} = which way this factor pushes THEIR lean. Ground each in the text.",
+    "items": [
+      {"id": "supply_shocks", "label": "Choques de oferta", "covers": "energy/oil, food, war, weather, other supply-side cost shocks; whether to look through them"},
+      {"id": "underlying_inflation", "label": "Inflação subjacente / difusão", "covers": "core/underlying persistence, broadening/diffusion, services, inertia/indexation, expectations de-anchoring, cumulative overshoot"},
+      {"id": "fx_external", "label": "Câmbio / externo", "covers": "exchange-rate pass-through, the Fed/external rates and the rate differential, tariffs and trade shocks, global risk appetite, capital flows"},
+      {"id": "labor_market", "label": "Mercado de trabalho", "covers": "labor tightness/looseness, wages, unemployment vs its natural level"},
+      {"id": "growth_demand", "label": "Atividade / demanda", "covers": "GDP/consumption/credit strength (hawkish) or weakness/recession risk (dovish), output gap"},
+      {"id": "other", "label": "Outros (fiscal, FCI, neutro, credibilidade)", "covers": "fiscal policy/debt, financial conditions/stability, the neutral rate, credibility/independence, the current restrictive setting itself"}
+    ]
+  },
+  "non_policy_rule": "Set non_policy=true when the speech is essentially about regulation, payments, community development, ceremonial remarks or operations, with no substantive read on the outlook or the stance. Such speeches are kept but down-weighted.",
+  "summary_rule": "summary = one tight paragraph (3-5 sentences), plain English, on the speaker's MONETARY-POLICY message, and explicitly naming what changed vs their previous policy speech when there is one.",
+  "quotes_rule": "key_quotes = 2-4 VERBATIM sentences from the text, each tagged with the dimension it speaks to and a short context note. Do not paraphrase inside quote text; mark omissions with '...'."
+}
