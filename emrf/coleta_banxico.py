@@ -10,19 +10,40 @@ BASE = "https://www.banxico.org.mx"
 MESES = {m: i for i, m in enumerate(
     ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
      "septiembre", "octubre", "noviembre", "diciembre"], start=1)}
-_ROW = re.compile(
-    r"aria-hidden=true>(\d{2})/(\d{2})/(\d{2}).*?anunciada el (\d{1,2}) de (\w+) de (\d{4}).*?HREF=\"([^\"]+\.pdf)\"",
-    re.S | re.I)
+MESES["setiembre"] = 9
+_TR = re.compile(r"<TR\b.*?</TR>", re.S | re.I)
+_DATA = re.compile(r"aria-hidden=true>\s*(\d{2})/(\d{2})/(\d{2})", re.I)
+_ANUNCIADA = re.compile(r"anunciada el (\d{1,2}) de (\w+) de (\d{4})", re.I)
+_PDF = re.compile(r"HREF=\"([^\"]+\.pdf)\"", re.I)
 _META = re.compile(r"<!--\s*(\w+):\s*(.*?)\s*-->")
 
 
-def parse_minutas(html: str) -> list[dict]:
-    out = []
-    for dd, mm, yy, d, mes, y, href in _ROW.findall(html):
-        out.append({"date": f"20{yy}-{mm}-{dd}",
+def parse_minutas(html: str) -> tuple[list[dict], list[str]]:
+    """Parseia linha a linha; devolve (linhas, problemas) - nada e descartado em silencio."""
+    out, problemas = [], []
+    for tr in _TR.findall(html):
+        dt = _DATA.search(tr)
+        if not dt:
+            continue
+        dd, mm, yy = dt.groups()
+        date = f"20{yy}-{mm}-{dd}"
+        an, pdf = _ANUNCIADA.search(tr), _PDF.search(tr)
+        faltas = []
+        if not an:
+            faltas.append("'anunciada el D de MES de YYYY' ausente")
+        if not pdf:
+            faltas.append("link pdf ausente")
+        if an and an.group(2).lower() not in MESES:
+            faltas.append(f"mes desconhecido '{an.group(2)}'")
+        if faltas:
+            problemas.append(f"linha publicada em {date}: " + "; ".join(faltas))
+            continue
+        d, mes, y = an.groups()
+        href = pdf.group(1)
+        out.append({"date": date,
                     "meeting_date": f"{y}-{MESES[mes.lower()]:02d}-{int(d):02d}",
                     "url": href if href.startswith("http") else BASE + href})
-    return out
+    return out, problemas
 
 
 def raw_header(doc_type: str, date: str, meeting_date: str, url: str) -> str:

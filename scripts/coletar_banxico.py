@@ -21,6 +21,12 @@ MINUTAS = ("https://www.banxico.org.mx/publicaciones-y-prensa/"
            "minutas-de-las-decisiones-de-politica-monetaria/minutas-politica-monetaria-ta.html")
 UA = {"User-Agent": "Mozilla/5.0"}
 MIN_CHARS = 1000
+FALHAS: list[str] = []
+
+
+def _falha(msg: str) -> None:
+    print(msg)
+    FALHAS.append(msg)
 
 
 def _get(url: str) -> bytes:
@@ -32,7 +38,7 @@ def _write(doc_type, date, meeting_date, url, text) -> None:
     if dest.exists():
         return
     if len(text.strip()) < MIN_CHARS:
-        print(f"ERRO texto ilegível ou curto ({len(text.strip())} chars): {doc_type} {meeting_date} {url}")
+        _falha(f"ERRO texto ilegível ou curto ({len(text.strip())} chars): {doc_type} {meeting_date} {url}")
         return
     dest.write_text(raw_header(doc_type, date, meeting_date, url) + "\n" + text.strip() + "\n", encoding="utf-8")
     print(f"novo {dest.name} ({doc_type} {meeting_date})")
@@ -44,18 +50,35 @@ def comunicados() -> None:
         if e["fecha"] < config.START_DATE:
             continue
         txt = HIST / f"{e['fecha']}.txt"
-        _write("comunicado", e["fecha"], e["fecha"], e["url"],
-               txt.read_text(encoding="utf-8") if txt.exists() else "")
+        if not txt.exists():
+            dest = config.raw_dir("banxico") / f"{colegiado_id('comunicado', e['fecha'], e['fecha'])}.md"
+            if not dest.exists():
+                _falha(f"ERRO comunicado {e['fecha']}: arquivo ausente {txt}")
+            continue
+        _write("comunicado", e["fecha"], e["fecha"], e["url"], txt.read_text(encoding="utf-8"))
 
 
 def minutas() -> None:
-    for m in parse_minutas(_get(MINUTAS).decode("latin-1")):
+    try:
+        rows, problemas = parse_minutas(_get(MINUTAS).decode("latin-1"))
+    except Exception as exc:
+        _falha(f"ERRO listagem de minutas: {exc}")
+        return
+    if not rows:
+        _falha("ERRO nenhuma minuta reconhecida na listagem (formato mudou?)")
+    for pb in problemas:
+        _falha(f"ERRO minuta: {pb}")
+    for m in rows:
         if m["meeting_date"] < config.START_DATE:
             continue
         if (config.raw_dir("banxico") / f"{colegiado_id('ata', m['date'], m['meeting_date'])}.md").exists():
             continue
-        with fitz.open(stream=_get(m["url"]), filetype="pdf") as doc:
-            text = "\n".join(page.get_text() for page in doc)
+        try:
+            with fitz.open(stream=_get(m["url"]), filetype="pdf") as doc:
+                text = chr(10).join(page.get_text() for page in doc)
+        except Exception as exc:
+            _falha(f"ERRO ata {m['meeting_date']} {m['url']}: {exc}")
+            continue
         _write("ata", m["date"], m["meeting_date"], m["url"], text)
 
 
@@ -65,3 +88,4 @@ if __name__ == "__main__":
     minutas()
     for p in pendentes(config.raw_dir("banxico"), config.extracted_dir("banxico")):
         print(f"PENDENTE {p.name}")
+    sys.exit(1 if FALHAS else 0)
