@@ -1,0 +1,12 @@
+{
+  "verified_at": "2026-09-28",
+  "source": "https://www.banxico.org.mx/conociendo-banxico/junta-gobierno-curriculo-banc.html",
+  "note": "Mandato de Jonathan Heath termina em 2026-12-31; revisar roster em janeiro.",
+  "members": [
+    {"member_id": "rodriguez", "name": "Victoria Rodríguez Ceja", "role": "Gobernadora"},
+    {"member_id": "heath", "name": "Jonathan Heath Constable", "role": "Subgobernador"},
+    {"member_id": "borja", "name": "Galia Borja Gómez", "role": "Subgobernadora"},
+    {"member_id": "mejia", "name": "Omar Mejía Castelazo", "role": "Subgobernador"},
+    {"member_id": "cuadra", "name": "José Gabriel Cuadra García", "role": "Subgobernador"}
+  ]
+}
