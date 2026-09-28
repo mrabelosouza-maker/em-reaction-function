@@ -25,7 +25,7 @@ h2{font-size:17px;margin:28px 0 8px}.kpis{display:grid;grid-template-columns:rep
 .pos{color:var(--hawk)}.neg{color:var(--dove)}.chart{background:var(--card);border:1px solid var(--line);border-radius:8px;min-height:360px}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}.filters input,.filters select{padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg)}
 details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-bottom:6px}
-details pre{white-space:pre-wrap;font:13px/1.45 inherit;max-height:420px;overflow:auto}
+details pre{white-space:pre-wrap;font-size:13px;line-height:1.45;font-family:inherit;max-height:420px;overflow:auto}
 </style></head><body>
 <header><h1>EM Reaction Functions</h1><p>Escala hawk-dove de comunicação de BCs emergentes · colegiado × membros · gerado em __GENERATED__</p></header>
 <nav id="nav"></nav><main id="main"></main>
@@ -51,11 +51,14 @@ function kpiHtml(k) {
 }
 
 function boardChart(el, b) {
-  const names = Object.fromEntries(b.members.map(m => [m.member_id, m.name]));
   const traces = [{x: b.series.map(p => p.date), y: b.series.map(p => p.level), name: 'Board',
-    mode: 'lines+markers', line: {shape: 'hv', width: 3, color: '#1f5f3f'},
-    marker: {size: 10, symbol: b.series.map(p => SYM[p.doc_type])},
-    text: b.series.map(p => DOC[p.doc_type] + ' (reunião ' + p.meeting_date + ')'), hovertemplate: '%{text}<br>%{y:+.1f}<extra></extra>'}];
+    mode: 'lines', line: {shape: 'hv', width: 3, color: '#1f5f3f'}, hoverinfo: 'skip'}];
+  for (const t of [...new Set(b.series.map(p => p.doc_type))]) {
+    const ps = b.series.filter(p => p.doc_type === t);
+    traces.push({x: ps.map(p => p.date), y: ps.map(p => p.level), name: DOC[t] || t, mode: 'markers',
+      marker: {size: 10, symbol: SYM[t] || 'circle', color: '#1f5f3f'},
+      text: ps.map(p => DOC[p.doc_type] + ' (reunião ' + p.meeting_date + ')'), hovertemplate: '%{text}<br>%{y:+.1f}<extra>Board</extra>'});
+  }
   for (const m of b.members) {
     const ps = b.points.filter(p => p.member_id === m.member_id);
     if (!ps.length) continue;
@@ -67,8 +70,9 @@ function boardChart(el, b) {
 }
 
 function heatChart(el, b, mode) {
-  const h = b.heatmap, rows = ['Board', ...b.members.map(m => m.name)];
-  const z = [h.board, ...b.members.map(m => (mode === 'deviation' ? h.deviation : h.level)[m.member_id])];
+  const h = b.heatmap, dev = mode === 'deviation';
+  const rows = [...(dev ? [] : ['Board']), ...b.members.map(m => m.name)];
+  const z = [...(dev ? [] : [h.board]), ...b.members.map(m => (dev ? h.deviation : h.level)[m.member_id])];
   const lim = mode === 'deviation' ? 3 : 5;
   Plotly.newPlot(el, [{type: 'heatmap', x: h.columns, y: rows, z, zmin: -lim, zmax: lim,
     colorscale: [[0, '#2166ac'], [0.5, '#f7f7f7'], [1, '#b2182b']], hoverongaps: false,
@@ -85,12 +89,14 @@ function cardsHtml(b) {
 
 function docsHtml(bc) {
   return `<div class="filters"><input id="q-${bc}" placeholder="buscar"><select id="t-${bc}"><option value="">todos os tipos</option>
-    ${Object.entries(DOC).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></div><div id="list-${bc}"></div>`;
+    ${[...new Set(DATA.bcs[bc].docs.map(d => d.doc_type))].map(k => `<option value="${k}">${esc(DOC[k] || k)}</option>`).join('')}</select>
+    <select id="tr-${bc}"><option value="">todas as trilhas</option><option value="colegiado">Colegiado</option><option value="membro">Membros</option></select></div><div id="list-${bc}"></div>`;
 }
 
 function renderDocs(bc) {
-  const q = document.getElementById('q-' + bc).value.toLowerCase(), t = document.getElementById('t-' + bc).value;
-  const docs = DATA.bcs[bc].docs.filter(d => (!t || d.doc_type === t) &&
+  const q = document.getElementById('q-' + bc).value.toLowerCase(), t = document.getElementById('t-' + bc).value,
+    tr = document.getElementById('tr-' + bc).value;
+  const docs = DATA.bcs[bc].docs.filter(d => (!t || d.doc_type === t) && (!tr || d.track === tr) &&
     (!q || (d.title + d.summary + d.text + d.member_id).toLowerCase().includes(q))).reverse();
   document.getElementById('list-' + bc).innerHTML = docs.map(d => `<details><summary>${esc(d.date)} · ${esc(DOC[d.doc_type])} ·
     ${esc(d.member_id === 'board' ? 'Board' : d.member_id)} · <b class="${cls(d.llm_scores.composite_hawk_dove)}">${fmt(d.llm_scores.composite_hawk_dove)}</b> — ${esc(d.title)}</summary>
@@ -104,6 +110,7 @@ const METODO = `<h2>Metodologia</h2>
 <p><b>Série do Board.</b> Degrau: o nível em cada data é o composto do último documento colegiado publicado até ali (comunicado ou ata). Documento sem composto não move o degrau. <b>Ressalva:</b> comunicado e ata são gêneros diferentes — a ata é mais longa e explicita divisões —, então parte do salto comunicado→ata pode ser gênero, não mudança de postura. O marcador (● comunicado, ■ ata) permite separar.</p>
 <p><b>Desvio do membro.</b> Composto da fala ou call menos o nível do Board vigente na data dela.</p>
 <p><b>Heatmap.</b> Cada coluna é um ciclo entre duas reuniões. Board = nível no fim do ciclo (já com a ata). Membro = média das falas no ciclo; no modo desvio, média dos desvios.</p>
+<p><b>Calibração.</b> Os scores são inteiros ou terminam em .5. A escala lê o que o documento pede da política, não o quanto ele reclama da inflação. Pontos de referência para comunicados do Banxico: corte com porta aberta a novos cortes −1,5; corte sinalizado como último ou pausa −0,5; manutenção neutra dependente de dados 0; manutenção com riscos de alta e ênfase na inflação +0,5; alta ou viés explícito de alta +2 ou mais. Diferenças de 0,5 são ruído: confie no ranking e na direção da mudança.</p>
 <p><b>Escopo.</b> Banxico, comunicados e atas desde janeiro de 2025. Outros BCs, RTIs e histórico de calls entram depois.</p>`;
 
 function renderBC(bc, sec) {
@@ -117,6 +124,7 @@ function renderBC(bc, sec) {
   hm.onchange = drawHm; drawHm();
   document.getElementById('q-' + bc).oninput = () => renderDocs(bc);
   document.getElementById('t-' + bc).onchange = () => renderDocs(bc);
+  document.getElementById('tr-' + bc).onchange = () => renderDocs(bc);
   renderDocs(bc);
 }
 

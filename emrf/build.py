@@ -26,7 +26,9 @@ def bc_payload(bc: str, records, roster: list[dict], raw_folder: Path, today: st
     for r in records:
         raw = raw_folder / f"{r.speech_id}.md"
         d = dataclasses.asdict(r)
-        d["text"] = raw.read_text(encoding="utf-8") if raw.exists() else ""
+        if not raw.exists():
+            raise SchemaError(f"{r.speech_id}: raw ausente em {raw}")
+        d["text"] = raw.read_text(encoding="utf-8")
         docs.append(d)
     return {
         **config.BCS[bc],
