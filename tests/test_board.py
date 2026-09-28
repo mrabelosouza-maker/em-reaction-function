@@ -66,3 +66,69 @@ def test_member_cards(make_record):
     assert cards["heath"]["latest"] == 1.5 and cards["heath"]["delta"] == 0.5
     assert cards["heath"]["deviation"] == 1.0
     assert cards["borja"]["latest"] is None
+
+
+def test_unsorted_input_same_result(make_record):
+    """board_series, kpis, member_cards give same results regardless of input order."""
+    rs_sorted = base(make_record)
+    rs_reversed = list(reversed(rs_sorted))
+
+    s_sorted = board.board_series(rs_sorted)
+    s_reversed = board.board_series(rs_reversed)
+    assert s_sorted == s_reversed
+
+    k_sorted = board.kpis(rs_sorted, s_sorted)
+    k_reversed = board.kpis(rs_reversed, s_reversed)
+    assert k_sorted == k_reversed
+
+    roster = [{"member_id": "heath", "name": "Jonathan Heath", "role": "Subgobernador"},
+              {"member_id": "borja", "name": "Galia Borja", "role": "Subgobernadora"}]
+    c_sorted = board.member_cards(rs_sorted, s_sorted, roster)
+    c_reversed = board.member_cards(rs_reversed, s_reversed, roster)
+    assert c_sorted == c_reversed
+
+
+def test_member_speech_before_first_board_doc(make_record):
+    """Member speech dated before first board doc: deviation is None in member_points and member_cards."""
+    rs = recs(make_record,
+        {"date": "2026-08-06", "meeting_date": "2026-08-06", "composite": -1.0},
+        {"track": "membro", "doc_type": "fala_publica", "member_id": "heath",
+         "date": "2026-07-15", "composite": 2.0},  # before first board doc
+    )
+    s = board.board_series(rs)
+
+    # member_points: deviation is None when board has no level yet
+    pts = board.member_points(rs, s)
+    assert [(p["date"], p["deviation"]) for p in pts] == [("2026-07-15", None)]
+
+    # member_cards: deviation is None for single speech before any board doc
+    roster = [{"member_id": "heath", "name": "Jonathan Heath", "role": "Subgobernador"}]
+    cards = board.member_cards(rs, s, roster)
+    assert cards[0]["deviation"] is None
+
+
+def test_kpis_empty_records_and_series(make_record):
+    """kpis with empty records and series returns None/[] for appropriate fields."""
+    k = board.kpis([], [])
+    assert k["rate"] is None
+    assert k["board_level"] is None
+    assert k["board_delta"] is None
+    assert k["dissents"] == []
+
+
+def test_same_day_comunicado_and_ata_order_independence(make_record):
+    """Same-day comunicado and ata: ata's level prevails regardless of input order."""
+    # Create comunicado and ata on same date
+    rs_com_first = recs(make_record,
+        {"date": "2026-08-06", "meeting_date": "2026-08-06", "composite": -1.0},  # comunicado
+        {"doc_type": "ata", "date": "2026-08-06", "meeting_date": "2026-08-06", "composite": 0.5},
+    )
+    rs_ata_first = list(reversed(rs_com_first))
+
+    s_com_first = board.board_series(rs_com_first)
+    s_ata_first = board.board_series(rs_ata_first)
+
+    # Both should have ata's level (0.5) as the result for that date
+    assert s_com_first == s_ata_first
+    assert board.board_level_at(s_com_first, "2026-08-06") == 0.5
+    assert board.board_level_at(s_ata_first, "2026-08-06") == 0.5

@@ -9,6 +9,7 @@ from bisect import bisect_right
 from datetime import date as _date, timedelta
 from statistics import mean
 
+from . import config
 from .schema import Record
 
 
@@ -20,15 +21,23 @@ def _day_before(d: str) -> str:
     return (_date.fromisoformat(d) - timedelta(days=1)).isoformat()
 
 
+def _ordered(records: list[Record]) -> list[Record]:
+    """Sort records by (date, doc_type order) for deterministic output."""
+    return sorted(records, key=lambda r: (r.date, config.DOC_ORDER.get(r.doc_type, 999)))
+
+
 def _policy_members(records: list[Record]) -> list[Record]:
-    return [r for r in records
-            if r.track == "membro" and not r.non_policy and r.composite is not None]
+    filtered = [r for r in records
+                if r.track == "membro" and not r.non_policy and r.composite is not None]
+    return _ordered(filtered)
 
 
 def board_series(records: list[Record]) -> list[dict]:
+    filtered = [r for r in records if r.track == "colegiado" and r.composite is not None]
+    ordered = _ordered(filtered)
     return [{"date": r.date, "level": r.composite, "doc_type": r.doc_type,
              "meeting_date": r.meeting_date, "speech_id": r.speech_id}
-            for r in records if r.track == "colegiado" and r.composite is not None]
+            for r in ordered]
 
 
 def board_level_at(series: list[dict], date: str) -> float | None:
@@ -42,7 +51,7 @@ def member_points(records: list[Record], series: list[dict]) -> list[dict]:
         b = board_level_at(series, r.date)
         out.append({"date": r.date, "member_id": r.member_id, "doc_type": r.doc_type,
                     "composite": r.composite, "board": b,
-                    "deviation": None if b is None else r.composite - b,
+                    "deviation": None if b is None else round(r.composite - b, 2),
                     "speech_id": r.speech_id})
     return out
 
@@ -70,14 +79,16 @@ def heatmap(records: list[Record], series: list[dict], members: list[str], today
 
 def kpis(records: list[Record], series: list[dict]) -> dict:
     coms = [r for r in records if r.doc_type == "comunicado"]
+    coms = _ordered(coms)
     last = coms[-1] if coms else None
     dec = (last.decision or {}) if last else {}
+    board_delta = None if len(series) <= 1 else round(series[-1]["level"] - series[-2]["level"], 2)
     return {
         "rate": dec.get("rate"), "action": dec.get("action"), "vote": dec.get("vote"),
-        "dissents": dec.get("dissents", []),
+        "dissents": dec.get("dissents") or [],
         "meeting_date": last.meeting_date if last else None,
         "board_level": series[-1]["level"] if series else None,
-        "board_delta": series[-1]["level"] - series[-2]["level"] if len(series) > 1 else None,
+        "board_delta": board_delta,
         "last_doc_type": series[-1]["doc_type"] if series else None,
         "last_doc_date": series[-1]["date"] if series else None,
     }
@@ -94,9 +105,11 @@ def member_cards(records: list[Record], series: list[dict], roster: list[dict]) 
         if rs:
             last, prev = rs[-1], (rs[-2] if len(rs) > 1 else None)
             b = board_level_at(series, last.date)
+            delta = None if prev is None else round(last.composite - prev.composite, 2)
+            deviation = None if b is None else round(last.composite - b, 2)
             card.update(latest=last.composite, date=last.date, doc_type=last.doc_type,
-                        delta=None if prev is None else last.composite - prev.composite,
-                        deviation=None if b is None else last.composite - b,
+                        delta=delta,
+                        deviation=deviation,
                         quote=last.key_quotes[0]["quote"] if last.key_quotes else "")
         cards.append(card)
     return cards
