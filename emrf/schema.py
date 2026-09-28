@@ -10,7 +10,7 @@ import hashlib
 import json
 import re
 import unicodedata
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -103,15 +103,25 @@ class Record:
             _require(self.member_id != config.BOARD_ID, f"{sid}: membro não pode ser board")
         for dim, (lo, hi) in config.DIMENSIONS.items():
             v = self.llm_scores.get(dim)
-            ok = v is None or (isinstance(v, (int, float)) and not isinstance(v, bool) and lo <= v <= hi)
-            _require(ok, f"{sid}: {dim}={v!r} fora de [{lo},{hi}]")
+            if v is not None:
+                ok = isinstance(v, (int, float)) and not isinstance(v, bool) and lo <= v <= hi
+                _require(ok, f"{sid}: {dim}={v!r} fora de [{lo},{hi}]")
+                # Scores devem ser inteiros ou .5 (v * 2 deve ser inteiro)
+                _require(v * 2 == int(v * 2), f"{sid}: {dim}={v!r} use inteiro ou .5")
         bias = self.llm_scores.get("near_term_bias") or {}
         _require(bias.get("direction") in config.DIRECTIONS | {None},
                  f"{sid}: near_term_bias.direction {bias.get('direction')!r}")
+        pace_allowed = set(config.RUBRIC["near_term_bias"]["pace_enum"]) | {None}
+        _require(bias.get("pace") in pace_allowed,
+                 f"{sid}: near_term_bias.pace {bias.get('pace')!r} inválido")
         _require(set(self.drivers) == set(config.DRIVER_IDS),
                  f"{sid}: drivers devem ser {config.DRIVER_IDS}")
         for k, v in self.drivers.items():
-            _require(v.get("intensity") in (0, 1, 2, 3) and v.get("push") in config.PUSHES,
+            intensity = v.get("intensity")
+            # Driver intensity must be int (not bool or float), in range 0-3
+            _require(type(intensity) is int and intensity in (0, 1, 2, 3),
+                     f"{sid}: driver {k} intensity={intensity!r} use inteiro ou .5")
+            _require(v.get("push") in config.PUSHES,
                      f"{sid}: driver {k} inválido {v!r}")
         return self
 
@@ -122,7 +132,7 @@ def load_records(bc: str, folder: Path | None = None) -> list[Record]:
     for p in sorted(folder.glob("*.json")):
         try:
             r = Record.from_json(json.loads(p.read_text(encoding="utf-8"))).validate()
-        except (SchemaError, TypeError, json.JSONDecodeError) as e:
+        except (SchemaError, TypeError, json.JSONDecodeError, AttributeError, KeyError) as e:
             raise SchemaError(f"{p.name}: {e}") from e
         _require(r.bc == bc, f"{p.name}: bc {r.bc} != {bc}")
         _require(p.stem == r.speech_id, f"{p.name}: nome difere do speech_id {r.speech_id}")

@@ -74,3 +74,36 @@ def test_load_records_sorted_and_names_bad_file(tmp_path, make_record):
     (tmp_path / f"{bad['speech_id']}x.json").write_text(json.dumps(bad), encoding="utf-8")
     with pytest.raises(SchemaError, match=bad["speech_id"]):
         load_records("banxico", tmp_path)
+
+
+def test_load_records_catches_malformed_driver(tmp_path, make_record):
+    """load_records must catch KeyError from malformed driver and report filename."""
+    bad = make_record()
+    bad["drivers"]["supply_shocks"] = 1  # Should be dict with intensity and push
+    bad_file = tmp_path / f"{bad['speech_id']}.json"
+    bad_file.write_text(json.dumps(bad), encoding="utf-8")
+    with pytest.raises(SchemaError, match=bad_file.name):
+        load_records("banxico", tmp_path)
+
+
+def test_composite_must_be_integer_or_half(make_record):
+    """Composite score must be integer or .5, not 0.37."""
+    d = make_record(composite=0.37)
+    with pytest.raises(SchemaError, match="inteiro ou .5"):
+        Record.from_json(d).validate()
+
+
+def test_driver_intensity_must_be_int_not_bool(make_record):
+    """Driver intensity must be int, not bool (True is rejected)."""
+    d = make_record()
+    d["drivers"]["supply_shocks"]["intensity"] = True
+    with pytest.raises(SchemaError, match="inteiro ou .5|inválido"):
+        Record.from_json(d).validate()
+
+
+def test_near_term_bias_pace_must_be_valid(make_record):
+    """near_term_bias.pace must be one of the allowed values."""
+    d = make_record()
+    d["llm_scores"]["near_term_bias"]["pace"] = "fast"  # Invalid; should be "urgent", "gradual", etc.
+    with pytest.raises(SchemaError, match="pace"):
+        Record.from_json(d).validate()
