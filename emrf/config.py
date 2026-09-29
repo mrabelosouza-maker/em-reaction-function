@@ -12,10 +12,10 @@ RESULTS = ROOT / "results"
 START_DATE = "2025-01-01"
 
 BCS = {
-    "banxico": {"label": "Banxico", "pais": "México"},
-    "bcch": {"label": "BCCh", "pais": "Chile"},
-    "banrep": {"label": "BanRep", "pais": "Colômbia"},
-    "sarb": {"label": "SARB", "pais": "África do Sul"},
+    "banxico": {"label": "Banxico", "pais": "México", "fonte": "Banco de México"},
+    "bcch": {"label": "BCCh", "pais": "Chile", "fonte": "Banco Central de Chile"},
+    "banrep": {"label": "BanRep", "pais": "Colômbia", "fonte": "Banco de la República"},
+    "sarb": {"label": "SARB", "pais": "África do Sul", "fonte": "South African Reserve Bank"},
 }
 
 DIMENSIONS = {

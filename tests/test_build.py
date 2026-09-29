@@ -43,6 +43,10 @@ def test_build_smoke(tmp_path, make_record):
     assert len(raw_bytes) == len(html.encode("utf-8"))
     assert "<!-- <script>" not in html and html.count("<script") == 3  # plotly, data, main
     assert "\\u003c!-- \\u003cscript>" in html
+    assert 'src="assets/plotly.min.js"' in html and "cdn.plot.ly" not in html
+    assert (tmp_path / "assets" / "plotly.min.js").stat().st_size > 500_000
+    assert bx["rates"] == [{"date": "2026-09-24", "rate": 6.5}]
+    assert bx["headline"] == "Banxico: a Junta saiu de −0,5 para 0,0 enquanto a taxa ficou em 6,50%"
 
 
 def test_build_raises_on_short_write(tmp_path, make_record, monkeypatch):
@@ -76,3 +80,33 @@ def test_build_fails_on_missing_raw(tmp_path, make_record):
     with pytest.raises(SchemaError, match=rec["speech_id"]):
         build.build(today="2026-10-20", out=tmp_path / "i.html",
                     extracted_root=ext, raw_root=tmp_path)
+
+
+def _s(*levels):
+    return [{"date": f"2026-0{i + 1}-01", "level": v} for i, v in enumerate(levels)]
+
+
+def _r(*rates):
+    return [{"date": f"2026-0{i + 1}-01", "rate": v} for i, v in enumerate(rates)]
+
+
+def test_headline_moved_and_rate_cut():
+    assert build.headline("Banxico", _s(-3.0, -1.5, 0.0), _r(9.5, 8.0, 6.5)) == (
+        "Banxico: a Junta saiu de \u22123,0 para 0,0 enquanto a taxa caiu de 9,50% para 6,50%")
+
+
+def test_headline_hawkish_move_and_hike():
+    assert build.headline("SARB", _s(0.5, 2.0), _r(7.25, 7.5)) == (
+        "SARB: a Junta saiu de +0,5 para +2,0 enquanto a taxa subiu de 7,25% para 7,50%")
+
+
+def test_headline_same_ends():
+    assert build.headline("Banxico", _s(0.5, 0.5), _r(6.5, 6.5)) == (
+        "Banxico: a Junta manteve-se em +0,5 enquanto a taxa ficou em 6,50%")
+    assert build.headline("Banxico", _s(-1.0, 0.5, -1.0), _r(7.0, 6.5)) == (
+        "Banxico: a Junta voltou ao nível inicial (\u22121,0) enquanto a taxa caiu de 7,00% para 6,50%")
+
+
+def test_headline_without_rate():
+    assert build.headline("BCCh", _s(-2.0, -0.5), []) == "BCCh: a Junta saiu de \u22122,0 para \u22120,5"
+    assert build.headline("BCCh", [], []) == "BCCh"

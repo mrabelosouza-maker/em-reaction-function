@@ -132,3 +132,19 @@ def test_same_day_comunicado_and_ata_order_independence(make_record):
     assert s_com_first == s_ata_first
     assert board.board_level_at(s_com_first, "2026-08-06") == 0.5
     assert board.board_level_at(s_ata_first, "2026-08-06") == 0.5
+
+
+def test_rate_series_parses_comunicados_only_sorted(make_record):
+    rs = recs(make_record,
+        {"date": "2026-09-24", "meeting_date": "2026-09-24", "composite": 0.5,
+         "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []}},
+        {"date": "2026-08-06", "meeting_date": "2026-08-06", "composite": -1.0,
+         "decision": {"action": "cut", "rate": " 6,75 % ", "vote": "4-1", "dissents": []}},
+        {"doc_type": "ata", "date": "2026-08-20", "meeting_date": "2026-08-06", "composite": 0.0,
+         "decision": {"action": "cut", "rate": "9.99%", "vote": "4-1", "dissents": []}},
+        {"date": "2026-10-30", "meeting_date": "2026-10-30", "composite": 0.0,
+         "decision": {"action": "hold", "rate": None, "vote": "5-0", "dissents": []}},
+    )
+    assert board.rate_series(list(reversed(rs))) == [
+        {"date": "2026-08-06", "rate": 6.75}, {"date": "2026-09-24", "rate": 6.5}]
+    assert board.rate_series([]) == []

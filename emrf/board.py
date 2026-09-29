@@ -40,6 +40,23 @@ def board_series(records: list[Record]) -> list[dict]:
             for r in ordered]
 
 
+def _rate(s) -> float | None:
+    try:
+        return float(str(s).replace("%", "").replace(",", ".").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def rate_series(records: list[Record]) -> list[dict]:
+    """Taxa anunciada em cada comunicado (decision.rate "6.50%" -> 6.5), em ordem de data."""
+    out = []
+    for r in _ordered([r for r in records if r.doc_type == "comunicado"]):
+        v = _rate((r.decision or {}).get("rate"))
+        if v is not None:
+            out.append({"date": r.date, "rate": v})
+    return out
+
+
 def board_level_at(series: list[dict], date: str) -> float | None:
     i = bisect_right([p["date"] for p in series], date)
     return series[i - 1]["level"] if i else None

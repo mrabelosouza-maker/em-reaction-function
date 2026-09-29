@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import shutil
 from datetime import date
 from pathlib import Path
 
@@ -13,6 +14,37 @@ from .schema import SchemaError, load_records
 def load_roster(bc: str) -> list[dict]:
     p = config.REGISTRY / bc / "roster.json"
     return json.loads(p.read_text(encoding="utf-8"))["members"] if p.exists() else []
+
+
+def _lvl(v: float) -> str:
+    s = f"{abs(v):.1f}".replace(".", ",")
+    return s if v == 0 else ("+" if v > 0 else "−") + s
+
+
+def _pct(v: float) -> str:
+    return f"{v:.2f}".replace(".", ",") + "%"
+
+
+def headline(label: str, series: list[dict], rates: list[dict]) -> str:
+    """Título editorial do gráfico: primeiro e último nível do Board, primeira e última taxa."""
+    if not series:
+        return label
+    a, b = series[0]["level"], series[-1]["level"]
+    if a != b:
+        junta = f"a Junta saiu de {_lvl(a)} para {_lvl(b)}"
+    elif all(p["level"] == a for p in series):
+        junta = f"a Junta manteve-se em {_lvl(a)}"
+    else:
+        junta = f"a Junta voltou ao nível inicial ({_lvl(a)})"
+    text = f"{label}: {junta}"
+    if rates:
+        r0, r1 = rates[0]["rate"], rates[-1]["rate"]
+        if r0 == r1:
+            text += f" enquanto a taxa ficou em {_pct(r1)}"
+        else:
+            verbo = "caiu" if r1 < r0 else "subiu"
+            text += f" enquanto a taxa {verbo} de {_pct(r0)} para {_pct(r1)}"
+    return text
 
 
 def bc_payload(bc: str, records, roster: list[dict], raw_folder: Path, today: str) -> dict:
@@ -30,10 +62,13 @@ def bc_payload(bc: str, records, roster: list[dict], raw_folder: Path, today: st
             raise SchemaError(f"{r.speech_id}: raw ausente em {raw}")
         d["text"] = raw.read_text(encoding="utf-8")
         docs.append(d)
+    rates = board.rate_series(records)
     return {
         **config.BCS[bc],
+        "headline": headline(config.BCS[bc]["label"], series, rates),
         "kpis": board.kpis(records, series),
         "series": series,
+        "rates": rates,
         "members": roster,
         "points": board.member_points(records, series),
         "heatmap": board.heatmap(records, series, members, today),
@@ -59,6 +94,11 @@ def build(today: str | None = None, out: Path | None = None,
     if not bcs:
         raise SchemaError("nenhum BC com documentos classificados")
     out.parent.mkdir(parents=True, exist_ok=True)
+    (out.parent / "assets").mkdir(exist_ok=True)
+    src, dst = config.ROOT / "assets" / "plotly.min.js", out.parent / "assets" / "plotly.min.js"
+    shutil.copyfile(src, dst)
+    if dst.stat().st_size != src.stat().st_size:
+        raise SchemaError(f"cópia truncada de {dst}")
     text = html.render({"bcs": bcs}, generated=today)
     out.write_text(text, encoding="utf-8", newline="\n")
     want, got = len(text.encode("utf-8")), out.stat().st_size
