@@ -37,24 +37,10 @@ def _pct(v: float) -> str:
 
 
 def headline(label: str, series: list[dict], rates: list[dict]) -> str:
-    """Título editorial do gráfico: primeiro e último nível do Board, primeira e última taxa."""
-    if not series:
-        return label
-    a, b = series[0]["level"], series[-1]["level"]
-    if a != b:
-        junta = f"a Junta saiu de {_lvl(a)} para {_lvl(b)}"
-    elif all(p["level"] == a for p in series):
-        junta = f"a Junta manteve-se em {_lvl(a)}"
-    else:
-        junta = f"a Junta voltou ao nível inicial ({_lvl(a)})"
-    text = f"{label}: {junta}"
-    if rates:
-        r0, r1 = rates[0]["rate"], rates[-1]["rate"]
-        if r0 == r1:
-            text += f" enquanto a taxa ficou em {_pct(r1)}"
-        else:
-            verbo = "caiu" if r1 < r0 else "subiu"
-            text += f" enquanto a taxa {verbo} de {_pct(r0)} para {_pct(r1)}"
+    """Título do gráfico principal (padrão pedido pelo analista)."""
+    text = f"{label}: evolução da classificação hawk-dove"
+    if series and rates:
+        text += " e da taxa de juros"
     return text
 
 
