@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import re
 import shutil
 from datetime import date
 from pathlib import Path
@@ -14,6 +15,16 @@ from .schema import SchemaError, load_records
 def load_roster(bc: str) -> list[dict]:
     p = config.REGISTRY / bc / "roster.json"
     return json.loads(p.read_text(encoding="utf-8"))["members"] if p.exists() else []
+
+
+def _corpo(text: str) -> str:
+    """Texto do raw sem o cabeçalho técnico (título '# ...' e linhas '<!-- chave: valor -->')."""
+    linhas = text.splitlines()
+    i = 0
+    while i < len(linhas) and (not linhas[i].strip() or linhas[i].startswith("# ")
+                               or re.fullmatch(r"\s*<!--.*-->\s*", linhas[i])):
+        i += 1
+    return "\n".join(linhas[i:])
 
 
 def _lvl(v: float) -> str:
@@ -60,7 +71,7 @@ def bc_payload(bc: str, records, roster: list[dict], raw_folder: Path, today: st
         d = dataclasses.asdict(r)
         if not raw.exists():
             raise SchemaError(f"{r.speech_id}: raw ausente em {raw}")
-        d["text"] = raw.read_text(encoding="utf-8")
+        d["text"] = _corpo(raw.read_text(encoding="utf-8"))
         docs.append(d)
     rates = board.rate_series(records)
     return {

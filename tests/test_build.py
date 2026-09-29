@@ -110,3 +110,8 @@ def test_headline_same_ends():
 def test_headline_without_rate():
     assert build.headline("BCCh", _s(-2.0, -0.5), []) == "BCCh: a Junta saiu de \u22122,0 para \u22120,5"
     assert build.headline("BCCh", [], []) == "BCCh"
+
+
+def test_corpo_remove_cabecalho_tecnico():
+    raw = "# Banxico — Minuta 2026-06-25\n\n<!-- speech_id: x -->\n<!-- url: y -->\n\nMinuta número 125\n<!-- no meio fica -->\n"
+    assert build._corpo(raw) == "Minuta número 125\n<!-- no meio fica -->"
