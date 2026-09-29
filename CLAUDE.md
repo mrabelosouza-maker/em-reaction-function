@@ -8,6 +8,12 @@ Spec: docs/superpowers/specs/2026-09-28-em-reaction-functions-design.md.
 agentes (`claude -p`, skill bc-hawk-dove) -> data/<bc>/extracted/<speech_id>.json -> emrf/ -> results/index.html
 `emrf/` nunca chama modelo nem rede. Remontar é grátis: `python scripts/build.py`.
 
+## Página
+Formato JGP (skill `jgp-html-report`): casca em `emrf/web/` (CSS/JS embutidos pelo build),
+sidebar fechada por padrão, Plotly **local** em `assets/plotly.min.js` (bundle basic 2.35.2:
+só scatter/bar/pie — o heatmap é tabela HTML). O título do gráfico principal é gerado dos
+dados (`build.headline`).
+
 ## Rotinas
 - **Atualizar o Banxico** (após decisão ou ata): `python scripts/coletar_banxico.py`
   -> `python scripts/classificar.py` -> `python -m pytest -q` -> `python scripts/build.py` -> publicar.
