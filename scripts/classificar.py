@@ -45,7 +45,17 @@ def verificar(out: Path, stem: str) -> str | None:
 
 
 def _cauda(txt: str | None, n: int = 20) -> str:
-    return chr(10).join((txt or "").splitlines()[-n:])
+    if isinstance(txt, bytes):
+        txt = txt.decode("utf-8", errors="replace")
+    return "\n".join((txt or "").splitlines()[-n:])
+
+
+def resultado(rc: int | str, out: Path, stem: str) -> str | None:
+    """rc = returncode do claude ou "timeout". Saida valida = sucesso, mesmo com rc != 0."""
+    erro = verificar(out, stem)
+    if erro is None:
+        return None
+    return f"TIMEOUT: {erro}" if rc == "timeout" else f"returncode {rc}: {erro}"
 
 
 if __name__ == "__main__":
@@ -67,17 +77,18 @@ if __name__ == "__main__":
         try:
             r = subprocess.run(cmd, cwd=config.ROOT, check=False, timeout=900, capture_output=True,
                                text=True, encoding="utf-8", errors="replace")
-        except subprocess.TimeoutExpired:
+            rc, stdout, stderr = r.returncode, r.stdout, r.stderr
+        except subprocess.TimeoutExpired as e:
             print(f"TIMEOUT {raw.name}")
-            falhas.append(raw.name)
-            continue
-        print(r.stdout)
-        erro = f"returncode {r.returncode}" if r.returncode else verificar(out, raw.stem)
+            rc, stdout, stderr = "timeout", e.stdout, e.stderr
+            print(_cauda(stdout))
+        else:
+            print(stdout)
+        erro = resultado(rc, out, raw.stem)
         if erro:
             if out.with_name(out.name + ".invalido").exists():
                 print(f"INVALIDO {out.name}: {erro}")
-            print(f"returncode {r.returncode}")
-            print("--- stderr ---", _cauda(r.stderr), "--- stdout ---", _cauda(r.stdout), sep=chr(10))
+            print(f"{erro}\n--- stderr ---\n{_cauda(stderr)}")
             falhas.append(raw.name)
     print(f"classificados {len(todo) - len(falhas)}/{len(todo)}")
     for f in falhas:

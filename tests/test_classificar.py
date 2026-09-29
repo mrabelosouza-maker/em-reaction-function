@@ -38,3 +38,15 @@ def test_speech_id_diferente_do_stem(tmp_path, make_record):
     out = _grava(tmp_path, d)
     assert classificar.verificar(out, "outro-stem")
     assert out.with_name(out.name + ".invalido").exists()
+
+
+def test_timeout_com_json_invalido(tmp_path, make_record):
+    d = make_record(composite=9)
+    out = _grava(tmp_path, d)
+    assert classificar.resultado("timeout", out, d["speech_id"])
+    assert out.with_name(out.name + ".invalido").exists()
+
+
+def test_rc_erro_com_json_valido_e_sucesso(tmp_path, make_record):
+    d = make_record()
+    assert classificar.resultado(1, _grava(tmp_path, d), d["speech_id"]) is None
