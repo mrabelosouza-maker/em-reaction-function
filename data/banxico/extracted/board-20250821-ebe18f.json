@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250821-ebe18f",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-08-07",
+  "date": "2025-08-21",
+  "meeting_date": "2025-08-07",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{93076C6E-4055-680E-9986-389D0B64F5E7}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.75%", "vote": "4-1", "dissents": ["Heath (hold at 8.00%)"]},
+  "summary": "The minutes of the 7 August decision (25bp cut to 7.75%, split 4-1 with Heath again dissenting for a hold) execute the more gradual pace the June minutes had flagged: the majority judged it appropriate to continue the easing cycle, citing peso appreciation, weak activity with a widening negative output gap, a cooling labor market and possible trade-policy impacts, and signaled it will weigh additional cuts while stressing that a gradual approach gives continuity to the cycle. Versus the previous minutes, headline inflation has improved markedly (back within the variability interval at 3.51% on a sharp drop in the non-core component), which softens the tone relative to June's alarm, but the core-persistence debate remains intense: members note core is stuck, merchandise inflation rose to 4.02%, the core forecast was revised up for a third consecutive time, and analysts' medium/long-term expectations stay unanchored around 3.6-3.7%. The minutes read modestly MORE HAWKISH than the communique: they surface a forceful Heath dissent arguing there is no room to cut and the restrictive stance must be kept, plus a cautious member warning the absolute stance is near neutrality and the Fed differential is close to post-2008 lows, so further adjustments must be more gradual. The dovish pillars (deepening slack, moderating wages, a strong peso and a weak dollar keeping global financial conditions loose) still dominate the decision, leaving the board tilted toward further but smaller, data-dependent cuts.",
+  "key_quotes": [
+    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.75%.", "context": "Collegial decision: 25bp cut to 7.75% by majority, one dissent", "dimension": "composite_hawk_dove"},
+    {"quote": "hacia delante se valorarán recortes adicionales, y que un enfoque gradual contribuirá a dar continuidad al ciclo de recortes.", "context": "Forward guidance: more cuts on the table, but a gradual pace", "dimension": "near_term_bias"},
+    {"quote": "la inflación subyacente no da señales de reducción.", "context": "Dissenting/hawkish member on stuck core inflation; core forecast revised up again", "dimension": "inflation_conviction"},
+    {"quote": "la posición absoluta está cerca del intervalo de neutralidad, por lo que los ajustes deben ser más graduales", "context": "Member judging the absolute stance is close to neutral, limiting room and demanding gradualism", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "food_prices", "dollar", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

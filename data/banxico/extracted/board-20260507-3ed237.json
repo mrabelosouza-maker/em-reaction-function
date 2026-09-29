@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260507-3ed237",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-05-07",
+  "date": "2026-05-07",
+  "meeting_date": "2026-05-07",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{8A05C722-0A97-4527-2166-0CE802CE6838}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "6.50%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
+  "summary": "Banxico's Board cut the policy rate 25bp to 6.50% but framed it as the final move that 'concluye el ciclo iniciado en marzo de 2024', explicitly signaling it will now be appropriate to hold the rate at its current level going forward. The decision was again taken 'por mayoria' by a divided 3-2 vote -- Rodriguez Ceja, Cuadra and Mejia for the cut; Borja and Heath dissenting to hold at 6.75% -- the same split as March. Versus the March 26 communique (a cut that opened the door to 'un recorte adicional', composite -1.5), this is a clear hawkish shift in guidance: the easing cycle is now explicitly closed and the stance is judged adequate, even though the immediate action is still a cut. The inflation backdrop improved -- headline eased from 4.63% to 4.45% and core from 4.46% to 4.26%, with no second-round effects from the year-start tax measures -- but 2026 expectations rose, Q2-Q3 headline forecasts were revised up, and the balance of risks stays tilted to the upside; the cut leaned on the Q1 activity contraction, widening slack, a stronger peso and the degree of monetary restriction already in place. Net, a cut signaled as the last one with a hold ahead scores a mildly dovish -0.5, up from -1.5 in March.",
+  "key_quotes": [
+    {"quote": "La Junta de Gobierno juzgó apropiado realizar un recorte adicional a la tasa de referencia y con esto concluir el ciclo iniciado en marzo de 2024.", "context": "The 25bp cut to 6.50% is explicitly framed as the FINAL move that closes the easing cycle begun in March 2024 -- a hawkish reframing of an otherwise dovish action versus March's open-ended guidance", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance flips from 'one more cut' in March to an explicit hold at the current level, judging the stance adequate for the macro challenges ahead", "dimension": "near_term_bias"},
+    {"quote": "Votaron a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 6.75% Galia Borja Gómez y Jonathan Heath.", "context": "Board stays split 3-2, with Borja and Heath again dissenting in favor of holding at 6.75% -- the same divided majority as March", "dimension": "composite_hawk_dove"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite headline and core both easing, the inflation risk balance stays tilted to the upside, with 2026 expectations up and Q2-Q3 forecasts revised higher -- the rationale for stopping the cuts", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -0.5,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 3.0,
+    "labor_concern": 3.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["commodities", "fx_passthrough", "dollar", "external_rates", "tariffs", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

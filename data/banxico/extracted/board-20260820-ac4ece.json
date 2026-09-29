@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260820-ac4ece",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-08-06",
+  "date": "2026-08-20",
+  "meeting_date": "2026-08-06",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{2C056A20-C01E-9A8C-F4C3-6BB70D49BABF}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the 6 August meeting record a UNANIMOUS 5-0 decision to hold the overnight target at 6.50% (all five members present), with the forward guidance repeated verbatim that it will be appropriate to keep the rate at its current level. Headline inflation fell further to around the 3% target (3.55% to 3.10% between the first halves of June and July) and core dropped below 4% for the first time since May 2025 (4.12% to 3.95%), improvements the board attributes largely to the fading of earlier supply shocks; yet it keeps the balance of risks to inflation tilted to the upside and now sees disinflation proceeding more gradually, with convergence pushed to Q4 2027. Versus the previous ata (Minuta 2026-06-25, composite +0.5) the collective message is essentially unchanged: the debate again spans a firmly hawkish member -- who argues the real ex-ante rate at neutrality 'previene una mayor relajación', that the differential to the Fed is uncomfortably low, and that guidance should signal rates stay put with no cuts expected through 2027 -- against dovish voices stressing that monetary transmission is still working and that output-gap slack, peso appreciation and anchored expectations all favor disinflation. No member advocates resuming cuts and none advocates hiking, so the unanimous hold with an upside-tilted risk balance is broadly in line with the same meeting's communique; net, a mildly hawkish +0.5, flat versus the June minutes.",
+  "key_quotes": [
+    {"quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "The collegial decision: a second consecutive UNANIMOUS 5-0 hold of the overnight target at 6.50% with all members present", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance repeated verbatim from June -- a firm signal to keep the rate on hold at its current level, judging the stance adequate", "dimension": "near_term_bias"},
+    {"quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite headline near 3% and core below 4%, the majority keeps the balance of risks to the inflation forecast tilted to the upside -- the rationale for continuing to hold", "dimension": "inflation_conviction"},
+    {"quote": "Advirtió que la tasa real ex ante dentro del rango de neutralidad previene una mayor relajación.", "context": "The most hawkish member: the real ex-ante rate is only at neutrality (not deeply restrictive), which rules out further easing, and guidance should signal rates stay until convergence is consolidated (no cuts through 2027)", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "credibility", "r_star", "indexation"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "neutral"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

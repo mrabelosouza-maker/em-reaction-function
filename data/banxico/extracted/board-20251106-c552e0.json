@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20251106-c552e0",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-11-06",
+  "date": "2025-11-06",
+  "meeting_date": "2025-11-06",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{EBE40A87-D410-9D84-25A1-935964853DED}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.25%", "vote": "4-1", "dissents": ["Heath (hold at 7.50%)"]},
+  "summary": "Banxico's Board cut the policy rate 25bp to 7.25% in another divided 4-1 vote, with Heath again dissenting for a hold (now at 7.50%), judging it appropriate to 'continue the cutting cycle' in line with the inflation outlook, the peso, weak activity and trade-policy risks. The key change versus the 25 September communique (also a 25bp cut, 4-1, composite -1.5) is a softer forward guidance: the plural, committed 'valorara recortes adicionales' is replaced by the singular 'valorara recortar la tasa de referencia' and an added emphasis that it will weigh 'the effects of all the determinants of inflation', a marginally more cautious, less pre-committed signal that narrows the door to a mechanical series of cuts. The data mix is broadly similar and benign: headline inflation eased from 3.74% to 3.63%, core was roughly flat at 4.26% to 4.24%, headline year-end 2025 expectations fell, and convergence to the 3% target is still expected in Q3 2026, though Q3 activity is now reported as an outright contraction. The Board still judges the balance of inflation risks tilted to the upside (less pronounced than in 2021-2024) and reaffirms its priority mandate, while flagging the degree of monetary restriction already implemented, i.e. diminishing room. Net, essentially the same cut and split as September but with a hawkish tweak to guidance, lifting the composite modestly to -1.0.",
+  "key_quotes": [
+    {"quote": "La Junta de Gobierno del Banco de México decidió disminuir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.25%, con efectos a partir del 7 de noviembre de 2025.", "context": "Corte de 25bp para 7.25%, mesmo ritmo do comunicado de setembro", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno valorará recortar la tasa de referencia.", "context": "Guidance suavizado: cai 'adicionales' e passa a 'recortar' no singular vs 'valorara recortes adicionales' de setembro, sinal mais cauteloso", "dimension": "near_term_bias"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza, si bien este es menos pronunciado que el enfrentado entre 2021 y 2024.", "context": "Balanco de riscos inflacionarios segue de alta; subyacente ainda resistente em 4.24%", "dimension": "inflation_conviction"},
+    {"quote": "Votó a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 7.50% Jonathan Heath.", "context": "Dissidencia de Heath persiste, agora preferindo manter em 7.50%", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 1,
+    "inflation_conviction": 3,
+    "labor_concern": 2,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

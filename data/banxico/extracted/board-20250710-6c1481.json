@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250710-6c1481",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-06-26",
+  "date": "2025-07-10",
+  "meeting_date": "2025-06-26",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{A354B917-F0F6-E4BE-CA35-B1F77AC37840}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "8.00%", "vote": "4-1", "dissents": ["Heath (hold at 8.50%)"]},
+  "summary": "The minutes of the 26 June decision (50bp cut to 8.00%, split 4-1 with Heath dissenting for a hold) read distinctly more hawkish than the communique itself. The majority that voted to cut explicitly framed this as the LAST 50bp move and signaled a shift to a more gradual easing pace going forward, elaborating at length on the narrowed rate differential with the Fed and the room the appreciating peso provides. The debate over inflation is more alarmed than the communique conveyed: several members stressed that core inflation rose to 4.20%, above the upper bound of the variability interval, with a sixth consecutive fortnightly increase, a generalized/broadening rise, and a third straight upward revision to the forecasts, while the upside risk balance is driven by the livestock (pecuarios) supply shock. Heath's dissent is spelled out forcefully, arguing the space for recalibration is exhausted, that the cut approaches the upper neutral threshold and risks a signal of complacency and a loss of credibility. The dovish counterweights remain (weak activity with two quarters of contracting demand, a widening negative output gap, a cooling labor market and moderating wages, peso appreciation and a still-restrictive stance), but the forward guidance clearly tilts toward slower, smaller cuts, making the minutes half a point more hawkish than the communique.",
+  "key_quotes": [
+    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por mayoría reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 8.00%.", "context": "Decisão da reunião de 26/jun: corte de 50bp a 8.00%, por maioria (4-1)", "dimension": "composite_hawk_dove"},
+    {"quote": "es conveniente comunicar que hacia delante se adoptará un enfoque más gradual en el ciclo de disminuciones, teniendo en consideración toda la información relevante.", "context": "Maioria sinaliza mudança para ritmo mais gradual à frente, tratando este como o último corte de 50bp", "dimension": "near_term_bias"},
+    {"quote": "En lo que respecta a la inflación subyacente, todos notaron que esta aumentó desde la última decisión, ubicándose en 4.20% en la primera quincena de junio.", "context": "Núcleo subiu a 4.20%, acima do limite superior do intervalo, sexto aumento quinzenal consecutivo — preocupação inflacionária mais explícita que no comunicado", "dimension": "inflation_conviction"},
+    {"quote": "El ajuste realizado en esta decisión pone en riesgo el mantenimiento de una postura monetaria lo suficientemente restrictiva, dado que lo acerca al umbral superior de la zona de neutralidad.", "context": "Voto dissidente de Heath (manter em 8.50%): espaço para recalibração esgotado, risco de complacência e perda de credibilidade", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2,
+    "policy_stance_read": 3.5,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "food_prices", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

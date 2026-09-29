@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20251218-3b7982",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-12-18",
+  "date": "2025-12-18",
+  "meeting_date": "2025-12-18",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{7EC38EB9-5F4D-5857-805D-2471209BFEBA}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.00%", "vote": "4-1", "dissents": ["Heath (hold at 7.25%)"]},
+  "summary": "Banxico's Board cut the policy rate 25bp to 7.00% in another divided 4-1 vote, with Heath again dissenting for a hold (now at 7.25%), judging it appropriate to 'continue the cycle of rate reductions' in line with the inflation outlook, the peso, weak activity and trade-policy risks. The key change versus the 6 November communique (also a 25bp cut, 4-1, composite -1.0) is a further hawkish tweak to forward guidance: November's 'valorara recortar la tasa de referencia' is replaced by 'valorara el momento de realizar ajustes adicionales a la tasa de referencia', dropping the explicit word 'cut' in favor of neutral 'adjustments' and emphasizing the timing, a clearer signal that a pause may be near. The data mix also turned less benign: headline inflation rose from 3.63% to 3.80% and core from 4.24% to 4.43%, and the Board revised its headline and core forecasts up for Q4 2025 and the next two quarters on stickier services inflation, though convergence to the 3% target is still expected in Q3 2026. The Board still judges the balance of inflation risks tilted to the upside (less pronounced than 2021-2024), flags a possible upside from fiscal (IEPS) measures it may later incorporate into forecasts, and notes the degree of restriction already implemented, i.e. diminishing room. Net, the same cut and split as November but with softer, de-committed guidance and rising inflation, lifting the composite modestly to -0.5.",
+  "key_quotes": [
+    {"quote": "Así, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.00%.", "context": "Quinto corte consecutivo de 25bp para 7.00%, decisão por maioria com todos os membros presentes", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno valorará el momento de realizar ajustes adicionales a la tasa de referencia.", "context": "Guidance mais hawkish: cai 'recortar' e passa a 'ajustes adicionales' com ênfase em 'el momento' vs 'valorara recortar la tasa' de novembro, sinalizando possível pausa", "dimension": "near_term_bias"},
+    {"quote": "Entre la primera quincena de octubre y el mes de noviembre, la inflación general aumentó de 3.63 a 3.80%, y la subyacente, de 4.24 a 4.43%, principalmente por un aumento en la inflación de las mercancías no alimenticias.", "context": "Inflação geral e subyacente subiram vs novembro; pronósticos revisados para cima nos próximos trimestres", "dimension": "inflation_conviction"},
+    {"quote": "Votó a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 7.25% Jonathan Heath.", "context": "Dissidência de Heath persiste, agora preferindo manter em 7.25%", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -0.5,
+    "mandate_weight": 1,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "patient"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

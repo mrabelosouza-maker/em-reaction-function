@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250807-2ebb30",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-08-07",
+  "date": "2025-08-07",
+  "meeting_date": "2025-08-07",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{2C71C5A0-BAB3-8C65-D666-AB9B5D82557E}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.75%", "vote": "4-1", "dissents": ["Heath (hold)"]},
+  "summary": "Banxico's Board cut the policy rate 25bp to 7.75% in a divided 4-1 vote (Heath again dissenting for a hold, now at 8.00%), keeping the open-ended guidance that it 'valorara recortes adicionales' while weighing all the determinants of inflation. Versus the 26 June communique (a 50bp cut, composite -2), the main change is the slower pace: the Board downshifted to 25bp, making the dovish action less aggressive even though the forward guidance, the 4-1 split and Heath's dissent all carried over. The data mix improved on the headline (inflation fell from 4.51% to 3.51%, driven by the non-core component) but core remained sticky, ticking up from 4.20% to 4.23% with short-term core forecasts nudged higher and 2025 year-end headline expectations rising. The Board still judges the balance of inflation risks tilted to the upside (though less pronounced than in 2021-2024) and continues to expect convergence to the 3% target in Q3 2026, justifying the cut by peso behavior, weak activity/slack and trade-policy uncertainty. Trade tensions and US policy remain the dominant external theme, with two-sided inflation effects flagged.",
+  "key_quotes": [
+    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.75%.", "context": "Corte de 25bp por maioria, desacelerando o ritmo frente aos 50bp de junho", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno valorará recortes adicionales a la tasa de referencia.", "context": "Guidance mantido: avaliará cortes adicionais, porta aberta para mais afrouxamento", "dimension": "near_term_bias"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza, si bien este es menos pronunciado que el enfrentado entre 2021 y 2024.", "context": "Balanco de riscos inflacionarios segue de alta; subyacente pegajosa (4.23%) e pronosticos de curto prazo revisados ao alza", "dimension": "inflation_conviction"},
+    {"quote": "Votó a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 8.00% Jonathan Heath.", "context": "Dissidencia de Heath persiste, preferindo manter a taxa", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1,
+    "inflation_conviction": 3,
+    "labor_concern": 2,
+    "policy_stance_read": 3,
+    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

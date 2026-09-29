@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250206-1e9084",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-02-06",
+  "date": "2025-02-06",
+  "meeting_date": "2025-02-06",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{8F4D3113-637F-2920-42DE-6A5866416A4F}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "9.50%", "vote": "4-1", "dissents": ["Heath (25bp cut)"]},
+  "summary": "Banxico's Board cut the policy rate 50bp to 9.50%, accelerating from the prior 25bp pace, judging that the significant progress in resolving the global inflationary episode allows lower rates than the shocks once demanded. Forward guidance says it could continue calibrating the stance and consider adjusting it by a similar magnitude, while keeping the stance restrictive, so the message signals further sizeable cuts ahead. Inflation printed near 3.7% (headline 3.69%, core 3.72%) with the balance of inflation risks still tilted up, but the Board leaned on Q4 economic contraction, a decelerating labor market and an activity risk balance tilted down to justify the larger move. The vote was 4-1, with Jonathan Heath dissenting in favor of a smaller 25bp cut. US tariff threats and peso volatility feature as the main external risks.",
+  "key_quotes": [
+    {"quote": "Tomando en cuenta el actual panorama inflacionario y el grado de restricción monetaria prevaleciente, la Junta de Gobierno consideró apropiado una reducción de la tasa de referencia de mayor magnitud.", "context": "Justificativa para acelerar o ritmo para 50bp", "dimension": "composite_hawk_dove"},
+    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance sinalizando novos cortes de magnitude similar", "dimension": "near_term_bias"},
+    {"quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.", "context": "Ciclo de cortes continua, mas postura ainda restritiva", "dimension": "policy_stance_read"},
+    {"quote": "El balance de riesgos para la actividad económica se encuentra sesgado a la baja.", "context": "Fraqueza da atividade sustentando o corte maior", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3,
+    "mandate_weight": 1,
+    "inflation_conviction": 2,
+    "labor_concern": 2.5,
+    "policy_stance_read": 4,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

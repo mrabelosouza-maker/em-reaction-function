@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20251009-33e7f4",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-09-25",
+  "date": "2025-10-09",
+  "meeting_date": "2025-09-25",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{51E24FD1-CEA3-EEDA-ECB3-B6BFDC8B6671}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.50%", "vote": "4-1", "dissents": ["Heath (hold at 7.75%)"]},
+  "summary": "The minutes of the 25 September decision (a second consecutive 25bp cut to 7.50%, again split 4-1 with Heath dissenting for a hold at 7.75%) keep the board on the gradual easing path set in prior meetings: the majority judged it appropriate to continue the cutting cycle, reaffirmed it will 'weigh additional cuts' toward 3% convergence, and explicitly kept the forward guidance of the previous two decisions, giving continuity to the cycle under a gradual approach. Versus the August minutes, the tone reads modestly MORE dovish: the Fed's 25bp cut and its dot-plot signal of two more cuts in 2025 are cited by several members as opening room to lower the Mexican rate 'without compressing the differential,' relaxing the relative-stance constraint that had been the key hawkish limiter in August, while headline inflation kept behaving well (3.74% in early September, below its historical average and stable) and activity weakened further (a negative July IGAE, industry reverting its gains, and the output gap seen widening to its most negative since 1993 ex-crises). The dovish pillars-deepening slack, a peso up more than 10% year-to-date, an expected persistently weak dollar, and a cooling labor market-dominate the decision and leave the board tilted toward further but smaller, gradual cuts. The counterweight is unchanged: core inflation is stuck at 4.26%, outside the variability range with no downward trend and its forecast revised up again, and members increasingly flag that the real ex-ante rate (~3.75%) is nearing the upper bound of neutral, so the remaining room is limited. Heath's dissent and a like-minded member argue the restrictive stance must be kept until core resumes its decline and that guidance should stay cautious and data-dependent rather than pre-committing to an automatic continuation of the easing cycle.",
+  "key_quotes": [
+    {"quote": "la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.50%.", "context": "Collegial decision: second straight 25bp cut to 7.50% by majority, one dissent", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno valorará recortes adicionales a la tasa de referencia.", "context": "Forward guidance: board will weigh additional cuts, continuity under a gradual approach", "dimension": "near_term_bias"},
+    {"quote": "la inflación subyacente se mantiene fuera del rango de variabilidad y sigue sin mostrar una tendencia a la baja, mientras que la reducción de la general se debe solamente al desempeño favorable del componente no subyacente.", "context": "Hawkish member (aligned with Heath dissent) on stuck core; headline gains only from the non-core component", "dimension": "inflation_conviction"},
+    {"quote": "Reconoció que la postura monetaria estaría próxima a alcanzar el nivel superior de la estimación del intervalo de neutralidad.", "context": "Member judging the stance is nearing the upper bound of the neutral range, limiting remaining room", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -2.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "dollar", "food_prices", "credibility", "minimum_wage", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

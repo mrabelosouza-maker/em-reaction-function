@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250515-97ec99",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-05-15",
+  "date": "2025-05-15",
+  "meeting_date": "2025-05-15",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{FE43A06F-5ECA-8C1D-3E51-DCD1C8657282}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "8.50%", "vote": "5-0", "dissents": []},
+  "summary": "Banxico's Board cut the policy rate another 50bp to 8.50%, unanimously and with all members present, and repeated the guidance that it could keep calibrating the stance and consider a similar-magnitude adjustment ahead, so the message still points to further sizeable cuts while insisting the stance stays restrictive. This is essentially the same signal as the 27 March communique (also a unanimous 50bp cut), the main change being the lower rate level. The Board judged the balance of inflation risks to remain tilted up but to have improved further as global shocks resolve, even as short-term inflation forecasts were revised up (headline and core both 3.93% in April, core below 4% for eight months but up at the margin) largely on higher-than-expected merchandise inflation. Q1 activity was weak again (0.2% q/q) with important downside risks from trade tensions and uncertainty, and US trade policy plus peso dynamics remain the dominant external theme with two-sided inflation effects; convergence to the 3% target is still expected in Q3 2026.",
+  "key_quotes": [
+    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por unanimidad reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 8.50%.", "context": "Terceiro corte consecutivo de 50bp, novamente por unanimidade", "dimension": "composite_hawk_dove"},
+    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance mantendo viés de novos cortes de magnitude similar (50bp)", "dimension": "near_term_bias"},
+    {"quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.", "context": "Ciclo de cortes continua, mas postura ainda restritiva", "dimension": "policy_stance_read"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico, si bien se mantiene sesgado al alza, ha mejorado conforme los choques globales se han ido resolviendo.", "context": "Balanço de riscos inflacionários segue de alta, mas melhorou frente ao comunicado anterior", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3,
+    "mandate_weight": 1,
+    "inflation_conviction": 2,
+    "labor_concern": 2,
+    "policy_stance_read": 4,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 3, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

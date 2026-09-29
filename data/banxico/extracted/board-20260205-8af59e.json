@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260205-8af59e",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-02-05",
+  "date": "2026-02-05",
+  "meeting_date": "2026-02-05",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{318D71D0-F37D-869C-E8B4-8E58FD9D3648}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "7.00%", "vote": "5-0", "dissents": []},
+  "summary": "Banxico's Board unanimously paused the easing cycle, holding the policy rate at 7.00% after five consecutive 25bp cuts, judging the pause appropriate given the inflation outlook. The big change versus the 18 December communique (a 25bp cut to 7.00%, split 4-1, composite -0.5) is twofold: the split becomes unanimous with Heath no longer dissenting, and the guidance shifts from 'valorara el momento de realizar ajustes adicionales' to an explicit pause, keeping only a generic, two-sided 'valorara realizar ajustes adicionales' path ahead. The data mix deteriorated on the core: headline eased slightly (3.80 to 3.77%) but core inflation rose again to 4.47% (from 4.43%, and up from 4.33% in December), and the Board revised its headline and core forecasts up between Q1 2026 and Q1 2027, pushing expected convergence to the 3% target all the way out to Q2 2027 from Q3 2026 previously. The Board now calls the inflation balance of risks 'mas equilibrado' but still tilted to the upside, cites the peso's appreciation and lower domestic yields as supports, and flags fiscal adjustments and services stickiness as reasons for caution. Net, the same 7.00% rate but a decisive pivot from cutting to a data-dependent pause with worse core dynamics and a delayed convergence lifts the composite to +0.5.",
+  "key_quotes": [
+    {"quote": "Así, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 7.00%.", "context": "Unanimous hold at 7.00%, ending the 4-1 splits of the cutting cycle; Heath no longer dissents", "dimension": "composite_hawk_dove"},
+    {"quote": "La Junta de Gobierno juzgó apropiado en esta ocasión hacer una pausa en el ciclo de disminuciones de la tasa de referencia.", "context": "Explicit pause of the easing cycle after five straight 25bp cuts, in line with the inflation outlook and fiscal/FX uncertainty", "dimension": "policy_stance_read"},
+    {"quote": "Hacia delante, la Junta de Gobierno valorará realizar ajustes adicionales a la tasa de referencia.", "context": "Guidance neutralized to a generic, two-sided 'will assess additional adjustments', dropping December's 'el momento de realizar ajustes' emphasis and keeping the path open both ways", "dimension": "near_term_bias"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico es más equilibrado, pero mantiene un sesgo al alza.", "context": "Inflation balance of risks called more balanced but still tilted up; core rose to 4.47% and convergence pushed to Q2 2027", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "fiscal", "credibility", "commodities"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "neutral"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

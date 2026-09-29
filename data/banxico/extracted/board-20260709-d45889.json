@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260709-d45889",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-06-25",
+  "date": "2026-07-09",
+  "meeting_date": "2026-06-25",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{34C74125-16AD-2F94-0E20-DB9349E8AB97}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the 25 June meeting record a UNANIMOUS 5-0 decision to hold the overnight target at 6.50% -- the first hold after the May meeting closed the easing cycle -- with forward guidance that it will be appropriate to keep the rate at its current level. Headline inflation fell back inside the variability interval (from 4.45% to 3.55%), driven mainly by the volatile non-core component, yet the board keeps the balance of risks to inflation tilted to the upside, flags persistent services inflation (4.57%) and long-term expectations at their highest since March 2019, and reaffirms its priority price-stability mandate. Versus the previous ata (Minuta 2026-05-07, a divided 3-2 cut ending the cycle, composite 0.0) the collective message is modestly more hawkish: the two former hold dissenters now get their unanimous hold, guidance firms into a de-facto prolonged pause, and one member argues the real ex-ante rate reached neutrality prematurely and that policy must stay 'suficientemente restrictiva' and not fall below neutral, warning that absent a rapid deceleration in services the stance should remain unchanged for a prolonged period. A dovish counter-current is present -- ample, widening output-gap slack, peso appreciation, fading supply shocks and weak demand are cited as forces pulling inflation down -- but no member advocates resuming cuts. Read against the same meeting's communique the minutes are somewhat MORE HAWKISH, exposing the delicate balance between economic weakness and predominant upside inflation risks that the bare unanimous-hold decision does not convey; net, a unanimous hold with an upside-tilted risk balance and firm hold guidance scores a mildly hawkish +0.5.",
+  "key_quotes": [
+    {"quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "Collegial decision: a unanimous (5-0) hold of the overnight target at 6.50%, the first hold after the May meeting closed the easing cycle", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance: a firm signal to keep the rate on hold at its current level, judging the stance adequate for the macro challenges", "dimension": "near_term_bias"},
+    {"quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Risk balance: the majority keeps the balance of risks to the inflation forecast tilted to the upside, though noting it improved somewhat versus the last decision", "dimension": "inflation_conviction"},
+    {"quote": "de no iniciarse una rápida desaceleración de la inflación de servicios, la postura debería permanecer en su nivel actual por un periodo prolongado.", "context": "The hawkish member: the real ex-ante rate reached neutrality prematurely, policy must stay sufficiently restrictive and not fall below neutral, and absent a rapid deceleration in services the stance should hold at its current level for a prolonged period", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "credibility", "r_star"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "hawkish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

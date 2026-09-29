@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260806-479689",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-08-06",
+  "date": "2026-08-06",
+  "meeting_date": "2026-08-06",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{8DA3F519-341F-480E-1D4E-1AEE71DD08DA}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
+  "summary": "Banxico's Board again held the policy rate at 6.50% by a unanimous 5-0 vote with all members present, repeating verbatim the June guidance that going forward it will be appropriate to keep the rate at its current level and judging the stance adequate for the macro environment. Versus the 25 June communique (also a unanimous hold, composite +0.5), the message is essentially unchanged: headline inflation fell further (from 3.55% to 3.10% between the first halves of June and July) and core dipped below 4% (4.12% to 3.95%), and the 2026 year-end headline expectation was revised down. The offsetting hawkish note is that disinflation is now expected to proceed 'more gradually than previously anticipated,' with convergence to target pushed out to Q4 2027 (from Q2 2027 in June) and core forecasts nudged up for 2027; the balance of risks for inflation is still tilted to the upside. Net -- a unanimous hold with unchanged guidance, improving current inflation but a more gradual and later convergence and an upside-tilted risk balance -- this stays a mildly hawkish +0.5, flat versus June.",
+  "key_quotes": [
+    {"quote": "Así, con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "The decision: a second consecutive unanimous hold at 6.50% with all members present", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance is repeated verbatim from June -- a firm hold at the current level, judging the stance adequate", "dimension": "near_term_bias"},
+    {"quote": "se sigue anticipando que las inflaciones general y subyacente desciendan a lo largo del horizonte de pronóstico, si bien de manera más gradual que lo anteriormente previsto.", "context": "The key hawkish change vs June: disinflation is now seen as more gradual, with convergence to target pushed to Q4 2027 (from Q2 2027) and core forecasts nudged up for 2027", "dimension": "inflation_conviction"},
+    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite lower current headline and core, the inflation risk balance stays tilted to the upside -- the rationale for continuing to hold", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["commodities", "fx_passthrough", "dollar", "external_rates", "tariffs", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "hawkish"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

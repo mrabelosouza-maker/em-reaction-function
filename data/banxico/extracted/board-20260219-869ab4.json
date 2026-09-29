@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260219-869ab4",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-02-05",
+  "date": "2026-02-19",
+  "meeting_date": "2026-02-05",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{5701F165-479A-EF00-AFC5-8D2BA594692E}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "7.00%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the 5 February meeting record a unanimous pause, holding the rate at 7.00% after five consecutive 25bp cuts, with Heath rejoining the majority (his only dissent is on the communique's wording, not the rate). Read against the 5 February communique (composite +0.5), the minutes come across meaningfully MORE DOVISH: three of the five members frame the pause as a temporary interruption and explicitly signal room to resume easing -- one says the pause 'pudiera incluso ser mas corta de lo previsto' and another that 'existe espacio para continuar con los recortes' -- because they judge the January IEPS and tariff increases to be one-off, focalized relative-price adjustments without second-round effects, supported by ample slack, a cooling labor market (weakest IMSS hiring since 2020), peso appreciation and a less restrictive Fed. Versus the previous ata (Minuta 2025-12-18, a 4-1 cut, composite -1.0), the board has stepped from active easing to a pause, so the collective message is a notch LESS dovish than December even as the underlying bias stays toward resuming cuts. The clear hawkish counterweight is Jonathan Heath, who argues 2025 saw no real disinflation progress despite a restrictive stance, that the 3% target has been met only twice in 23 years, and that a single-meeting pause is insufficient -- calling instead for a prolonged pause and patience through at least H1 2026. Core dynamics remain the binding concern (core rose to 4.47% and convergence to 3% was pushed out to Q2 2027), which keeps the pause unanimous, but the majority's emphasis on transitory shocks and space to keep cutting tilts the minutes to a mildly dovish -0.5.",
+  "key_quotes": [
+    {"quote": "Así, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 7.00%.", "context": "Collegial decision: unanimous pause holding the rate at 7.00% after five straight 25bp cuts; Heath rejoins the majority (his dissent is only on the communique text)", "dimension": "composite_hawk_dove"},
+    {"quote": "Consideró que ante las repercusiones hasta ahora acotadas y focalizadas de las nuevas medidas, lo cual mitiga los riesgos de observar efectos de segundo orden, la pausa actual pudiera incluso ser más corta de lo previsto.", "context": "A member frames the pause as possibly shorter than expected given the contained, focalized fiscal shock -- a dovish tilt to the forward path not conveyed by the neutral communique", "dimension": "near_term_bias"},
+    {"quote": "Consideró adecuado comunicar que existe espacio para continuar con los recortes, procurando la convergencia eficiente a la meta y un ajuste ordenado de la economía.", "context": "A member argues the board should communicate there is room to continue cutting, given slack, dollar weakness/peso appreciation and a less restrictive Fed; signals an underlying easing bias", "dimension": "near_term_bias"},
+    {"quote": "Mencionó que el pausar solamente en esta ocasión no es suficiente, sino que se debe hacer una pausa prolongada hasta obtener evidencia de avances adicionales en la convergencia.", "context": "Heath (hawkish counterweight): a single-meeting pause is insufficient; wants a prolonged pause and patience through at least H1 2026 until there is evidence of further convergence", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "minimum_wage", "credibility", "food_prices"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

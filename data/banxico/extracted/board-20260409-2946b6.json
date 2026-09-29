@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260409-2946b6",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-03-26",
+  "date": "2026-04-09",
+  "meeting_date": "2026-03-26",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{FAC24258-9128-F1BD-D497-6225C392ED52}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "6.75%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
+  "summary": "The minutes of the 26 March meeting record a resumption of easing -- a 25bp cut to 6.75% -- but by the tightest possible 3-2 majority, with Borja and Heath both voting to hold at 7.00%. The majority justified cutting on peso levels, weak activity, widening slack and a still-restrictive stance, and argued the new Middle East oil shock and the fruit-and-vegetable (jitomate) spike are transitory supply shocks whose domestic pass-through is buffered by the federal gasoline price cap; the guidance is cautious and data-dependent, promising only to weigh 'the appropriateness and timing of an additional cut'. Versus the previous ata (Minuta 2026-02-05, a unanimous pause, composite -0.5), the collective message is more dovish in ACTION -- the board actually resumed cutting -- yet the board is now far more divided and more preoccupied with upside inflation risk: headline crossed above the variability interval to 4.63%, core is stuck near 4.5% with an almost-uninterrupted year-long uptrend, the inflation risk balance stays tilted up and one member says that upside bias 'se ha incrementado de manera significativa', short-term expectations deteriorated and a stronger dollar plus a more cautious Fed have narrowed room to cut the rate differential. Read against the same meeting's communique, the minutes are somewhat MORE HAWKISH: they expose two dissents wanting to pause, Heath's argument that cutting while core persists signals weaker commitment to the priority mandate, and several members' worries about a structural inflation floor near 4% -- color the bare cut decision does not convey. Net, a divided, cautious cut with the door open to only one further, data-dependent move scores a mildly dovish -1.0.",
+  "key_quotes": [
+    {"quote": "De esta forma, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 6.75%.", "context": "Collegial decision: a 25bp cut to 6.75%, resuming the easing cycle but by majority (3-2), with Borja and Heath dissenting in favor of holding at 7.00%", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante, conforme la evolución de las condiciones macroeconómicas y financieras lo amerite, la Junta de Gobierno valorará la pertinencia y el momento de realizar un recorte adicional a la tasa de referencia.", "context": "Forward guidance: cautious and data-dependent, promising to weigh only 'an additional cut' -- a softer continuity signal than an open easing cycle", "dimension": "near_term_bias"},
+    {"quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza. ... Uno opinó que su sesgo al alza se ha incrementado de manera significativa.", "context": "The majority keeps the inflation risk balance tilted up and one member sees that upside bias having increased significantly, amid the Middle East oil shock and sticky core", "dimension": "inflation_conviction"},
+    {"quote": "Al enfrentar mayores riesgos, no perdemos nada en pausar y esperar para que estos choques verdaderamente se disipen.", "context": "Heath's dissent (hawkish counterweight): with the risk balance more skewed to the upside, the board loses nothing by pausing and much by cutting while core persists and non-core rises", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "minimum_wage", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "hawkish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260521-6ef8cd",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-05-07",
+  "date": "2026-05-21",
+  "meeting_date": "2026-05-07",
+  "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{3F15F7F1-3E5A-4FD4-E0C0-B4BEA1703FAF}.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "6.50%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
+  "summary": "The minutes of the 7 May meeting record a 25bp cut to 6.50% that the board explicitly frames as the LAST move -- 'concluir el ciclo iniciado en marzo de 2024' -- with forward guidance that it will now be appropriate to hold the rate at its current level. The cut passed by the tightest 3-2 majority (Rodriguez, Cuadra, Mejia in favor; Borja and Heath dissenting to hold at 6.75%), the majority justifying easing on peso appreciation, a sharp Q1 GDP contraction (-0.77% qoq) implying no demand-side pressures, and the degree of restriction already delivered, while treating the Middle East oil shock and the jitomate/food spike as transitory relative-price adjustments buffered by the federal gasoline price cap. Versus the previous ata (Minuta 2026-03-26, an open-door cut, composite -1.0), the collective message turns markedly more hawkish: the easing cycle is now declared over, the guidance shifts from weighing 'an additional cut' to firmly holding, several members judge the stance has reached NEUTRAL and one argues the margin for further cuts is 'practicamente nulo' given the near-historic-low rate differential to a Fed on hold, core has stayed above 4.2% for eleven consecutive months, services inflation is persistent around a ~4% structural floor, and short- and medium-term expectations were revised up. Read against the same meeting's communique, the minutes are somewhat MORE HAWKISH: they expose the two hold dissents, Heath's call for a 'pausa prolongada', and the divided debate over whether policy is now merely neutral rather than restrictive -- color the bare end-of-cycle decision does not convey. Net, a divided cut that closes the easing cycle with firm hold guidance scores a balanced 0.0.",
+  "key_quotes": [
+    {"quote": "La Junta de Gobierno juzgó apropiado realizar un recorte adicional a la tasa de referencia y con esto concluir el ciclo iniciado en marzo de 2024.", "context": "Collegial decision: a 25bp cut to 6.50% (by a 3-2 majority, Borja and Heath dissenting to hold) that the board explicitly frames as the END of the easing cycle begun in March 2024", "dimension": "composite_hawk_dove"},
+    {"quote": "Hacia delante la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance: a firm signal to hold going forward, judging the stance adequate for the macro challenges -- a clear shift from the prior ata's promise to weigh 'an additional cut'", "dimension": "near_term_bias"},
+    {"quote": "Aseveró que, ante ambos factores, el margen para recortes adicionales en la tasa objetivo sin que con ello se comprometa la convergencia a la meta es prácticamente nulo.", "context": "One (hawkish) member: with the real ex-ante rate in neutral range for over six months and the rate differential to the US near historic lows, there is essentially no room for further cuts -- a case for pausing", "dimension": "policy_stance_read"},
+    {"quote": "Otro advirtió que, pese a haberse reducido en abril, la inflación subyacente anual ha permanecido por arriba de 4.2% por once meses consecutivos.", "context": "Core persistence: despite the April decline, annual core inflation has stayed above 4.2% for eleven consecutive months, underpinning the upside-tilted risk balance and the end-of-cycle caution", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 3.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": 1.5,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "minimum_wage", "credibility", "r_star"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "dovish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "hawkish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-4-8",
+  "extracted_at": "2026-09-28T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
