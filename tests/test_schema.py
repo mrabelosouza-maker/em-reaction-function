@@ -97,7 +97,15 @@ def test_driver_intensity_must_be_int_not_bool(make_record):
     """Driver intensity must be int, not bool (True is rejected)."""
     d = make_record()
     d["drivers"]["supply_shocks"]["intensity"] = True
-    with pytest.raises(SchemaError, match="inteiro ou .5|inválido"):
+    with pytest.raises(SchemaError, match="inteiro 0-3"):
+        Record.from_json(d).validate()
+
+
+@pytest.mark.parametrize("kq", ["x", [None], ["a"], [{"quote": ""}], [{"quote": 3}], [{"context": "c"}]])
+def test_key_quotes_must_be_list_of_dicts_with_quote(make_record, kq):
+    d = make_record()
+    d["key_quotes"] = kq
+    with pytest.raises(SchemaError, match=d["speech_id"]):
         Record.from_json(d).validate()
 
 

@@ -101,6 +101,10 @@ class Record:
                      f"{sid}: decision inválida {self.decision!r}")
         else:
             _require(self.member_id != config.BOARD_ID, f"{sid}: membro não pode ser board")
+        kq = self.key_quotes
+        _require(isinstance(kq, list) and all(
+            isinstance(q, dict) and isinstance(q.get("quote"), str) and q["quote"].strip()
+            for q in kq), f"{sid}: key_quotes deve ser lista de objetos com 'quote' não vazio")
         for dim, (lo, hi) in config.DIMENSIONS.items():
             v = self.llm_scores.get(dim)
             if v is not None:
@@ -120,7 +124,7 @@ class Record:
             intensity = v.get("intensity")
             # Driver intensity must be int (not bool or float), in range 0-3
             _require(type(intensity) is int and intensity in (0, 1, 2, 3),
-                     f"{sid}: driver {k} intensity={intensity!r} use inteiro ou .5")
+                     f"{sid}: driver {k} intensity={intensity!r} use inteiro 0-3")
             _require(v.get("push") in config.PUSHES,
                      f"{sid}: driver {k} inválido {v!r}")
         return self

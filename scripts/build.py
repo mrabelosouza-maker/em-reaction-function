@@ -8,4 +8,4 @@ from emrf.build import build  # noqa: E402
 
 if __name__ == "__main__":
     out = build()
-    print(f"OK {out} ({out.stat().st_size / 1e6:.2f} MB)")
+    print(f"OK {out} ({out.stat().st_size} bytes)")

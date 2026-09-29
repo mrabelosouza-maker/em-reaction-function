@@ -37,9 +37,23 @@ def test_pendentes(tmp_path):
     raw, ext = tmp_path / "raw", tmp_path / "ext"
     raw.mkdir(); ext.mkdir()
     for n in ("a", "b"):
-        (raw / f"{n}.md").write_text("x", encoding="utf-8")
+        (raw / f"{n}.md").write_text(_hdr("comunicado"), encoding="utf-8")
     (ext / "a.json").write_text("{}", encoding="utf-8")
     assert [p.name for p in cb.pendentes(raw, ext)] == ["b.md"]
+
+
+def _hdr(doc_type):
+    return f"# t\n\n<!-- doc_type: {doc_type} -->\n<!-- date: 2026-01-01 -->\n\ntexto"
+
+
+def test_pendentes_ignora_raw_de_membro(tmp_path):
+    raw, ext = tmp_path / "raw", tmp_path / "ext"
+    raw.mkdir(); ext.mkdir()
+    (raw / "membro.md").write_text(_hdr("call_privado"), encoding="utf-8")
+    (raw / "sem-header.md").write_text("x", encoding="utf-8")
+    (raw / "com.md").write_text(_hdr("comunicado"), encoding="utf-8")
+    (raw / "ata.md").write_text(_hdr("ata"), encoding="utf-8")
+    assert [p.name for p in cb.pendentes(raw, ext)] == ["ata.md", "com.md"]
 
 
 def test_parse_minutas_linha_sem_pdf_nao_pareia_com_a_seguinte():

@@ -101,21 +101,22 @@ function renderDocs(bc) {
   document.getElementById('list-' + bc).innerHTML = docs.map(d => `<details><summary>${esc(d.date)} · ${esc(DOC[d.doc_type])} ·
     ${esc(d.member_id === 'board' ? 'Board' : d.member_id)} · <b class="${cls(d.llm_scores.composite_hawk_dove)}">${fmt(d.llm_scores.composite_hawk_dove)}</b> — ${esc(d.title)}</summary>
     <p>${esc(d.summary)}</p><ul>${d.key_quotes.map(q => `<li><i>${esc(q.quote)}</i></li>`).join('')}</ul>
-    ${d.url ? `<p><a href="${esc(d.url)}" target="_blank" rel="noopener">fonte</a></p>` : ''}<pre>${esc(d.text)}</pre></details>`).join('');
+    ${/^https?:\/\//.test(d.url || '') ? `<p><a href="${esc(d.url)}" target="_blank" rel="noopener">fonte</a></p>` : ''}<pre>${esc(d.text)}</pre></details>`).join('');
 }
 
 const METODO = `<h2>Metodologia</h2>
-<p><b>Rubrica.</b> Cada documento é classificado por um modelo de linguagem na rubrica 1.0-generic (projeto de reaction functions do FOMC, drivers adaptados a EMs): composto hawk-dove em [−5, +5] (positivo = hawk), peso no mandato de preços, convicção sobre inflação, preocupação com atividade, leitura do stance, viés de curto prazo e seis drivers. Dimensão não tratada no texto fica em branco, nunca zero. Diferenças de 0,5 são ruído.</p>
+<p><b>Rubrica.</b> Cada documento é classificado por um modelo de linguagem na rubrica 1.0-generic (projeto de reaction functions do FOMC, drivers adaptados a EMs): composto hawk-dove em [−5, +5] (positivo = hawk), peso no mandato de preços, convicção sobre inflação, preocupação com atividade, leitura do stance, viés de curto prazo e seis drivers. Dimensão não tratada no texto fica em branco, nunca zero.</p>
 <p><b>Duas trilhas.</b> <i>Colegiado</i> (comunicado e ata) é a voz oficial da Junta. <i>Membros</i> (falas públicas e calls privados) é a voz individual.</p>
 <p><b>Série do Board.</b> Degrau: o nível em cada data é o composto do último documento colegiado publicado até ali (comunicado ou ata). Documento sem composto não move o degrau. <b>Ressalva:</b> comunicado e ata são gêneros diferentes — a ata é mais longa e explicita divisões —, então parte do salto comunicado→ata pode ser gênero, não mudança de postura. O marcador (● comunicado, ■ ata) permite separar.</p>
 <p><b>Desvio do membro.</b> Composto da fala ou call menos o nível do Board vigente na data dela.</p>
 <p><b>Heatmap.</b> Cada coluna é um ciclo entre duas reuniões. Board = nível no fim do ciclo (já com a ata). Membro = média das falas no ciclo; no modo desvio, média dos desvios.</p>
-<p><b>Calibração.</b> Os scores são inteiros ou terminam em .5. A escala lê o que o documento pede da política, não o quanto ele reclama da inflação. Pontos de referência para comunicados do Banxico: corte com porta aberta a novos cortes −1,5; corte sinalizado como último ou pausa −0,5; manutenção neutra dependente de dados 0; manutenção com riscos de alta e ênfase na inflação +0,5; alta ou viés explícito de alta +2 ou mais. Diferenças de 0,5 são ruído: confie no ranking e na direção da mudança.</p>
-<p><b>Escopo.</b> Banxico, comunicados e atas desde janeiro de 2025. Outros BCs, RTIs e histórico de calls entram depois.</p>`;
+<p><b>Calibração.</b> Os scores são inteiros ou terminam em .5. A escala lê o que o documento pede da política, não o quanto ele reclama da inflação. Régua para comunicados do Banxico, usada como ordem de grandeza: corte grande ou aceleração do ritmo (ex.: 50 bp) sinalizando novos cortes de magnitude similar −3; corte grande sem sinalizar repetição, ou corte de 25 bp com guidance claro de continuidade e maioria folgada −2 a −2,5; corte com porta aberta a mais cortes e maioria dividida −1,5; corte sinalizado como último ou pausa à frente −0,5; manutenção neutra, dependente de dados 0; manutenção com balanço de riscos inclinado para cima e ênfase na inflação +0,5; alta ou viés explícito de alta +2 ou mais. A régua foi calibrada no próprio Banxico 2025–26 e está sujeita a revisão. Diferenças de 0,5 são ruído: confie no ranking e na direção da mudança.</p>
+<p><b>Escopo.</b> Banxico, comunicados e atas desde janeiro de 2025; as datas do primeiro e do último documento de cada BC aparecem abaixo dos indicadores da aba. Outros BCs, RTIs e histórico de calls entram depois.</p>`;
 
 function renderBC(bc, sec) {
   const b = DATA.bcs[bc];
-  sec.innerHTML = kpiHtml(b.kpis) + `<h2>Board e membros</h2><div class="chart" id="bchart-${bc}"></div>
+  const cv = b.coverage;
+  sec.innerHTML = kpiHtml(b.kpis) + (cv ? `<p style="color:var(--muted);font-size:13px">Datas cobertas: ${esc(cv.first)} a ${esc(cv.last)} · ${esc(cv.n_docs)} documentos</p>` : '') + `<h2>Board e membros</h2><div class="chart" id="bchart-${bc}"></div>
     <h2>Heatmap <select id="hm-${bc}"><option value="level">nível</option><option value="deviation">desvio vs Board</option></select></h2>
     <div class="chart" id="hchart-${bc}"></div><h2>Membros</h2>${cardsHtml(b)}<h2>Base de documentos</h2>${docsHtml(bc)}`;
   boardChart(document.getElementById('bchart-' + bc), b);
@@ -150,5 +151,5 @@ show(tabs.some(([k]) => k === location.hash.slice(1)) ? location.hash.slice(1) :
 
 
 def render(payload: dict, generated: str) -> str:
-    blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+    blob = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
     return TEMPLATE.replace("__GENERATED__", generated).replace("__DATA__", blob)

@@ -15,7 +15,7 @@ def _write(root, d):
 
 def _data(html):
     m = re.search(r'<script id="data" type="application/json">(.*?)</script>', html, re.S)
-    return json.loads(m.group(1).replace("<\\/", "</"))
+    return json.loads(m.group(1))
 
 
 def test_build_smoke(tmp_path, make_record):
@@ -25,7 +25,7 @@ def test_build_smoke(tmp_path, make_record):
     for d in (com, ata):
         _write(ext, d)
     (raw / "banxico" / "raw").mkdir(parents=True)
-    (raw / "banxico" / "raw" / f"{com['speech_id']}.md").write_text("texto </script> cru", encoding="utf-8")
+    (raw / "banxico" / "raw" / f"{com['speech_id']}.md").write_text("texto </script> <!-- <script> cru", encoding="utf-8")
     (raw / "banxico" / "raw" / f"{ata['speech_id']}.md").write_text("texto da ata", encoding="utf-8")
     out = build.build(today="2026-10-20", out=tmp_path / "index.html",
                       extracted_root=ext, raw_root=raw)
@@ -35,8 +35,28 @@ def test_build_smoke(tmp_path, make_record):
     bx = data["bcs"]["banxico"]
     assert {d["speech_id"] for d in bx["docs"]} == {com["speech_id"], ata["speech_id"]}
     assert [p["level"] for p in bx["series"]] == [-0.5, 0.0]
-    assert "texto </script> cru" in [d["text"] for d in bx["docs"] if d["speech_id"] == com["speech_id"]][0]
+    assert "texto </script> <!-- <script> cru" in [d["text"] for d in bx["docs"] if d["speech_id"] == com["speech_id"]][0]
     assert bx["kpis"]["board_level"] == ata["llm_scores"]["composite_hawk_dove"] == 0.0
+    assert bx["coverage"] == {"first": "2026-09-24", "last": "2026-10-08", "n_docs": 2}
+    raw_bytes = out.read_bytes()
+    assert b"\r\n" not in raw_bytes
+    assert len(raw_bytes) == len(html.encode("utf-8"))
+    assert "<!-- <script>" not in html and html.count("<script") == 3  # plotly, data, main
+    assert "\\u003c!-- \\u003cscript>" in html
+
+
+def test_build_raises_on_short_write(tmp_path, make_record, monkeypatch):
+    ext = tmp_path / "ext"
+    rec = make_record()
+    _write(ext, rec)
+    (tmp_path / "banxico" / "raw").mkdir(parents=True)
+    (tmp_path / "banxico" / "raw" / f"{rec['speech_id']}.md").write_text("x", encoding="utf-8")
+    real = build.Path.write_text
+    monkeypatch.setattr(build.Path, "write_text",
+                        lambda self, text, **kw: real(self, text[:-10], **kw))
+    with pytest.raises(SchemaError, match="bytes"):
+        build.build(today="2026-10-20", out=tmp_path / "i.html",
+                    extracted_root=ext, raw_root=tmp_path)
 
 
 def test_build_rejects_member_outside_roster(tmp_path, make_record):

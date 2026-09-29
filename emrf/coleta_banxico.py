@@ -60,5 +60,7 @@ def read_meta(path: Path) -> dict:
 
 
 def pendentes(raw_folder: Path, extracted_folder: Path) -> list[Path]:
+    """Só raws colegiados (comunicado/ata); raws de membros vivem na mesma pasta."""
     return sorted(p for p in Path(raw_folder).glob("*.md")
-                  if not (Path(extracted_folder) / f"{p.stem}.json").exists())
+                  if read_meta(p).get("doc_type") in ("comunicado", "ata")
+                  and not (Path(extracted_folder) / f"{p.stem}.json").exists())

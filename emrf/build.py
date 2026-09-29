@@ -39,6 +39,8 @@ def bc_payload(bc: str, records, roster: list[dict], raw_folder: Path, today: st
         "heatmap": board.heatmap(records, series, members, today),
         "cards": board.member_cards(records, series, roster),
         "docs": docs,
+        "coverage": {"first": min(r.date for r in records), "last": max(r.date for r in records),
+                     "n_docs": len(records)},
     }
 
 
@@ -57,5 +59,9 @@ def build(today: str | None = None, out: Path | None = None,
     if not bcs:
         raise SchemaError("nenhum BC com documentos classificados")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html.render({"bcs": bcs}, generated=today), encoding="utf-8")
+    text = html.render({"bcs": bcs}, generated=today)
+    out.write_text(text, encoding="utf-8", newline="\n")
+    want, got = len(text.encode("utf-8")), out.stat().st_size
+    if got != want:
+        raise SchemaError(f"escrita truncada em {out}: esperado {want} bytes, gravado {got} bytes")
     return out
