@@ -10,32 +10,83 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{F63C3DE2-0AEC-9BAE-A86E-FC59895F9702}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
-  "summary": "The minutes of the 24 September meeting record a UNANIMOUS 5-0 decision to hold the overnight target at 6.50% (all five members present). The board keeps the balance of risks to inflation tilted to the upside, driven by the geopolitical energy shock (Brent back above USD 100), stuck services inflation above 4% and long-horizon expectations still nearer 4% than the 3% target; headline rose to 3.42% on a non-core rebound while core kept falling to 3.79%. The decisive change versus the previous ata (Minuta 2026-08-06, composite +0.5) is dovish: the collective forward guidance DROPS the firm 'será apropiado mantener la tasa de referencia en su nivel actual' pledge, and at least three members now openly float evaluating a cut in coming meetings -- 'se podrá evaluar una disminución puntual', 'podría llegar a valorar la posibilidad de una disminución', 'existen elementos para discutir... un ajuste fino a la baja' -- after August's minutes had no member advocating cuts, with the restrictive stance now seen as close to fully diluted (real ex-ante rate near the top of the neutral range). Against this, one member stays firmly hawkish, wanting the stance held 'por un tiempo prolongado' and even raising the possibility of coupling with the Fed's hiking cycle if inflation does not converge, so the net is a balanced on-hold message with the easing door newly cracked open -- 0, a half-step dovish from the August minutes' +0.5.",
+  "decision": {
+    "action": "hold",
+    "rate": "6.50%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "The minutes of the 24 September meeting record a unanimous 5-0 hold at 6.50%, but the member-by-member discussion is clearly more dovish than the decision: three of the five members now openly float a cut at coming meetings ('se podrá evaluar una disminución puntual', 'podría llegar a valorar la posibilidad de una disminución', 'existen elementos para discutir... un ajuste fino a la baja'), conditional on core continuing to fall and orderly markets. The majority still sees the balance of risks to inflation tilted to the upside (energy shock, sticky services above 4%, expectations nearer 4% than 3%), and one member stays firmly hawkish, wanting the stance held 'por un tiempo prolongado' and even raising a possible coupling with the Fed's hiking cycle; a fifth member asks for caution and a hold. Collectively the Board decouples from the Fed's hike, saying policy need not react mechanically to fed funds adjustments, and frames the remaining restriction as close to diluted. Versus the previous minutes (Minuta 2026-08-06, +0.5), where no member advocated cuts and the guidance was to keep the rate at its current level, the Board moves from comfortable hold to hold with the easing question open: -1.0.",
   "key_quotes": [
-    {"quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "The collegial decision: a fourth consecutive UNANIMOUS 5-0 hold of the overnight target at 6.50% with all members present", "dimension": "composite_hawk_dove"},
-    {"quote": "en las siguientes decisiones se podrá evaluar una disminución puntual en la tasa de referencia.", "context": "One member opens the easing door -- conditional on determinants continuing to support disinflation, a cut can be evaluated at coming meetings; this and two similar statements mark the dovish shift vs August's minutes, which had no member advocating cuts", "dimension": "near_term_bias"},
-    {"quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite core falling to 3.79% and headline near target, the majority keeps the balance of risks to the inflation forecast tilted to the upside -- the main restraint on the dovish pivot", "dimension": "inflation_conviction"},
-    {"quote": "existen elementos para discutir la conveniencia de realizar un ajuste fino a la baja de la tasa de referencia.", "context": "A member judges that with the restrictive stance close to fully diluted (real ex-ante rate near the top of the neutral range), there are grounds to debate a fine downward adjustment -- not a pre-decision but an open discussion", "dimension": "policy_stance_read"}
+    {
+      "quote": "en las siguientes decisiones se podrá evaluar una disminución puntual en la tasa de referencia.",
+      "context": "One member opens the door to a one-off cut at coming meetings, conditional on determinants continuing to support disinflation",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "existen elementos para discutir la conveniencia de realizar un ajuste fino a la baja de la tasa de referencia.",
+      "context": "Another member argues that ignoring slack would mean more restriction than needed; a fine downward adjustment should be discussed, not pre-decided",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "The majority keeps the upside tilt to the inflation risk balance -- the main brake on the dovish shift",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "la postura monetaria debe mantenerse en los niveles actuales por un tiempo prolongado.",
+      "context": "The lone hawk wants a prolonged hold and warns a coupling with Fed hikes may need discussing if inflation does not converge",
+      "dimension": "composite_hawk_dove"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": 0,
+    "composite_hawk_dove": -1.0,
     "mandate_weight": 0.5,
     "inflation_conviction": 2.5,
     "labor_concern": 2.5,
     "policy_stance_read": 1.5,
-    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
-    "theme_flags": ["external_rates", "fx_passthrough", "dollar", "commodities", "food_prices", "tariffs", "fiscal", "r_star", "credibility", "housing"]
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "external_rates",
+      "fx_passthrough",
+      "dollar",
+      "commodities",
+      "food_prices",
+      "fiscal",
+      "r_star",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 3, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "neutral"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "neutral"}
+    "supply_shocks": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
+  "extractor_model": "claude-opus-5-5",
   "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }
