@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250925-bb0425",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-09-09",
+  "date": "2025-09-25",
+  "meeting_date": "2025-09-09",
+  "url": "https://www.bcentral.cl/documents/33528/7688599/Minuta+RPM+Septiembre+2025.pdf/edd92b58-ad02-4501-7dda-cb80b34162d7?version=1.0&t=1758835243866",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.75%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the September meeting show all five Council members voting to hold at 4.75%, with holding judged the only plausible option, while agreeing that the strategy is unchanged and the policy rate should keep converging toward neutral. The discussion centres on the jump in projected core inflation (December forecast up from 3.1% to 3.7%, broad-based), driven by stronger domestic demand, a weaker peso and high labour costs; staff arguments that the effects should not be very persistent (machinery-led investment, a high real exchange rate likely to appreciate, expectations at 3%) are recorded, but several members added that inflation risks had risen and 'should not be ignored or minimised' after a prolonged overshoot and a sequence of same-direction shocks. Several members also judged the neutral rate more likely in the upper half of the 3.5-4.5% range, which shrinks the remaining easing room from 4.75%. Versus the July minutes, where all members saw a 25bp cut as the only plausible option fully consistent with the IPoM path, the Council moves to a unanimous pause; and this text reads somewhat more hawkish than the same-meeting communique, since the risk warnings and the upper-half neutral view narrow how much further convergence is left.",
+  "key_quotes": [
+    {"quote": "En este contexto, todos los Consejeros concordaron en que lo prudente era pausar el proceso de reducción de la TPM hacia su rango de valores neutrales y monitorear de cerca la evolución de la inflación subyacente y sus fundamentos.", "context": "Unanimous agreement to pause the easing process", "dimension": "near_term_bias"},
+    {"quote": "No obstante, varios Consejeros añadieron que los riesgos para la inflación habían aumentado.", "context": "Hawkish emphasis from several members beyond the central scenario", "dimension": "inflation_conviction"},
+    {"quote": "No obstante, varios Consejeros señalaron que, a su juicio, era más probable que la TPM neutral se ubicará en la mitad superior de dicho rango.", "context": "Upper-half neutral view implies less remaining easing room", "dimension": "policy_stance_read"},
+    {"quote": "Esto implicaba que la Tasa de Política Monetaria (TPM) debía seguir convergiendo hacia su rango de valores neutrales.", "context": "Easing destination preserved: strategy unchanged", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 1.0,
+    "policy_stance_read": 1.0,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["tariffs", "external_rates", "dollar", "fx_passthrough", "r_star", "indexation", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "hawkish"},
+    "growth_demand": {"intensity": 2, "push": "hawkish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

@@ -83,6 +83,11 @@ No `summary`, descreva a mudança vs o documento anterior de forma qualitativa, 
   ("unanimous" ou "four members preferred..."). `vote` como `"6-0"`/`"4-2"` (contagem do texto),
   `dissents` como `"<n> membros (<o que preferiam>)"`. Choques administrados (eletricidade, combustível)
   entram em `supply_shocks`; o rand e o Fed em `fx_external`.
+- **BCCh** (comunicado e minuta): o colegiado é o Consejo (5 consejeros). O comunicado diz se foi
+  por unanimidade; a minuta nomeia os votos na seção "Decisión de política monetaria" —
+  `dissents` como `"<Sobrenome> (<o que preferia>)"`. Na minuta, a seção "Análisis de las opciones"
+  mostra o leque de opções que o Consejo considerou plausível: pondere-o como a discussão de uma ata.
+  Cobre e o peso (tipo de cambio) entram em `fx_external`; combustíveis em `supply_shocks`.
 - `decision`: extraia do texto. Na ata, é a decisão da reunião a que ela se refere. `dissents`
   lista `"<Sobrenome> (<o que preferia>)"`; `[]` se unânime. `vote` como `"5-0"`, `"4-1"`.
 - Scores inteiros ou .5; `null` se o documento não trata da dimensão.

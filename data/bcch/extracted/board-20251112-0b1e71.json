@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20251112-0b1e71",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-10-28",
+  "date": "2025-11-12",
+  "meeting_date": "2025-10-28",
+  "url": "https://www.bcentral.cl/documents/33528/7854006/Minuta+RPM+Octubre+2025.pdf/6ccf03bf-fd69-0b73-c23b-f8a1e0437c5c?version=1.0&t=1762961628685",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.75%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the October meeting record a unanimous hold at 4.75%, with all Council members agreeing that holding was the only plausible option while more information accumulated before continuing toward the neutral range. Beneath that consensus the discussion leans more dovish than the communique: one Council member said a 25bp cut could have been discussed (though he would have rejected it), another said cuts toward the upper half of the neutral range should continue if data keep validating the IPoM and that inflation risks had moderated 'de manera importante' given wages, the peso and activity, and the staff discussion stressed that the stronger peso, softer wages and lower oil reduce tradable-goods pressure. Only one member pushed back, noting elevated core inflation and a TPM already close to the upper half of the neutral range. Versus the September minutes, where several members said inflation risks had increased and should not be minimised, the balance has clearly shifted toward resuming cuts, making this document more dovish than the October communique.",
+  "key_quotes": [
+    {"quote": "Un Consejero indicó que varios antecedentes apuntaban a una reducción de los riesgos para la inflación, por lo que podría haberse discutido la opción de bajar 25pb, aun cuando la habría descartado.", "context": "A cut was already considered discussable by one member", "dimension": "near_term_bias"},
+    {"quote": "Además, señaló que, dada la evolución reciente de los salarios, el tipo de cambio y la actividad, los riesgos de desvíos de la trayectoria inflacionaria se habían moderado de manera importante.", "context": "Second member sees inflation risks markedly lower and wants cuts to continue as data validate the IPoM", "dimension": "inflation_conviction"},
+    {"quote": "Por otro, la TPM estaba muy cercana a la mitad superior del rango de valores neutrales, por lo que era necesario un análisis pausado de sus movimientos, y era difícil pensar que estaba siendo contractiva.", "context": "Lone cautious voice: policy is not clearly restrictive, so cuts should be measured", "dimension": "policy_stance_read"},
+    {"quote": "Todos los Consejeros coincidieron en que, en ese contexto, la única opción plausible para esta Reunión era mantener la TPM en 4,75%.", "context": "Unanimous agreement that holding was the only plausible option this time", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.0,
+    "policy_stance_read": 1.5,
+    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
+    "theme_flags": ["external_rates", "commodities", "tariffs", "fx_passthrough", "r_star"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "neutral"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

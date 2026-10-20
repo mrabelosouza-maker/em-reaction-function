@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250404-f3bb3c",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-03-21",
+  "date": "2025-04-04",
+  "meeting_date": "2025-03-21",
+  "url": "https://www.bcentral.cl/documents/33528/7097382/Minuta+RPM+marzo+2025.pdf/06b8cfb2-e972-874f-e266-2fbd830ae848?version=1.0&t=1743799161789",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "5.00%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the March meeting show all five Council members agreeing that holding the TPM at 5% was the only plausible option, with several stressing that inflation, though in line with forecasts and driven by transitory factors, remained high with relevant risks, and one asking to keep a message of high caution and act firmly if alternative IPoM scenarios materialised. Versus the February minutes, the debate is more two-sided: the earlier text featured a councillor openly raising the possibility of hikes and a stress on two-year expectations, whereas March frames the path as a 'monetary normalisation' that new cost shocks or persistence could merely delay, one councillor noted inflation could fall faster, and some flagged that a substantial global slowdown would require looser policy to avoid a costly overshoot. The minutes therefore reveal a Council somewhat more balanced, and slightly more dovish, than the communique's caution-only wording, with easing still the direction of travel once convergence consolidates.",
+  "key_quotes": [
+    {"quote": "todos los Consejeros concordaron en que la única opción plausible para esta Reunión era mantener la TPM en 5%", "context": "Hold was unanimous and no other option was considered", "dimension": "near_term_bias"},
+    {"quote": "la emergencia de nuevos shocks de costos o la constatación de una mayor persistencia o efectos de segunda vuelta rezagados de shocks anteriores constituirían señales de alerta que podrían llevar a dilatar el proceso de normalización monetaria", "context": "Risks framed as delaying further easing, not as triggering hikes", "dimension": "policy_stance_read"},
+    {"quote": "algunos Consejeros remarcaron que un debilitamiento sustantivo del crecimiento global pondría un freno a la actividad, generando holguras que podrían llevar a un descenso rápido de la inflación, más allá de la meta, lo cual requeriría una política más laxa", "context": "Dovish tail scenario explicitly discussed", "dimension": "labor_concern"},
+    {"quote": "Un Consejero destacó los riesgos respecto de la persistencia inflacionaria, añadiendo que el actual nivel de la inflación era incómodo en caso de potenciales nuevos shocks al alza", "context": "Hawkish voice on persistence", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "dollar", "commodities", "external_rates"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "neutral"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

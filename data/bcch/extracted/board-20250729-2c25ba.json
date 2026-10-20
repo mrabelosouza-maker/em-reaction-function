@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250729-2c25ba",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-07-29",
+  "date": "2025-07-29",
+  "meeting_date": "2025-07-29",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "4.75%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously cut the policy rate 25bp to 4.75%, delivering the first step of the gradual approach to the neutral range that the June IPoM had laid out. The guidance paragraph is unchanged: if the IPoM central scenario materialises the TPM will keep approaching its neutral range in coming quarters, with next moves assessed against inflation convergence, which leaves room for modest further easing at a measured pace. The macro picture supports the move: June headline CPI fell to 4.1% below forecast, two-year expectations sit at 3% and activity is in line with the IPoM, while the Council flags slow job creation and rising unemployment. Versus the June communique, which held at 5% and stressed the new uncertainty from the Middle East conflict, the end of the Iran-Israel war and lower oil removed that obstacle, although the Council still notes core inflation slightly above forecast, elevated wage growth, a weaker peso and higher US tariffs.",
+  "key_quotes": [
+    {"quote": "el Consejo del Banco Central de Chile acordó reducir la tasa de interés de política monetaria en 25 puntos base, hasta 4,75%. La decisión fue adoptada por la unanimidad de sus miembros.", "context": "Decision: unanimous 25bp cut", "dimension": "composite_hawk_dove"},
+    {"quote": "De concretarse el escenario central del IPoM de junio, en los próximos trimestres la TPM irá aproximándose a su rango de valores neutrales.", "context": "Forward guidance: gradual further easing toward neutral", "dimension": "policy_stance_read"},
+    {"quote": "En junio, la inflación total se ubicó por debajo de lo anticipado en el último IPoM.", "context": "Headline inflation surprise to the downside", "dimension": "inflation_conviction"},
+    {"quote": "El mercado laboral da cuenta de una lenta creación", "context": "Labor market softening alongside elevated wage growth", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "external_rates", "dollar", "commodities", "r_star"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "neutral"},
+    "growth_demand": {"intensity": 1, "push": "neutral"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

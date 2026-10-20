@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250321-dc5f1e",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-03-21",
+  "date": "2025-03-21",
+  "meeting_date": "2025-03-21",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "5.00%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the policy rate at 5%, a second consecutive pause, and kept its guidance that the inflation outlook still faces relevant risks that reaffirm the need for caution, with next moves conditioned on the macro scenario and its implications for convergence to 3%. Versus the January communique, the tone is marginally less tense: January said inflation risks 'had increased', reinforcing caution, while March says the scenario has broadly evolved as expected, inflation is in line with the December IPoM and the peso appreciated about 7% on a weaker global dollar and higher copper. Activity is described as more dynamic than forecast (exports, investment pipeline, improving expectations) and labor slack as limited, while two-year expectations above 3% in some measures remain the main inflation concern. Net, it remains a hold with an upside-risk emphasis and no easing bias, with the external shock (tariffs, geopolitics) cited as higher uncertainty rather than as a reason to ease.",
+  "key_quotes": [
+    {"quote": "el conjunto de antecedentes disponibles apunta a un panorama inflacionario que sigue enfrentando riesgos relevantes, lo que reafirma la necesidad de cautela", "context": "Core guidance; January had said inflation risks had increased", "dimension": "inflation_conviction"},
+    {"quote": "El Consejo evaluará los próximos movimientos de la TPM teniendo presente la evolución del escenario macroeconómico y sus implicancias para la convergencia inflacionaria.", "context": "No signal on the direction or timing of the next move", "dimension": "near_term_bias"},
+    {"quote": "Los datos de cierre de 2024 e inicios de 2025 evidencian una economía más dinámica que lo previsto, en buena parte por el impulso de las exportaciones.", "context": "Activity stronger than expected removes the growth argument for easing", "dimension": "labor_concern"},
+    {"quote": "El peso se apreció cerca de 7%, influido por el debilitamiento global del dólar y la mejora del precio del cobre.", "context": "FX relief versus the January depreciation", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 2.5,
+    "labor_concern": 1.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["tariffs", "dollar", "commodities", "external_rates"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 3, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "hawkish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

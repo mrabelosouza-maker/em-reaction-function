@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260623-9edd8b",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-06-16",
+  "date": "2026-06-23",
+  "meeting_date": "2026-06-16",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the 16 June meeting record a unanimous 5-0 hold at 4.5% (Costa, Naudon, Céspedes, Soto, Cowan), with all Consejeros judging holding as the only plausible option and any alternative 'improcedente': lower inflation risks reduce the odds of needing tighter policy, while signs of a weaker economy are still premature. Inflation has behaved as projected, core and two-year expectations are at target and the US-Iran ceasefire lowers the probability of the high-inflation scenarios, so the risk balance is equilibrating; the debate on activity is two-sided, with one view stressing deteriorating consumption fundamentals, weaker investment and rising unemployment, and another reading the soft April data as precautionary and offset by higher fiscal spending. The Consejo stresses that credibility requires the same caution with good news as with bad. Versus the April minutes, where some Consejeros raised a 25bp hike as an option to consider, the hike option has disappeared from the menu, but no cut is put on the table either; the minutes are consistent with the same meeting's communique, a balanced, data-dependent hold.",
+  "key_quotes": [
+    {"quote": "En este contexto, todos los Consejeros estimaron que la única opción plausible era mantener la TPM en 4,5%.", "context": "Options set narrows to hold only; April's hike option dropped", "dimension": "near_term_bias"},
+    {"quote": "Por una parte, la disminución de los riesgos inflacionarios reducía la probabilidad de escenarios que requirieran una política monetaria más contractiva.", "context": "Why a hike is off the table", "dimension": "inflation_conviction"},
+    {"quote": "los antecedentes de eventual mayor debilidad de la economía aún eran prematuros", "context": "Why a cut is not considered yet", "dimension": "labor_concern"},
+    {"quote": "Hubo consenso en que, ante escenarios con mayor incertidumbre, la credibilidad de la política monetaria requería la misma cautela ante noticias positivas, como las de los últimos días, que frente a noticias negativas, como el alza del precio del petróleo en marzo.", "context": "Symmetric caution: the ceasefire is not a reason to ease", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "neutral"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 1, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "neutral"},
+    "other": {"intensity": 2, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260728-11a4da",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-07-28",
+  "date": "2026-07-28",
+  "meeting_date": "2026-07-28",
+  "url": "https://www.bcentral.cl/documents/33528/8532724/Comunicado+RPM+julio+2026.pdf/aadc0e99-211c-5da7-0671-889b70a71d87?version=1.0&t=1785274442155",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the TPM at 4.5% and kept the meeting-by-meeting, data-dependent guidance. Versus the June communique, the tone shifts modestly toward inflation risk: the June ceasefire was followed by renewed attacks that took oil back to around US$100, June CPI (4.3%) surprised on the upside because of core inflation (3.4%), short-term expectations rose, and the Fed's tone and a weaker peso added external pressure. The June line that the balance of inflation risks 'se ha ido equilibrando' is dropped and replaced by a call to keep evaluating alternative scenarios that could require changes in policy, while two-year expectations remain at 3%. Weaker activity (Imacec, investment), softer consumption and rising unemployment are the counterweight, so the message is a comfortable hold with somewhat more upside-risk emphasis, not a tightening bias.",
+  "key_quotes": [
+    {"quote": "En su Reunión de Política Monetaria, el Consejo del Banco Central de Chile acordó mantener la tasa de interés de política monetaria en 4,5%. La decisión fue adoptada por la unanimidad de sus miembros.", "context": "Unanimous hold at 4.5%, as in June", "dimension": "composite_hawk_dove"},
+    {"quote": "La diferencia se explicó por un aumento de la inflación subyacente superior al proyectado, componente que alcanzó una variación de 3,4% anual en el mismo mes.", "context": "Upside core surprise behind June CPI of 4.3%", "dimension": "inflation_conviction"},
+    {"quote": "El Consejo estima que será necesaria la constante evaluación de escenarios alternativos en que la respuesta de la economía mundial y local pueda configurar trayectorias de la inflación distintas de las esperadas y requiera cambios en la política monetaria.", "context": "Replaces June's 'balance de riesgos se ha ido equilibrando'; two-sided, no explicit bias", "dimension": "near_term_bias"},
+    {"quote": "En el mercado laboral, la tasa de desempleo aumentó, en medio de una creación de empleo que se mantiene débil y costos laborales por hora que se aceleraron.", "context": "Weak labor market but accelerating labor costs", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "dollar", "ai_productivity"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

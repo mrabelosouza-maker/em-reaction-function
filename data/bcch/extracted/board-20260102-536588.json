@@ -1,0 +1,91 @@
+{
+  "speech_id": "board-20260102-536588",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2025-12-16",
+  "date": "2026-01-02",
+  "meeting_date": "2025-12-16",
+  "url": "https://www.bcentral.cl/documents/33528/8019743/Minuta+RPM+Diciembre+2025.pdf/36ed3291-b55d-ade8-2506-c73048543ceb?version=1.0&t=1767368199627",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {
+    "action": "cut",
+    "rate": "4.50%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "The minutes confirm a unanimous 25bp cut to 4.5% (Costa, Novy, Naudon, Cespedes and Soto), with all Consejeros agreeing inflation would converge to 3% in Q1 2026, that the mid-year patience strategy had been vindicated and that, with risks diminished, it was 'coherent to continue bringing the TPM toward its neutral range'. That explicit continuation language, absent from the communique, plus one Consejero floating a 50bp cut on the grounds that the output gap is closed and the rate could sit at the 4.25% centre of the neutral range, make the minutes somewhat more dovish than the statement. The counterweights are that some Consejeros wanted to avoid any sense that the inflation problem was solved and also weighed holding at 4.75%, and the discussion flagged upside risks from cumulative spending growth spilling into non-tradables, goods-price volatility and AI-valuation and tariff risks abroad. Versus the October minutes, where all members saw holding as the only plausible option and only one hinted a 25bp cut could have been discussed, the range of options has shifted down to cut-25 dominant with 50bp and hold as fringe views, and further moves toward neutral are now the shared baseline.",
+  "key_quotes": [
+    {
+      "quote": "Añadieron que dichos riesgos habían disminuido, por lo que era coherente continuar acercando la TPM a su rango neutral.",
+      "context": "All Consejeros: further convergence of the rate to neutral as the baseline",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Un Consejero planteó la posibilidad de un recorte de 50pb, dado que la brecha de actividad se encontraba cerrada y la inflación cercana a la meta, lo que sugería que la TPM podría estar en el centro del rango estimado para su nivel neutral, en 4,25%.",
+      "context": "Dovish fringe: a 50bp cut considered",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Por su parte, algunos Consejeros enfatizaron la importancia de evitar que se entendiera que el problema inflacionario estaba completamente resuelto o que los riesgos habían desaparecido, por lo que también cabía evaluar la opción de mantener la TPM en 4,75%.",
+      "context": "Hawkish fringe: hold also weighed",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "En ese contexto, la opción claramente dominante era reducir la TPM en 25 puntos base (pb).",
+      "context": "25bp cut clearly dominant",
+      "dimension": "composite_hawk_dove"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 1.5,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "fx_passthrough",
+      "ai_productivity",
+      "financial_stability",
+      "tariffs",
+      "r_star",
+      "commodities",
+      "external_rates"
+    ]
+  },
+  "drivers": {
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

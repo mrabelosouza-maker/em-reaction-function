@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250617-4513ea",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-06-17",
+  "date": "2025-06-17",
+  "meeting_date": "2025-06-17",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "5.00%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the policy rate at 5%, but added an explicit easing path: if the June IPoM central scenario materialises, the TPM will move toward its neutral range in the coming quarters. The case rests on inflation evolving as projected with core falling faster than expected (headline 4.4%, core 3.6%), two-year expectations at 3% and the upside inflation risks raised earlier in the year having moderated; activity surprised upward and wage growth stays high, while the labour market shows slow job creation and rising unemployment. The new escalation in the Middle East is flagged as a fresh source of uncertainty that could lead to more complex scenarios, which is the reason for waiting. Versus the April communique, which held with no directional guidance and stressed that 'the need for caution' remained, the Council dropped the caution line and signalled cuts ahead, a clear dovish shift while still holding.",
+  "key_quotes": [
+    {"quote": "De concretarse el escenario central del IPoM de junio, en los próximos trimestres la TPM irá aproximándose a su rango de valores neutrales.", "context": "New easing guidance absent from the April communique", "dimension": "near_term_bias"},
+    {"quote": "Durante los últimos meses la inflación ha evolucionado en línea con lo proyectado y se han moderado los riesgos al alza que se habían levantado en la primera parte del año.", "context": "Inflation risks moderating, replacing April's 'necesidad de cautela'", "dimension": "inflation_conviction"},
+    {"quote": "Sin embargo, los eventos recientes en Medio Oriente introducen una nueva fuente de incertidumbre, cuyos desarrollos podrían llevar a escenarios más complejos.", "context": "Middle East escalation as the reason to wait", "dimension": "composite_hawk_dove"},
+    {"quote": "El mercado laboral da cuenta de una lenta creación de empleo y un incremento de la tasa de desocupación, en un escenario donde se ha mantenido un elevado crecimiento de los salarios.", "context": "Labour market softening, wages still strong", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "commodities", "external_rates", "dollar"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "hawkish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

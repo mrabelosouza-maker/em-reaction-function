@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260428-acad34",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-04-28",
+  "date": "2026-04-28",
+  "meeting_date": "2026-04-28",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The Consejo unanimously held the policy rate at 4.5% for a second meeting under the Middle East war shock, keeping the meeting-by-meeting guidance and the commitment to bring projected inflation to 3% in two years. The tone stays inflation-focused: the war has been more adverse than the March IPoM central scenario, short-term inflation projections have risen, oil sits above IPoM levels and the Board will be 'particularly attentive' to greater pass-through or persistence. Offsetting that, March headline (2.8%) surprised only on non-energy volatiles, core was in line, two-year expectations are anchored at 3%, non-mining activity contracted in February and job creation remains limited. Versus the March communique, the framing shifts from a fresh, sharp shock with tighter financial conditions and a weaker peso to a prolonged conflict with recovering markets and an appreciated peso, and the explicit path back to target in 2027 is dropped in favour of a risk-focused paragraph; no tightening or easing bias is signalled, so the read is a hold with upside inflation risks.",
+  "key_quotes": [
+    {"quote": "El desarrollo de la guerra en Medio Oriente ha sido más adverso que el considerado en el escenario central del IPoM de marzo, elevando la probabilidad de resultados más negativos para la inflación y la actividad global.", "context": "Risk assessment worsened vs the March IPoM, on both inflation and global activity", "dimension": "inflation_conviction"},
+    {"quote": "El Consejo estará particularmente atento a los factores que puedan incidir en una mayor transmisión y/o persistencia de la inflación.", "context": "Inflation-side vigilance kept from March", "dimension": "inflation_conviction"},
+    {"quote": "De este modo, la evolución futura de la TPM irá evaluándose Reunión a Reunión en función del desarrollo de los acontecimientos.", "context": "No directional bias; meeting-by-meeting guidance unchanged", "dimension": "near_term_bias"},
+    {"quote": "De hecho, el incremento anual de la inflación subyacente —3,4% en marzo— se situó en línea con lo esperado.", "context": "Core in line; headline surprise only on non-energy volatiles", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

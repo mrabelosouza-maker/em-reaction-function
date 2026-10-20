@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260616-21bcd7",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-06-16",
+  "date": "2026-06-16",
+  "meeting_date": "2026-06-16",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The Consejo unanimously held the TPM at 4.5% and kept the meeting-by-meeting guidance, but the risk assessment shifted: the balance of risks to inflation is now judged to be 'equilibrating', as the oil-driven rise in headline (3.9% in May) has followed historical pass-through patterns, core is stable at 3.2% and two-year expectations sit at the 3% target. The US-Iran ceasefire and the drop in oil below US$80 are welcomed but treated with caution given the conflict's back-and-forth, while domestic activity contracted in Q1, unemployment rose and several determinants of household consumption weakened. Versus the April communique, which stressed a war more adverse than the IPoM scenario, higher short-term inflation projections and particular attention to factors that could amplify pass-through or persistence, the text drops the upside-risk emphasis and adds softer activity and labor signals. Net, it moves from a hold with upside-risk vigilance to a balanced, data-dependent hold with no easing signal.",
+  "key_quotes": [
+    {"quote": "El Consejo estima que el balance de riesgos para la inflación se ha ido equilibrando, aunque el escenario macroeconómico sigue sujeto a un grado de incertidumbre mayor al habitual.", "context": "Risk balance moves from upside-tilted (April) to equilibrating", "dimension": "inflation_conviction"},
+    {"quote": "La inflación subyacente —IPC sin volátiles— no ha mostrado mayores cambios en los últimos meses (3,2% anual a mayo), reflejando un traspaso del shock de costos similar a patrones históricos.", "context": "Oil shock pass-through contained; core stable", "dimension": "inflation_conviction"},
+    {"quote": "En el mercado laboral, se observa un aumento de la tasa de desempleo, en un contexto de débil creación de empleo.", "context": "Labor market weakening, new versus April's unchanged unemployment", "dimension": "labor_concern"},
+    {"quote": "De este modo, la evolución futura de la TPM irá evaluándose Reunión a Reunión en función del desarrollo de los acontecimientos.", "context": "Guidance unchanged: meeting-by-meeting, no directional signal", "dimension": "near_term_bias"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "neutral"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

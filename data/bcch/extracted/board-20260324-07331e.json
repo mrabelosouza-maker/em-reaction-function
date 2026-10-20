@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260324-07331e",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-03-24",
+  "date": "2026-03-24",
+  "meeting_date": "2026-03-24",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The Consejo unanimously held the TPM at 4.5% as the Middle East war pushed oil to around US$100 and fuel prices sharply higher, tightening global and local financial conditions and depreciating the peso. It now expects headline inflation to jump to around 4% in the second quarter, returning to target only during 2027, and says it will be particularly attentive to signs of greater pass-through and/or persistence of the shocks, with the TPM to be assessed meeting by meeting and alternative scenarios that could require changes in policy in either direction. Versus the January communique, which stressed lower-than-expected short-term inflation, an improving external impulse and an appreciating peso and deferred to the March IPoM for implications (a tacit opening to resume easing), the easing tilt has disappeared: the risk focus has flipped to inflation persistence after an energy shock, short-term expectations have risen and no cut is in sight. The text stops short of any hike signal, so it reads as a vigilant, inflation-focused hold.",
+  "key_quotes": [
+    {"quote": "Estas alzas se transmitirán a los precios locales y elevarán de forma importante la inflación, la que se ubicaría en torno a 4% anual en el segundo trimestre.", "context": "Fuel shock lifts the near-term inflation path well above target", "dimension": "inflation_conviction"},
+    {"quote": "Sin embargo, dada su magnitud, el Consejo estará particularmente atento a señales de mayor transmisión y/o persistencia a la inflación de los shocks que se están enfrentando.", "context": "New vigilance on second-round effects, replacing January's lower-inflation framing", "dimension": "composite_hawk_dove"},
+    {"quote": "De este modo, la evolución futura de la TPM irá evaluándose Reunión a Reunión en función del desarrollo de los acontecimientos.", "context": "Guidance turns to meeting-by-meeting, with scenarios that could require changes in either direction", "dimension": "near_term_bias"},
+    {"quote": "Las expectativas de inflación de corto plazo, al igual que en el resto del mundo, han aumentado en forma relevante en las últimas semanas producto del alza de los precios internacionales de los combustibles y la depreciación del peso.", "context": "Short-term expectations up on fuel and the peso; two-year expectations still at 3%", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 2.5,
+    "labor_concern": 1.0,
+    "policy_stance_read": 1.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "fx_passthrough", "external_rates", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 1, "push": "dovish"},
+    "other": {"intensity": 1, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

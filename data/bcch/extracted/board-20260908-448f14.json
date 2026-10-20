@@ -1,0 +1,57 @@
+{
+  "speech_id": "board-20260908-448f14",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-09-08",
+  "date": "2026-09-08",
+  "meeting_date": "2026-09-08",
+  "url": "https://www.bcentral.cl/documents/33528/8618392/Comunicado+RPM+septiembre+2026.pdf/3cec1aa3-00d3-8486-98d6-1eeddb7d997e?version=1.0&t=1788898567406",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the policy rate at 4.5% and kept its meeting-by-meeting, data-dependent guidance with no directional bias, reaffirming the 3% two-year target. Versus the July communique, the balance of the text tilts slightly toward activity: July flagged an upside surprise in core inflation, rising short-term expectations and Fed-driven peso depreciation, whereas September reports core stable at 3.3% with the headline rise (4.1%) attributed to volatile items and fuel pass-through in line with history, a dollar that has weakened globally, and a domestic economy below the June IPoM with contracting consumption and investment, job destruction and higher unemployment. The risk section is now explicitly two-sided: the Middle East conflict has intensified again (oil near US$100), but the Council adds that the current weakness of the economy may prove more persistent than expected. There is no signal of a cut, so this remains a comfortable hold, marginally softer in tone than July.",
+  "key_quotes": [
+    {
+      "quote": "En su Reunión de Política Monetaria, el Consejo del Banco Central de Chile acordó mantener la tasa de interés de política monetaria en 4,5%. La decisión fue adoptada por la unanimidad de sus miembros.",
+      "context": "Unanimous hold at 4.5%, as in July",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Por otro, si bien se anticipa que la economía local retomará impulso hacia 2027, no puede descartarse que su debilidad actual sea más persistente que lo previsto.",
+      "context": "New downside activity risk added to the risk balance, absent in July",
+      "dimension": "labor_concern"
+    },
+    {
+      "quote": "En gran parte, la inflación ha continuado determinada por el alza del valor de los combustibles, cuyo traspaso a otros precios ha seguido los patrones históricos.",
+      "context": "Headline rise read as fuel/volatile-driven; core stable at 3.3% vs July's upside core surprise",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "De este modo, la evolución futura de la TPM seguirá evaluándose Reunión a Reunión en función del desarrollo de los acontecimientos.",
+      "context": "Guidance unchanged: meeting-by-meeting, no bias",
+      "dimension": "near_term_bias"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "dollar", "ai_productivity", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

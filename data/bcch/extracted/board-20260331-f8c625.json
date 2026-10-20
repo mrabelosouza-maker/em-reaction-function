@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260331-f8c625",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-03-24",
+  "date": "2026-03-31",
+  "meeting_date": "2026-03-24",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the March meeting show all five consejeros voting to hold the TPM at 4.5%, but the option set has moved to the hawkish side: while hold was judged the most plausible option, several consejeros said it was also reasonable to discuss a 25bp hike, some warning that a rapid rise in inflation to 4% right after a long period above target risks greater persistence, one seeing a preventive hike as potentially useful though premature and costly, and another framing the discussion as a signal that risks are not fully balanced. The Board argues the oil shock can no longer be treated as a simple supply shock to look through, given uncertainty over the war's duration and Hormuz logistics, while acknowledging scenarios in which weaker global demand would call for easier policy; the fiscal spending cut is noted as disinflationary. Versus the January minutes, where the plausible options were hold or a 25bp cut toward the neutral midpoint and the hold was largely tactical, the debate has flipped from whether to cut to whether to hike. This makes the minutes more hawkish than the same meeting's communique, which signalled vigilance but no hike option.",
+  "key_quotes": [
+    {"quote": "Varios Consejeros señalaron que también era razonable discutir la opción de subir la TPM en 25 puntos base.", "context": "Hike option enters the plausible set; in January the alternative to holding was a cut", "dimension": "near_term_bias"},
+    {"quote": "Indicaron que esto podía tener asociados riesgos que afectaran la persistencia del proceso inflacionario más allá de lo contemplado en el escenario central.", "context": "Some consejeros worry about persistence after a long overshoot", "dimension": "inflation_conviction"},
+    {"quote": "Otro Consejero manifestó que discutir la opción de subir la TPM debía ser interpretado como una forma de transmitir que, frente a un alza significativa y rápida de la inflación, los riesgos no estaban completamente balanceados.", "context": "Discussing a hike used as a signal of upside-tilted risks", "dimension": "composite_hawk_dove"},
+    {"quote": "Esto obligaba a la política monetaria a considerar el riesgo de una inflación más persistente.", "context": "Look-through stance on the oil shock qualified as the war drags on", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.5,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 1.0,
+    "policy_stance_read": 1.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "fx_passthrough", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 1, "push": "hawkish"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

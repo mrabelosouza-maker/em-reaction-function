@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260203-383950",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-01-27",
+  "date": "2026-02-03",
+  "meeting_date": "2026-01-27",
+  "url": "https://www.bcentral.cl/documents/33528/8116896/Minuta+RPM+Enero+2026.pdf/2370765b-9f90-d741-4e1e-e6148264e5d8?version=1.0&t=1770148427256",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the January 2026 meeting record a unanimous hold at 4.5%, but the discussion is more dovish than the communique: all Councillors agreed that, with the gap practically closed and inflation near target, the policy rate should converge to the midpoint of its neutral range, and the plausible options were holding or cutting 25bp to 4.25%. Several Councillors saw the lower near-term inflation path (peso appreciation, fuel prices, inflation below 3% for several months in H1) as a relevant basis for cutting to keep the real monetary impulse of the December IPoM, framing it as a change only in the timing of reaching neutral; the hold was driven largely by tactical considerations (the market expected a hold given prior communication) and risk management, with one Councillor giving less weight to short-lived inflation effects and some upside medium-term risks from stronger growth fundamentals. Versus the December minutes, where a 25bp cut was the clearly dominant option with hold and 50bp briefly weighed on either side, the debate has shifted to when, not whether, the last step to neutral is taken, and the minutes reveal a Council closer to cutting than the communique's hold suggests.",
+  "key_quotes": [
+    {"quote": "la Tasa de Política Monetaria (TPM) debía converger al punto medio de su rango de valores neutrales", "context": "All Councillors agree the rate should still fall to mid-neutral", "dimension": "policy_stance_read"},
+    {"quote": "En consecuencia, las opciones plausibles para esta Reunión eran: (i) mantener la TPM en 4,5%; o (ii) reducirla en 25 puntos base, hasta 4,25%.", "context": "A cut was on the table at this meeting", "dimension": "near_term_bias"},
+    {"quote": "Varios Consejeros consideraron que la decisión de esta Reunión estaba marcada de manera importante por factores tácticos y consideraciones de gestión de riesgos.", "context": "Hold justified mainly by tactics (market expectations) and risk management", "dimension": "composite_hawk_dove"},
+    {"quote": "Un Consejero otorgó menos peso a este argumento, mencionando que el marco de política monetaria no contemplaba ajustes significativos en la trayectoria de tasas cuando se trataba de efectos de corto plazo, de baja persistencia y que no afectaban la convergencia de la inflación a la meta en el mediano plazo.", "context": "One Councillor pushes back on cutting for short-lived inflation effects", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -2.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.0,
+    "labor_concern": 1.0,
+    "policy_stance_read": 1.0,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["commodities", "fx_passthrough", "external_rates", "dollar", "r_star", "ai_productivity"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "hawkish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

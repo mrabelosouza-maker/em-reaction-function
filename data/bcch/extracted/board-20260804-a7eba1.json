@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260804-a7eba1",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-07-28",
+  "date": "2026-08-04",
+  "meeting_date": "2026-07-28",
+  "url": "https://www.bcentral.cl/documents/33528/8545911/Minuta+RPM+Julio+2026.pdf/f07144bd-b2f8-57a5-2ee7-50594f826f3f?version=1.0&t=1785884464071",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The July minutes show all five Council members voting to hold the TPM at 4.5%, with holding judged the only plausible option, the June IPoM strategy still valid and caution guiding policy amid higher risks both domestically and externally. Versus the June minutes, which saw the balance of inflation risks equalising thanks to the ceasefire and lower oil, the renewed oil shock (around US$100) and higher global expectations bring back upside inflation risk, but the domestic discussion is noticeably more balanced than the communique: the core surprise is played down as coming after a couple of months of opposite misses, pass-through is still in line with historical patterns and two-year expectations sit at 3%. Much of the debate is about weaker-than-expected activity, investment (a genuine IPoM surprise), deteriorating consumer expectations and a weak labor market, alongside AI-valuation and tariff risks abroad. The minutes therefore read as a two-sided, cautious hold, somewhat less hawkish than the communique of the same meeting, with no option other than holding on the table.",
+  "key_quotes": [
+    {"quote": "En coherencia con ello, el Consejo estimó que la única opción plausible para esta Reunión era mantener la Tasa de Política Monetaria (TPM) en 4,5%.", "context": "Only option considered was a hold, as in June", "dimension": "near_term_bias"},
+    {"quote": "El conjunto de antecedentes daba cuenta de mayores riesgos tanto en lo interno como en lo externo, con implicancias de corto y mediano plazo que debían ser evaluadas cuidadosamente.", "context": "Risks framed as two-sided, domestic and external", "dimension": "composite_hawk_dove"},
+    {"quote": "De todos modos, esto se producía después de un par de meses con registros en la dirección opuesta, en un contexto donde se seguía evaluando que la transmisión del shock de costos al resto de los precios era acorde con los patrones históricos.", "context": "Core inflation surprise played down", "dimension": "inflation_conviction"},
+    {"quote": "Respecto de la actividad y la demanda, su evolución reciente había sido más débil que la esperada en el IPoM.", "context": "Activity weakness occupies much of the discussion", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 2.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "dollar", "ai_productivity", "tariffs", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

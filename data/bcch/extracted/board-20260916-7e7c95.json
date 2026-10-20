@@ -1,0 +1,57 @@
+{
+  "speech_id": "board-20260916-7e7c95",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-09-08",
+  "date": "2026-09-16",
+  "meeting_date": "2026-09-08",
+  "url": "https://www.bcentral.cl/documents/33528/8639656/Minuta+RPM+Septiembre+2026.pdf/d7da02ea-3316-9573-a768-a52fe296df46?version=1.0&t=1789559334036",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the September meeting show the Consejo unanimously holding the TPM at 4.5%, with holding judged 'clearly dominant' because inflation is evolving as forecast, convergence to 3% is still seen in 2Q27 and two-year expectations remain anchored. The centre of gravity has shifted towards activity: the Consejo agreed that weakness spreading from supply-hit sectors to investment, private consumption and a deteriorating formal labour market was 'a relevant change' in the domestic assessment, and the risk discussion flagged that more persistent weakness could take inflation below target, so policy must keep 'capacity to respond'. Versus the July minutes, which stressed that caution had to keep guiding the Consejo amid higher risks on both sides and an oil shock with core inflation surprising up, the tone moves from a cautious, two-sided hold to a hold with an incipient easing tilt; all members now call for evaluating alternative scenarios that could require adjusting the stance. No cut is signalled and the Middle East oil risk, said to have intensified, remains the brake, so this is a mild dovish lean rather than an open discussion of the next cut.",
+  "key_quotes": [
+    {
+      "quote": "Hubo coincidencia en que este conjunto de antecedentes representaba un cambio relevante en la evaluación del escenario macroeconómico interno.",
+      "context": "Consejo agrees the broadening weakness in demand and the labour market is a relevant change in the domestic outlook",
+      "dimension": "labor_concern"
+    },
+    {
+      "quote": "Se indicó que, en todo caso, se debía estar atento a que una debilidad más persistente de la economía terminara llevando la inflación por debajo de la meta de 3% en el horizonte de dos años, por lo que la política monetaria debía mantener capacidad de respuesta.",
+      "context": "Downside inflation risk from weak activity raised in the balance-of-risks discussion",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "En este contexto, hubo acuerdo en que la opción de mantener la TPM era claramente dominante en esta Reunión.",
+      "context": "Hold is the only option discussed; no cut on the table yet",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "En ese contexto, todos los Consejeros hicieron presente la necesidad de seguir evaluando escenarios alternativos que pudieran requerir ajustes en la orientación de la política monetaria para asegurar la convergencia de la inflación a la meta.",
+      "context": "Unanimous call to weigh alternative scenarios that could require a change in stance",
+      "dimension": "policy_stance_read"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -0.5,
+    "mandate_weight": 0.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "ai_productivity", "external_rates", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "neutral"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 1, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

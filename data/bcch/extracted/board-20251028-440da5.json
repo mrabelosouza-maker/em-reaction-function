@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20251028-440da5",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-10-28",
+  "date": "2025-10-28",
+  "meeting_date": "2025-10-28",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.75%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the TPM at 4.75% for a further meeting, saying the scenario has evolved in line with the September IPoM and that it still needs to accumulate more information before continuing the convergence of the TPM to its neutral range, so the easing direction is intact but the timing is deferred. Versus the September communique, the tone softens: September grounded the pause in core inflation running above forecast in goods and services and the 'riesgo de una mayor persistencia de la inflación', whereas October reports headline and core in line with projections, wage growth moderating, a stronger peso and lower oil, and refers only generically to remaining 'riesgos para la trayectoria de la inflación futura'. The one hawkish note is that EOF two-year expectations edged up to 3.1%. Net, a patient hold with a clear easing bias that reads slightly more dovish than September.",
+  "key_quotes": [
+    {"quote": "El escenario actual, si bien ha evolucionado en línea con lo esperado en el IPoM de septiembre, aún presenta riesgos para la trayectoria de la inflación futura, lo que amerita acumular más información antes de continuar el proceso de convergencia de la TPM a su rango de valores neutrales.", "context": "Guidance: further cuts toward neutral remain the direction, but only after more data; the persistence-risk language of September is dropped", "dimension": "near_term_bias"},
+    {"quote": "Ambas cifras se ubicaron en línea con lo proyectado en el último IPoM.", "context": "Headline 4.4% and core 3.9% in line with forecasts, versus core above forecast in September", "dimension": "inflation_conviction"},
+    {"quote": "Los salarios han moderado sus tasas de crecimiento anual.", "context": "Wage growth easing, versus 'elevado crecimiento' in September", "dimension": "labor_concern"},
+    {"quote": "En el mercado financiero local, las tasas de interés —tanto de corto como de largo plazo— han mostrado cambios acotados respecto de la última Reunión, mientras que el peso se ha apreciado.", "context": "Peso appreciation, a disinflationary factor for tradables", "dimension": "policy_stance_read"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 2.0,
+    "labor_concern": 1.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "cut", "pace": "patient"},
+    "theme_flags": ["external_rates", "commodities", "tariffs", "dollar"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 1, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "neutral"},
+    "other": {"intensity": 1, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

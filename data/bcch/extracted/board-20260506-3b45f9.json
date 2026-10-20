@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260506-3b45f9",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "ata",
+  "member_id": "board",
+  "title": "Minuta 2026-04-28",
+  "date": "2026-05-06",
+  "meeting_date": "2026-04-28",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The minutes of the April meeting record a unanimous hold at 4.5% (Costa, Naudon, Cespedes, Soto, Cowan) and agreement that the March IPoM strategy of a prolonged hold remains valid. The options section is more hawkish than the communique: all Consejeros saw the prolonged war raising risks to inflation and activity, and some argued that a 25bp hike was an option worth considering, although the information was not yet sufficient to change strategy; no one floated a cut. The discussion is two-sided, flagging weak services activity, soft investment and weak job creation, a possible abrupt tightening of global financial conditions, and a smaller-than-assumed fiscal adjustment, while noting the short-term inflation rise comes from volatiles with core unchanged. Versus the March minutes, the hike option is still on the table but carried by 'some' rather than 'several' Consejeros and without the March argument about inflation jumping to 4% right after a long overshoot, and the explicit anchor of a prolonged hold is new, so the hawkish tilt is slightly softer; relative to the same meeting's communique, which signalled no bias, the minutes reveal a Consejo leaning toward tightening.",
+  "key_quotes": [
+    {"quote": "En este marco, hubo acuerdo en que la estrategia de política monetaria delineada en el IPoM de marzo seguía vigente, la cual consideraba una mantención prolongada de la Tasa de Política Monetaria (TPM).", "context": "Baseline strategy: prolonged hold", "dimension": "near_term_bias"},
+    {"quote": "Algunos Consejeros señalaron que, en este contexto, cabía considerar la opción de aumentar la TPM en 25 puntos base, aunque enfatizaron que la información disponible aún no era suficiente para justificar un cambio en la estrategia vigente.", "context": "Hike option discussed by some members; the only alternative to holding", "dimension": "composite_hawk_dove"},
+    {"quote": "Todos los Consejeros coincidieron en que la prolongación de la guerra y sus efectos sobre los precios del petróleo y de otras materias primas elevaban los riesgos para la inflación y la actividad.", "context": "Two-sided risk from the war", "dimension": "mandate_weight"},
+    {"quote": "Por una parte, se destacó que el débil resultado del primer trimestre se daba en un escenario en que la actividad de los servicios había ido perdiendo dinamismo y en que los indicadores del mercado laboral seguían siendo débiles.", "context": "Activity and labor weakness acknowledged", "dimension": "labor_concern"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.0,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "patient"},
+    "theme_flags": ["commodities", "fiscal", "financial_stability", "ai_productivity"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
