@@ -1,0 +1,62 @@
+{
+  "speech_id": "board-20260723-75b653",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-07-23",
+  "date": "2026-07-23",
+  "meeting_date": "2026-07-23",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2026/july/july-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {
+    "action": "hold",
+    "rate": "7.00%",
+    "vote": "4-2",
+    "dissents": ["2 membros (alta de 25bp)"]
+  },
+  "summary": "The SARB MPC held the policy rate at 7% after May's hike, by a 4-2 vote in which the two dissenters wanted a further 25bp increase, and judged the stance appropriate for now with rates somewhat restrictive. Versus the May statement, which delivered a hike on intensifying inflation risks and second-round fears (with two members preferring no change), the committee moves from tightening to a pause, the split flips to the hawkish side, and the QPM path shows rates broadly stable this year with cuts only later. The inflation outlook is described as slightly improved (lower oil assumptions, softer food, a resilient rand), but services and all underlying measures are trending higher, BER inflation expectations rose, and the committee still sees upside risks to inflation. Scenarios for rising expectations and an adverse oil case each imply an extra hike, while weak growth and downside growth risks act as the counterweight: a hold with a hawkish tilt, not an easing bias.",
+  "key_quotes": [
+    {
+      "quote": "Four members preferred a hold, while two favoured an increase of 25 basis points.",
+      "context": "Split flips: in May two wanted no change; now two want another hike",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "The committee agreed that the outlook is uncertain, and with the rate increase at our previous meeting, the policy stance is appropriate for now, with rates somewhat restrictive.",
+      "context": "Pause justified by the May hike; stance judged adequate 'for now'",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Our various measures of underlying inflation also indicate stronger inflation pressures.",
+      "context": "Services and core measures trending higher alongside rising expectations",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "To conclude, the inflation outlook has improved slightly since our last meeting, but inflation is still too high, while growth is weak.",
+      "context": "Balance: slight improvement on inflation, weak growth as counterweight",
+      "dimension": "mandate_weight"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.5,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 2.0,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "food_prices", "dollar", "external_rates", "credibility", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "hawkish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

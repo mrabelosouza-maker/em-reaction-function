@@ -11,7 +11,9 @@ na rubrica `registry/rubric.json`.
   traz `speech_id`, `bc`, `doc_type`, `date`, `meeting_date`, `url`. Copie esses valores
   exatamente.
 - `registry/rubric.json` — leia inteira.
-- `C:\Users\mrabelo\.claude\skills\bc-hawk-dove\references\calibracao.md` — régua da escala.
+- A skill bc-hawk-dove: `C:\Users\mrabelo\.claude\skills\bc-hawk-dove\SKILL.md` (seção 4,
+  Classificar, e os princípios — nota só pelo texto, `null` quando não trata, citação verbatim)
+  e `references\calibracao.md` — régua da escala.
 - O JSON colegiado anterior do mesmo `doc_type` em `data/<bc>/extracted/` (maior `date`
   menor que a deste), se existir — só para descrever o que mudou no `summary`, nunca
   para puxar a nota.
@@ -27,7 +29,8 @@ o composto tem que refletir isso (diferença de pelo menos 0.5).
 **Régua para documentos colegiados** (escala −5 a +5; o lado dovish espelha a calibração
 da skill bc-hawk-dove; aprovada pelo analista em 2026-10-20). A nota vale pelo que o documento
 PEDE/SINALIZA PARA A POLÍTICA, não pelo quanto reclama da inflação. Antes de dar a nota, leia
-2 ou 3 JSON colegiados já gravados em fases parecidas do ciclo e mantenha a escala:
+2 ou 3 JSON colegiados já gravados em fases parecidas do ciclo e mantenha a escala (se o BC
+ainda tem poucos, use também os do Banxico, `data/banxico/extracted/board-*.json`):
 - corte grande (ex.: 50bp) com sinalização explícita de novos cortes de magnitude similar: **−4.5**
 - corte grande com mais afrouxamento como cenário claro; ou 25bp com urgência/aceleração: **−4.0**
 - corte com mais cortes como cenário base (guidance explícito de continuidade): **−3.5**
@@ -48,7 +51,7 @@ No `summary`, descreva a mudança vs o documento anterior de forma qualitativa, 
 ```json
 {
   "speech_id": "<do cabeçalho>",
-  "bc": "banxico",
+  "bc": "<do cabeçalho>",
   "track": "colegiado",
   "doc_type": "comunicado | ata",
   "member_id": "board",
@@ -56,11 +59,11 @@ No `summary`, descreva a mudança vs o documento anterior de forma qualitativa, 
   "date": "<do cabeçalho>",
   "meeting_date": "<do cabeçalho>",
   "url": "<do cabeçalho>",
-  "source": "banxico",
+  "source": "<bc do cabeçalho>",
   "non_policy": false,
   "decision": {"action": "cut|hold|hike", "rate": "6.50%", "vote": "4-1", "dissents": ["Heath (hold)"]},
   "summary": "Um parágrafo em inglês, 3-5 frases: a mensagem de política e o que mudou vs o documento anterior do mesmo tipo.",
-  "key_quotes": [{"quote": "verbatim em espanhol", "context": "...", "dimension": "<id>"}],
+  "key_quotes": [{"quote": "verbatim, na língua do documento", "context": "...", "dimension": "<id>"}],
   "llm_scores": {
     "composite_hawk_dove": 0, "mandate_weight": 0, "inflation_conviction": 0,
     "labor_concern": 0, "policy_stance_read": 0,
@@ -76,6 +79,10 @@ No `summary`, descreva a mudança vs o documento anterior de forma qualitativa, 
 
 **Regras**
 - `title` é EXATAMENTE `Comunicado <meeting_date>` ou `Minuta <meeting_date>` (o `speech_id` depende dele).
+- **SARB** (só statement, sem ata): o comitê é o MPC; o statement dá o placar sem nomes
+  ("unanimous" ou "four members preferred..."). `vote` como `"6-0"`/`"4-2"` (contagem do texto),
+  `dissents` como `"<n> membros (<o que preferiam>)"`. Choques administrados (eletricidade, combustível)
+  entram em `supply_shocks`; o rand e o Fed em `fx_external`.
 - `decision`: extraia do texto. Na ata, é a decisão da reunião a que ela se refere. `dissents`
   lista `"<Sobrenome> (<o que preferia>)"`; `[]` se unânime. `vote` como `"5-0"`, `"4-1"`.
 - Scores inteiros ou .5; `null` se o documento não trata da dimensão.

@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from . import config
 from .schema import colegiado_id, colegiado_title
 
 BASE = "https://www.banxico.org.mx"
@@ -46,10 +47,10 @@ def parse_minutas(html: str) -> tuple[list[dict], list[str]]:
     return out, problemas
 
 
-def raw_header(doc_type: str, date: str, meeting_date: str, url: str) -> str:
-    return (f"# Banxico — {colegiado_title(doc_type, meeting_date)}\n\n"
+def raw_header(doc_type: str, date: str, meeting_date: str, url: str, bc: str = "banxico") -> str:
+    return (f"# {config.BCS[bc]['label']} — {colegiado_title(doc_type, meeting_date)}\n\n"
             f"<!-- speech_id: {colegiado_id(doc_type, date, meeting_date)} -->\n"
-            f"<!-- bc: banxico -->\n<!-- doc_type: {doc_type} -->\n"
+            f"<!-- bc: {bc} -->\n<!-- doc_type: {doc_type} -->\n"
             f"<!-- date: {date} -->\n<!-- meeting_date: {meeting_date} -->\n"
             f"<!-- url: {url} -->\n")
 

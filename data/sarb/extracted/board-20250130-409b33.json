@@ -1,0 +1,92 @@
+{
+  "speech_id": "board-20250130-409b33",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-01-30",
+  "date": "2025-01-30",
+  "meeting_date": "2025-01-30",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2025/january/Statement%20of%20the%20monetary%20policy%20committee%20January%202025%20.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {
+    "action": "cut",
+    "rate": "7.50%",
+    "vote": "4-2",
+    "dissents": [
+      "2 membros (manter a taxa inalterada)"
+    ]
+  },
+  "summary": "The SARB MPC cut the repo rate 25bp (to 7.50%) on a split 4-2 vote, with two members preferring to hold, framing the move as reducing the degree of restrictiveness to make the stance 'somewhat more neutral'. The cut rests on benign near-term inflation (3% in December, expectations aligned with the 4.5% midpoint, core at or below the midpoint) and an output gap expected to close, but the committee assessed inflation risks to the upside and all members worried about the global outlook: a strong dollar, limited Fed space, possible US hikes, tariffs and administered prices. Guidance is deliberately non-committal ('no forward guidance and no pre-commitment'), with the QPM path drifting only slightly lower to around 7.25%, and a trade-war scenario showing rates 50bp higher at peak. This is the first statement in the base, so there is no previous statement to compare against; on its own it reads as a cautious cut with a divided committee and limited further easing in view.",
+  "key_quotes": [
+    {
+      "quote": "Four members preferred this action, while two supported an unchanged stance.",
+      "context": "Split 4-2 vote on the 25bp cut, two members for a hold",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "The committee ultimately agreed that it was possible to reduce the degree of policy restrictiveness, making the stance somewhat more neutral.",
+      "context": "Rationale for the cut: stance still restrictive, moving toward neutral",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "with no forward guidance and no pre-commitment to any specific rate path",
+      "context": "No easing guidance; QPM path only drifts slightly lower to ~7.25%",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "The risks to the inflation outlook are assessed to the upside.",
+      "context": "Upside inflation risks from the external environment and administered prices despite benign near-term inflation",
+      "dimension": "inflation_conviction"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": null,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "dollar",
+      "external_rates",
+      "fx_passthrough",
+      "food_prices",
+      "fiscal"
+    ]
+  },
+  "drivers": {
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "other": {
+      "intensity": 1,
+      "push": "neutral"
+    }
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

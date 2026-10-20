@@ -1,0 +1,89 @@
+{
+  "speech_id": "board-20250731-eb6176",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-07-31",
+  "date": "2025-07-31",
+  "meeting_date": "2025-07-31",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2025/july/july-mpc-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {
+    "action": "cut",
+    "rate": "7.00%",
+    "vote": "6-0",
+    "dissents": []
+  },
+  "summary": "The SARB MPC unanimously cut the repo rate 25bp to 7.00%, citing a stronger rand, moderating inflation expectations, headline at 3% and core at 2.9%, and a weaker 2025 growth outlook, with balanced risks to both growth and inflation and no explicit guidance on the next move. The big change versus the May statement is that the 3% inflation objective moves from an illustrative scenario to the Committee's stated preference: the MPC will now aim for the bottom of the 3-6% range and use forecasts with a 3% anchor at future meetings. That framework shift cuts both ways: under the old 4.5% anchor the model had rates bottoming around 7% (i.e. roughly at today's level), while the 3% path implies about five more cuts over the medium term, albeit with temporarily higher real rates and a modest growth sacrifice. The vote also moved from 5-1, with one member preferring a 50bp cut in May, to unanimous, removing the dovish dissent. Net, a cut that keeps modest further easing on the table through the new 3% anchor, framed around locking in low inflation rather than urgency.",
+  "key_quotes": [
+    {
+      "quote": "Against this backdrop, the MPC decided to reduce the policy rate by 25 basis points, to 7%, with effect from the 1st of August. The decision was unanimous.",
+      "context": "25bp cut to 7%, unanimous (May was 5-1 with one member for 50bp)",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Therefore, the MPC now prefers inflation to settle at 3%. In line with this, we have decided to aim for the bottom of our inflation target range, of 3-6%.",
+      "context": "The 3% objective moves from scenario (May) to the Committee's preference",
+      "dimension": "mandate_weight"
+    },
+    {
+      "quote": "By contrast, the forecast for a 3% objective has roughly five more cuts, over the medium term, taking interest rates slightly below 6%.",
+      "context": "Under the 4.5% anchor rates bottom around 7%; the 3% anchor, now used for forecasts, implies further easing",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "The risks to this outlook appear balanced.",
+      "context": "Balanced inflation risks despite an expected near-term rise in headline from food and fuel",
+      "dimension": "inflation_conviction"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3.0,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 1.0,
+    "labor_concern": 1.5,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "credibility",
+      "food_prices",
+      "fx_passthrough",
+      "external_rates"
+    ]
+  },
+  "drivers": {
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "neutral"
+    }
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

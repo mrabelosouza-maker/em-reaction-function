@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260326-e8b179",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-03-26",
+  "date": "2026-03-26",
+  "meeting_date": "2026-03-26",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2026/march/mar-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "6.75%", "vote": "6-0", "dissents": []},
+  "summary": "The MPC unanimously kept the repo rate at 6.75% as the Middle East war pushed oil and fuel prices sharply higher, and it now judges inflation risks to the upside, with headline expected to jump to around 4% in the second quarter. The committee says it will look through first-round effects but stay alert to second-round effects, flagging the jump in market-based breakevens, and the QPM path now keeps rates unchanged for longer, postponing the cuts it implied in January; both adverse scenarios call for hikes this year, and the statement closes with a commitment to the 3% target and readiness to act. Versus the January statement, where risks were balanced, the model projected gradual cuts and two members voted for an immediate cut, the dovish minority has vanished, the risk balance has flipped upward and the easing bias has been replaced by a hawkish-leaning hold, tempered only by a baseline that still contains one cut late in 2026 and new downside risks to growth.",
+  "key_quotes": [
+    {"quote": "Given current forecasts, we see inflation risks to the upside.", "context": "Risk balance flips from balanced in January to upside after the oil shock", "dimension": "inflation_conviction"},
+    {"quote": "The latest forecasts from our Quarterly Projection Model show rates unchanged for a longer period, postponing the cuts from the January projections", "context": "Model path drops the early-2026 cut; only one cut left in H2 2026", "dimension": "near_term_bias"},
+    {"quote": "Both call for higher interest rates this year, with one hike in the first scenario and several more in the other.", "context": "Adverse oil/rand scenarios imply hikes, making the tightening option explicit", "dimension": "composite_hawk_dove"},
+    {"quote": "We are committed to delivering that outcome, and stand ready to act as needed to fulfil our mandate.", "context": "Commitment to bring inflation back to the new 3% target within two years", "dimension": "mandate_weight"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.0,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "fx_passthrough", "external_rates", "credibility", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

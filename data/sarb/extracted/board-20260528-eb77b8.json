@@ -1,0 +1,65 @@
+{
+  "speech_id": "board-20260528-eb77b8",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-05-28",
+  "date": "2026-05-28",
+  "meeting_date": "2026-05-28",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2026/may/may-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {
+    "action": "hike",
+    "rate": "7.00%",
+    "vote": "4-2",
+    "dissents": ["2 membros (manutenção em 6.75%)"]
+  },
+  "summary": "The MPC raised the repo rate by 25bp to 7% on a split 4-2 vote, with two members preferring no change, arguing that inflation risks had intensified and that large, overlapping shocks (Hormuz still largely closed, oil near USD100, fuel and food costs) would likely trigger second-round effects requiring a monetary-policy response. Headline jumped to 4% and services to 4.6%, the forecast was raised to 4.4% for 2026 with core peaking early next year, and market and analyst inflation expectations are edging higher, while growth forecasts were cut and downside growth risks acknowledged. The guidance is not a tightening cycle: the QPM shows one hike this quarter and then rates easing back toward neutral, with decisions meeting-by-meeting, although all risk scenarios show two to three additional hikes and the statement closes on credibility and preventing inflation from becoming entrenched. Versus the March statement, a unanimous hold that framed the oil shock as a supply shock to look through while watching for second-round effects, the committee moves from watchful hold with upside risks to actually acting on those second-round risks, tempered by the divided vote and a baseline that does not call for further hikes.",
+  "key_quotes": [
+    {
+      "quote": "Four members preferred this action, while two favoured no change.",
+      "context": "Split 4-2 vote on the 25bp hike to 7%; two members wanted to hold",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "The forecast from our Quarterly Projection Model (QPM) shows one hike this quarter.",
+      "context": "Baseline path: a single hike, then rates easing back toward neutral as inflation falls",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Given the forecasts, we see upside risks to inflation.",
+      "context": "Forecast raised to 4.4% for 2026, second-round effects and expectations edging higher",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "We see downside risks to growth.",
+      "context": "Growth forecasts lowered; investment and household consumption hit by the shock",
+      "dimension": "labor_concern"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 2.5,
+    "mandate_weight": 2.5,
+    "inflation_conviction": 3.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "data-dependent"
+    },
+    "theme_flags": ["commodities", "food_prices", "credibility", "external_rates"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

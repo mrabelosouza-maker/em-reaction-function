@@ -159,8 +159,11 @@ function renderDocs(bc) {
 
 /* ---------- aba do BC ---------- */
 function bcPane(bc) {
-  return `<h2>Visão geral</h2>${kpiHtml(DATA.bcs[bc])}
-    <h2>Tom da Junta e taxa de juros</h2><div id="chart-${bc}"></div>
+  const b = DATA.bcs[bc];
+  const top = `<h2>Visão geral</h2>${kpiHtml(b)}
+    <h2>Tom da Junta e taxa de juros</h2><div id="chart-${bc}"></div>`;
+  if (!b.members.length) return `${top}<h2>Base de documentos</h2>${docsHtml(bc)}`;  // BC só com documentos colegiados
+  return `${top}
     <h2>Heatmap por reunião</h2>
     <div class="hmctl"><div class="seg" id="hm-${bc}"><button type="button" data-mode="level" class="on">Nível</button><button type="button" data-mode="deviation">Desvio vs Junta</button></div>
       <p class="sub">Coluna = ciclo aberto pela reunião. Junta = nível no fim do ciclo (já com a ata); membro = média das falas no ciclo. Azul = dove, vermelho = hawk.</p></div>
@@ -171,12 +174,14 @@ function bcPane(bc) {
 
 function wireBC(bc) {
   const b = DATA.bcs[bc], seg = document.getElementById('hm-' + bc), heat = document.getElementById('heat-' + bc);
-  const drawHeat = mode => {
-    heat.innerHTML = heatHtml(b, mode);
-    seg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.mode === mode));
-  };
-  seg.querySelectorAll('button').forEach(x => x.addEventListener('click', () => drawHeat(x.dataset.mode)));
-  drawHeat('level');
+  if (seg) {
+    const drawHeat = mode => {
+      heat.innerHTML = heatHtml(b, mode);
+      seg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.mode === mode));
+    };
+    seg.querySelectorAll('button').forEach(x => x.addEventListener('click', () => drawHeat(x.dataset.mode)));
+    drawHeat('level');
+  }
   for (const id of ['q-', 't-', 'tr-']) document.getElementById(id + bc).addEventListener(id === 'q-' ? 'input' : 'change', () => renderDocs(bc));
   const list = document.getElementById('list-' + bc);
   list.addEventListener('toggle', e => {       // texto integral só quando o documento é aberto
@@ -194,8 +199,8 @@ const METODO = [
   ['Taxa de referência', 'Taxa anunciada em cada comunicado, em degrau a partir da data do comunicado e estendida até a data de geração do site. Eixo direito do gráfico.'],
   ['Desvio do membro', 'Composto da fala ou call menos o nível do Board vigente na data dela.'],
   ['Heatmap', 'Cada coluna é um ciclo entre duas reuniões. Board = nível no fim do ciclo (já com a ata). Membro = média das falas no ciclo; no modo desvio, média dos desvios.'],
-  ['Calibração', 'Os scores são inteiros ou terminam em .5. A escala lê o que o documento pede da política, não o quanto ele reclama da inflação. Régua para comunicados do Banxico, usada como ordem de grandeza: corte grande ou aceleração do ritmo (ex.: 50 bp) sinalizando novos cortes de magnitude similar −3; corte grande sem sinalizar repetição, ou corte de 25 bp com guidance claro de continuidade e maioria folgada −2 a −2,5; corte com porta aberta a mais cortes e maioria dividida −1,5; corte sinalizado como último ou pausa à frente −0,5; manutenção neutra, dependente de dados 0; manutenção com balanço de riscos inclinado para cima e ênfase na inflação +0,5; alta ou viés explícito de alta +2 ou mais. A régua foi calibrada no próprio Banxico 2025–26 e está sujeita a revisão. Diferenças de 0,5 são ruído: confie no ranking e na direção da mudança.'],
-  ['Escopo', 'Banxico, comunicados e atas desde janeiro de 2025; as datas do primeiro e do último documento aparecem no cabeçalho da página. Outros BCs, RTIs e histórico de calls entram depois.'],
+  ['Calibração', 'Os scores são inteiros ou terminam em .5. A escala lê o que o documento pede da política, não o quanto ele reclama da inflação. A régua dos documentos colegiados é a calibração da skill de classificação de falas (exemplos do Fed em 2026) espelhada para o lado dovish, usada como ordem de grandeza: corte grande (ex.: 50 bp) sinalizando novos cortes de magnitude similar −4,5; corte grande com mais afrouxamento como cenário claro −4; corte com mais cortes como cenário base −3,5; corte com algum afrouxamento adicional modesto −3; corte com guidance mais cauteloso ou colegiado dividido −2,5; corte sinalizado como último, ou manutenção em que a maioria já discute o próximo corte, −1,5 a −2; manutenção com a porta aberta a corte −1; manutenção confortável, dependente de dados, 0 a +0,5; manutenção com a suficiência da política em questão +1 a +2; alta ou endosso de alta +2,5 ou mais. Votos divergentes puxam a nota no sentido deles. Diferenças de 0,5 são ruído: confie no ranking e na direção da mudança.'],
+  ['Escopo', 'Desde janeiro de 2025. Banxico: comunicados e atas, mais falas e calls de membros. SARB: só os statements do MPC (o SARB não publica ata, e o placar do statement não tem nomes). As datas do primeiro e do último documento aparecem no cabeçalho da página. RTIs, outros BCs e falas de membros do SARB entram depois.'],
 ].map(([h, p]) => `<h2>${h}</h2><div class="card metodo"><p>${p}</p></div>`).join('');
 
 /* ---------- casca ---------- */

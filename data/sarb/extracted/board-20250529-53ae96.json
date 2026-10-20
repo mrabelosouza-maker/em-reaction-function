@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250529-53ae96",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-05-29",
+  "date": "2025-05-29",
+  "meeting_date": "2025-05-29",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2025/may/Statement%20of%20the%20Monetary%20Policy%20Committee%20May%202025.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {"action": "cut", "rate": "7.25%", "vote": "5-1", "dissents": ["1 membro (corte de 50bp)"]},
+  "summary": "The SARB MPC cut the repo rate by 25bp to 7.25%, with five members in favour and one preferring a 50bp cut, on a benign inflation picture (headline below 3%, core at the bottom of the range, forecasts revised down on fuel, a firmer rand and the cancelled VAT hike) and weaker growth. The baseline projection has rates broadly flat above 7% after this cut, but the Committee said it prefers a 3% inflation-objective scenario in which the policy rate falls to just under 6%, and sees scope to 'clear the way for sustainably lower interest rates', a conditional path to further easing tied to lower inflation expectations. Versus the March statement, which held rates with two members wanting a cut, saw medium-term inflation risks skewed to the upside and called for a cautious approach, the Committee moved to a cut, now sees balanced risks to inflation and growth, and the lone dissent is on the dovish side. The adverse rand-depreciation scenario remains as the hawkish caveat.",
+  "key_quotes": [
+    {"quote": "Against this backdrop, the MPC decided to reduce the policy rate by 25 basis points, with effect from 30 May. Five members favoured this action, while one preferred a cut of 50 basis points.", "context": "Decision and vote: 25bp cut, one dissent for a larger cut", "dimension": "composite_hawk_dove"},
+    {"quote": "The policy rate falls to just under 6%, rather than staying above 7%, as in the baseline.", "context": "3% objective scenario implies a much lower rate path than the flat baseline", "dimension": "near_term_bias"},
+    {"quote": "The SARB’s main contribution is to deliver price stability, and we see scope to lock in low inflation and clear the way for sustainably lower interest rates.", "context": "Framing of lower target as a route to lower rates", "dimension": "policy_stance_read"},
+    {"quote": "Core inflation came in at 3%, at the bottom of our target range.", "context": "Underlying inflation well contained; risks to the forecast balanced", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -3.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.0,
+    "labor_concern": 2.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["tariffs", "external_rates", "fx_passthrough", "commodities", "credibility", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "dovish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "dovish"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 3, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

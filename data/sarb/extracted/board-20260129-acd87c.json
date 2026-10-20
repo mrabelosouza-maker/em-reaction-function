@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20260129-acd87c",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-01-29",
+  "date": "2026-01-29",
+  "meeting_date": "2026-01-29",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2026/january/jan-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "6.75%", "vote": "4-2", "dissents": ["2 membros (corte de 25bp)"]},
+  "summary": "The SARB MPC held the repo rate at 6.75% by a 4-2 vote, with two members preferring a further 25bp cut, while the Quarterly Projection Model still forecasts gradual cuts as inflation subsides and now reads the stance as moderately restrictive, reaching neutral during 2027. Inflation risks are balanced, the near-term inflation forecast was lowered on a stronger rand and cheaper oil, and longer-term expectations are at record lows, with the December 3.6% print framed as the peak; food (foot-and-mouth) and a larger NERSA electricity correction are the flagged upside risks, and services inflation above 4% is the remaining hurdle to settling at the new 3% target. Versus the November statement, which delivered a unanimous cut on an improved inflation outlook, the committee pauses but with a split that leans toward easing, an unchanged gradual-cuts model path, and scenarios in which favourable rand/oil shocks allow front-loaded cuts and adverse ones merely delay the move to neutral by about a year. The message is a hold with the door clearly open to resuming cuts, meeting by meeting.",
+  "key_quotes": [
+    {"quote": "Two members favoured a cut of 25 basis points, while four preferred a hold.", "context": "Vote split on the hold decision; minority wanted to keep cutting.", "dimension": "composite_hawk_dove"},
+    {"quote": "The Quarterly Projection Model continues to forecast gradual rate cuts as inflation subsides.", "context": "Model rate path still points to further easing toward neutral in 2027.", "dimension": "policy_stance_read"},
+    {"quote": "We assess the risks to the inflation outlook as balanced.", "context": "Balance of risks unchanged from November.", "dimension": "inflation_conviction"},
+    {"quote": "We are also concerned about electricity prices, given that NERSA’s price correction may rise from R54 billion to R76 billion.", "context": "Administered-price upside risk flagged alongside food prices.", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.0,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "gradual"},
+    "theme_flags": ["dollar", "commodities", "food_prices", "credibility", "cb_independence", "fiscal", "ai_productivity", "fx_passthrough"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "neutral"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 1, "push": "neutral"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

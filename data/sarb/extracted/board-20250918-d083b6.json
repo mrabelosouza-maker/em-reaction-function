@@ -1,0 +1,41 @@
+{
+  "speech_id": "board-20250918-d083b6",
+  "bc": "sarb",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2025-09-18",
+  "date": "2025-09-18",
+  "meeting_date": "2025-09-18",
+  "url": "https://www.resbank.co.za/content/dam/sarb/publications/statements/monetary-policy-statements/2025/september/september-mpc-statement.pdf",
+  "source": "sarb",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "7.00%", "vote": "4-2", "dissents": ["2 membros (corte de 25bp)"]},
+  "summary": "The SARB MPC kept the repo rate at 7% in a split 4-2 vote, with two members preferring a 25bp cut, after 125bp of cumulative easing since September 2024. Versus the July statement, which delivered a unanimous cut and stressed that a 3% objective opens room for roughly five more cuts, this one is a pause: the majority wants to see how past cuts transmit, how expectations evolve and how risks resolve, while the QPM still shows rates easing gradually (about one more cut by end-2025) and the committee repeats that a 3% anchor implies a lower long-run policy rate. Inflation risks are balanced, core is around 3% and expectations moderated further, but headline is set to rise towards 4% on food, fuel and a higher electricity tariff, and a slower-expectations scenario implies roughly one cut less. Net, a hold with the easing door clearly open and a dovish minority, rather than an outright end to the cycle.",
+  "key_quotes": [
+    {"quote": "Four members preferred to keep rates on hold, while two favoured a cut of 25 basis points.", "context": "Split vote: dovish minority wanted to keep cutting", "dimension": "composite_hawk_dove"},
+    {"quote": "Since September last year, we have reduced rates by 125 basis points, and we want to see how this is affecting the economy, how expectations evolve, and how inflation risks are resolved.", "context": "Rationale for pausing after July's cut", "dimension": "near_term_bias"},
+    {"quote": "The forecast has rates easing gradually as inflation returns to the bottom end of the 3-6% target range.", "context": "QPM path still implies further gradual cuts", "dimension": "policy_stance_read"},
+    {"quote": "The policy stance is somewhat tighter over the forecast period, with roughly one less cut, and moderately lower growth.", "context": "Slow-expectations scenario as a hawkish counterweight", "dimension": "inflation_conviction"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.0,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {"direction": "cut", "pace": "patient"},
+    "theme_flags": ["credibility", "tariffs", "food_prices", "external_rates", "dollar", "commodities"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "dovish"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "neutral"},
+    "other": {"intensity": 2, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
