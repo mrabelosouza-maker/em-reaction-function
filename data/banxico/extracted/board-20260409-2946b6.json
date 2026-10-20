@@ -10,32 +10,88 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{FAC24258-9128-F1BD-D497-6225C392ED52}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "6.75%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
-  "summary": "The minutes of the 26 March meeting record a resumption of easing -- a 25bp cut to 6.75% -- but by the tightest possible 3-2 majority, with Borja and Heath both voting to hold at 7.00%. The majority justified cutting on peso levels, weak activity, widening slack and a still-restrictive stance, and argued the new Middle East oil shock and the fruit-and-vegetable (jitomate) spike are transitory supply shocks whose domestic pass-through is buffered by the federal gasoline price cap; the guidance is cautious and data-dependent, promising only to weigh 'the appropriateness and timing of an additional cut'. Versus the previous ata (Minuta 2026-02-05, a unanimous pause, composite -0.5), the collective message is more dovish in ACTION -- the board actually resumed cutting -- yet the board is now far more divided and more preoccupied with upside inflation risk: headline crossed above the variability interval to 4.63%, core is stuck near 4.5% with an almost-uninterrupted year-long uptrend, the inflation risk balance stays tilted up and one member says that upside bias 'se ha incrementado de manera significativa', short-term expectations deteriorated and a stronger dollar plus a more cautious Fed have narrowed room to cut the rate differential. Read against the same meeting's communique, the minutes are somewhat MORE HAWKISH: they expose two dissents wanting to pause, Heath's argument that cutting while core persists signals weaker commitment to the priority mandate, and several members' worries about a structural inflation floor near 4% -- color the bare cut decision does not convey. Net, a divided, cautious cut with the door open to only one further, data-dependent move scores a mildly dovish -1.0.",
+  "decision": {
+    "action": "cut",
+    "rate": "6.75%",
+    "vote": "3-2",
+    "dissents": [
+      "Borja (hold)",
+      "Heath (hold)"
+    ]
+  },
+  "summary": "The minutes of the 26 March meeting record the 25bp cut to 6.75% by a 3-2 majority and show a Board more divided, and on balance more hawkish, than the bare communique conveys. The three cutters lean on transitory supply shocks (jitomate, Middle East energy buffered by the gasoline price cap), widening slack and a rate still above historical references, but one frames the move as 'cerca de concluir el proceso de normalización' and sees margin for just one additional adjustment. The two dissents are substantive: Borja says the ex-ante real rate is already within the neutral range, and Heath wants a pause through at least the first half of 2026 and warns that cutting signals weaker commitment to the mandate; the majority keeps the inflation risk balance tilted up, with one member seeing that bias increased significantly. Versus the previous minutes (February), where the majority framed the pause as temporary and pressed to resume easing, the Board did resume cutting but the debate shifted toward how close the cycle is to its end. Net, a divided, late-cycle cut with room for at most one more move, half a notch less dovish than the communique.",
   "key_quotes": [
-    {"quote": "De esta forma, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 6.75%.", "context": "Collegial decision: a 25bp cut to 6.75%, resuming the easing cycle but by majority (3-2), with Borja and Heath dissenting in favor of holding at 7.00%", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, conforme la evolución de las condiciones macroeconómicas y financieras lo amerite, la Junta de Gobierno valorará la pertinencia y el momento de realizar un recorte adicional a la tasa de referencia.", "context": "Forward guidance: cautious and data-dependent, promising to weigh only 'an additional cut' -- a softer continuity signal than an open easing cycle", "dimension": "near_term_bias"},
-    {"quote": "La mayoría consideró que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza. ... Uno opinó que su sesgo al alza se ha incrementado de manera significativa.", "context": "The majority keeps the inflation risk balance tilted up and one member sees that upside bias having increased significantly, amid the Middle East oil shock and sticky core", "dimension": "inflation_conviction"},
-    {"quote": "Al enfrentar mayores riesgos, no perdemos nada en pausar y esperar para que estos choques verdaderamente se disipen.", "context": "Heath's dissent (hawkish counterweight): with the risk balance more skewed to the upside, the board loses nothing by pausing and much by cutting while core persists and non-core rises", "dimension": "composite_hawk_dove"}
+    {
+      "quote": "Consideró que hacia delante existe margen para realizar un ajuste adicional en congruencia con el entorno macroeconómico del país.",
+      "context": "A cutter sees room for one more adjustment, after calling the stance close to the end of normalization",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Argumentó que se necesita implementar una pausa en la postura actual al menos durante la primera mitad de 2026, con el fin de evaluar si los choques inflacionarios existentes se han absorbido.",
+      "context": "Heath's hawkish dissent: pause at least through H1 2026",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Desde noviembre, la tasa de interés real ex ante se ubica dentro del rango estimado como neutral y está muy cerca de su estimación central.",
+      "context": "Borja's dissent: the stance is already near neutral, so hold to assess the shock",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "La mayoría enfatizó que el incremento en los precios de dichos productos agrícolas se asocia con un choque de oferta transitorio.",
+      "context": "The majority looks through the fruit-and-vegetable spike that drove headline to 4.63%",
+      "dimension": "inflation_conviction"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -1.0,
+    "composite_hawk_dove": -1.5,
     "mandate_weight": 1.0,
     "inflation_conviction": 3.5,
-    "labor_concern": 2.5,
-    "policy_stance_read": 2.5,
-    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
-    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "minimum_wage", "credibility"]
+    "labor_concern": 3.0,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fiscal",
+      "fx_passthrough",
+      "dollar",
+      "external_rates",
+      "commodities",
+      "food_prices",
+      "minimum_wage",
+      "r_star",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 3, "push": "dovish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

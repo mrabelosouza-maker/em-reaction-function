@@ -10,32 +10,79 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{9842071D-B7B0-B46C-D052-117072FFFC84}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "9.00%", "vote": "5-0", "dissents": []},
-  "summary": "Banxico's Board cut the policy rate another 50bp to 9.00% and kept the forward guidance that it could continue calibrating the stance and consider a similar-magnitude adjustment, so the message still points to further sizeable cuts while insisting the stance stays restrictive. Versus the 6 February communique (also a 50bp cut, but 4-1 with Heath dissenting), the key change is that this decision was unanimous with all members present, signaling the Board has coalesced around the faster pace. Disinflation continued - headline 3.67% and core 3.56%, the latter slightly below its pre-pandemic average - and 2025 headline inflation expectations fell; the balance of inflation risks remains tilted up but is judged to have improved. Q1 2025 activity is expected to show weakness again with important downside risks from trade tensions and uncertainty, and US tariff/trade policy plus peso dynamics remain the dominant external theme, with two-sided inflation effects flagged.",
+  "decision": {
+    "action": "cut",
+    "rate": "9.00%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "Banxico cut the policy rate by another 50bp to 9.00% and repeated that it could keep calibrating the stance and consider adjusting it by a similar magnitude, i.e. an explicit signal of further sizeable cuts, while keeping the stance restrictive. The case rests on continued disinflation (headline and core around their pre-pandemic averages), an inflation risk balance that, though still tilted up, has improved, and an economy expected to show weakness again in Q1 with important downside risks from trade tensions. Versus the 6 February communique, the guidance is unchanged but the decision is now unanimous: the lone dissenter who wanted a smaller cut joined the 50bp move, so the Board speaks with one voice for the faster easing pace, a more dovish message than in February. US tariffs are flagged as adding two-sided uncertainty rather than as a reason to slow down.",
   "key_quotes": [
-    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por unanimidad reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 9.00%.", "context": "Segundo corte consecutivo de 50bp, agora por unanimidade (Heath aderiu)", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance mantendo viés de novos cortes de magnitude similar (50bp)", "dimension": "near_term_bias"},
-    {"quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.", "context": "Ciclo de cortes continua, mas postura ainda restritiva", "dimension": "policy_stance_read"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico si bien se mantiene sesgado al alza, ha mejorado.", "context": "Balanço de riscos inflacionários segue de alta, mas melhorou", "dimension": "inflation_conviction"}
+    {
+      "quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por unanimidad reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 9.00%.",
+      "context": "Second consecutive 50bp cut, now unanimous",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.",
+      "context": "Explicit guidance for further cuts of similar (50bp) size",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico si bien se mantiene sesgado al alza, ha mejorado.",
+      "context": "Risk balance still up but improved",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Se prevé que en el primer trimestre de 2025 la actividad económica nacional nuevamente exhiba debilidad.",
+      "context": "Activity weakness supports easing",
+      "dimension": "labor_concern"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -3,
-    "mandate_weight": 1,
-    "inflation_conviction": 2,
-    "labor_concern": 2,
-    "policy_stance_read": 4,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility"]
+    "composite_hawk_dove": -4.5,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 3.5,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 1, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 2, "push": "dovish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 1, "push": "dovish"},
-    "growth_demand": {"intensity": 2, "push": "dovish"},
-    "other": {"intensity": 2, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

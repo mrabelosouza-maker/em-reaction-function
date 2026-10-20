@@ -10,32 +10,85 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{44EB2DF8-E71A-1553-7322-F60A34382EBA}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "6.75%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
-  "summary": "Banxico's Board resumed the easing cycle, cutting the policy rate 25bp to 6.75% after the one-meeting pause of 5 February (a unanimous hold at 7.00%, composite +0.5). The decision was taken 'por mayoria' with a divided 3-2 vote: Rodriguez Ceja, Cuadra and Mejia backed the cut, while Borja and Heath dissented in favor of holding at 7.00%. The Board justified the cut by the marked weakness of economic activity, the observed exchange-rate levels and the degree of monetary restriction already in place, and it opened the door to 'un recorte adicional', assessing its pertinence and timing as conditions warrant. Yet the inflation backdrop worsened versus February: headline jumped from 3.77% to 4.63% (non-core driven, core roughly flat at 4.46%), 2026 headline expectations rose, forecasts for Q1-Q3 2026 were revised up, and the balance of risks stays tilted to the upside amid the Middle East conflict, commodity gains and a moderately weaker peso, with convergence to 3% still only in Q2 2027. Net, a cut with a single-sided guidance toward one more cut but a closely split board and a deteriorating inflation picture places the composite at -1.5, a clear dovish shift in action from February's neutral hold.",
+  "decision": {
+    "action": "cut",
+    "rate": "6.75%",
+    "vote": "3-2",
+    "dissents": [
+      "Borja (hold)",
+      "Heath (hold)"
+    ]
+  },
+  "summary": "Banxico resumed the easing cycle with a 25bp cut to 6.75%, taken by a 3-2 majority: Rodríguez Ceja, Cuadra and Mejía voted for the cut, while Borja and Heath voted to hold at 7.00%. The Board justified the move on the observed exchange-rate levels, the marked weakness of activity and the degree of restriction already in place, and judged the resulting stance adequate to face a prolonged Middle East conflict; guidance opens the door to one more cut, but only as something whose 'pertinencia y momento' will be weighed. Versus the previous communique (5 February, a unanimous pause with a generic two-sided path), the message flips from pause to cutting with a single-sided easing guidance, a clear dovish shift in action. The hawkish brakes are the split vote and a worse inflation picture: headline rose to 4.63% on non-core, core stayed near 4.5%, 2026 forecasts and expectations were revised up and the risk balance stays tilted up. Net, a cut with room for one modest additional move, pulled up by a closely divided Board.",
   "key_quotes": [
-    {"quote": "De esta forma, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 6.75%.", "context": "Collegial decision: 25bp cut to 6.75% by a divided 3-2 majority, resuming the easing cycle after February's unanimous pause; Borja and Heath dissented for a hold at 7.00%", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, conforme la evolución de las condiciones macroeconómicas y financieras lo amerite, la Junta de Gobierno valorará la pertinencia y el momento de realizar un recorte adicional a la tasa de referencia.", "context": "Guidance opens the door to one more cut, framed cautiously around its pertinence and timing rather than committed -- more dovish in action than February's neutral two-sided path", "dimension": "near_term_bias"},
-    {"quote": "A inicios del 2026, la actividad económica mostró una marcada debilidad.", "context": "Marked weakness in activity cited as a key rationale for resuming cuts, alongside FX levels and the degree of monetary restriction", "dimension": "labor_concern"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite the cut, the inflation balance of risks stays tilted to the upside; headline rose to 4.63%, forecasts and 2026 expectations were revised up, convergence still Q2 2027", "dimension": "inflation_conviction"}
+    {
+      "quote": "La Junta de Gobierno juzgó apropiado en esta ocasión continuar con el ciclo de disminuciones de la tasa de referencia.",
+      "context": "Resumes the easing cycle after the February pause",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Hacia delante, conforme la evolución de las condiciones macroeconómicas y financieras lo amerite, la Junta de Gobierno valorará la pertinencia y el momento de realizar un recorte adicional a la tasa de referencia.",
+      "context": "Guidance: one more cut on the table, timing and pertinence data-dependent",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Votaron a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 7.00% Galia Borja Gómez y Jonathan Heath.",
+      "context": "Two dissents for a hold make it a 3-2 decision -- the main hawkish counterweight",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "Upside risk balance kept despite the cut; forecasts revised up for Q1-Q3 2026",
+      "dimension": "inflation_conviction"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -1.5,
+    "composite_hawk_dove": -2.0,
     "mandate_weight": 0.5,
-    "inflation_conviction": 3.5,
+    "inflation_conviction": 3.0,
     "labor_concern": 3.0,
     "policy_stance_read": 2.5,
-    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
-    "theme_flags": ["commodities", "fx_passthrough", "dollar", "external_rates", "tariffs", "fiscal", "credibility"]
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "commodities",
+      "fx_passthrough",
+      "dollar",
+      "external_rates",
+      "tariffs",
+      "fiscal",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "neutral"},
-    "labor_market": {"intensity": 0, "push": "neutral"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

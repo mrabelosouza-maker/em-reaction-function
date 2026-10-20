@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{7D0BDB6E-E519-9C69-04AA-ABD4D31E4850}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
-  "summary": "Banxico's Board unanimously held the policy rate at 6.50% with all members present, a third consecutive pause. The main change versus the 6 August communique is the forward guidance: the firm 'it will be appropriate to keep the rate at its current level' line is gone, replaced by a data-dependent formulation that considers 'the continuation of the disinflation process' and its determinants -- a marginal dovish tilt reopening the path. The Board also added an explicit line that, because Mexico and the US are at different points of the cycle, monetary policy 'need not react mechanically' to the Fed's expected fed-funds moves -- a defense against importing hawkishness after the Fed's 25bp September hike, a stronger dollar and higher US rates. The inflation picture is mixed: headline rose from 3.10 to 3.42% on non-core, while core kept falling from 3.95 to 3.79% and the 2026 year-end headline expectation was cut; convergence to target stays at Q4 2027. The balance of risks remains tilted to the upside, so the net is a data-dependent neutral hold, a touch less hawkish than August's firmer +0.5.",
+  "decision": {
+    "action": "hold",
+    "rate": "6.50%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "Banxico's Board unanimously held the policy rate at 6.50% with all members present, a third consecutive pause. The key change versus the 6 August communique is the forward guidance: the firm line that it 'will be appropriate to keep the rate at its current level' and that the stance is adequate is dropped, replaced by decisions conditioned on 'the continuation of the disinflation process' and its determinants -- a quiet reopening of the easing path without any explicit signal of a cut. The Board also added that monetary policy 'need not react mechanically' to the Fed's expected fed-funds moves, decoupling from the Fed's September hike despite a stronger dollar and higher US yields, and it cited slack, the absence of demand pressures and the degree of restriction already in place as inputs to the decision. The hawkish counterweights remain: headline rose on non-core, core forecasts were nudged up for Q3-Q4 2026 and the balance of inflation risks stays tilted to the upside. Net, the communique moves from a comfortable hold to a hold with a slight easing tilt; the minutes later showed a Board more dovish than this text, with three members openly floating a cut.",
   "key_quotes": [
-    {"quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "The decision: a third consecutive unanimous hold at 6.50% with all members present", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, la Junta de Gobierno tomará sus decisiones considerando la continuación del proceso desinflacionario y el comportamiento esperado de sus determinantes, incluyendo el traspaso del tipo de cambio a los precios del consumidor, las condiciones de holgura y las expectativas de inflación.", "context": "New forward guidance: the firm 'keep the rate at its current level' line from August/June is dropped for a data-dependent stance that leans on the continuation of disinflation -- a marginal dovish tilt", "dimension": "policy_stance_read"},
-    {"quote": "Dado que las condiciones macroeconómicas en México son distintas a las de Estados Unidos, la política monetaria no tendría que reaccionar de manera mecánica ante los ajustes previstos a la tasa de fondos federales.", "context": "New line defending against imported hawkishness after the Fed's September 25bp hike, a stronger dollar and higher US rates", "dimension": "composite_hawk_dove"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "The inflation risk balance stays tilted to the upside despite falling core -- the hawkish counterweight keeping the composite from going negative", "dimension": "inflation_conviction"}
+    {
+      "quote": "Hacia delante, la Junta de Gobierno tomará sus decisiones considerando la continuación del proceso desinflacionario y el comportamiento esperado de sus determinantes, incluyendo el traspaso del tipo de cambio a los precios del consumidor, las condiciones de holgura y las expectativas de inflación.",
+      "context": "New guidance replaces August's 'keep the rate at its current level': the path is reopened, conditional on disinflation continuing",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Dado que las condiciones macroeconómicas en México son distintas a las de Estados Unidos, la política monetaria no tendría que reaccionar de manera mecánica ante los ajustes previstos a la tasa de fondos federales.",
+      "context": "Explicit decoupling from the Fed's September 25bp hike",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Valoró el comportamiento del tipo de cambio, que las economías de México y Estados Unidos atraviesan por etapas distintas del ciclo económico, la ausencia de presiones de demanda en México y el grado de restricción monetaria implementado.",
+      "context": "Inputs to the decision lean on slack and accumulated restriction",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "Upside risk balance kept -- the brake that stops the text from signaling a cut",
+      "dimension": "inflation_conviction"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": 0.0,
+    "composite_hawk_dove": -0.5,
     "mandate_weight": 1.0,
-    "inflation_conviction": 2.0,
+    "inflation_conviction": 2.5,
     "labor_concern": 2.5,
     "policy_stance_read": 2.0,
-    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
-    "theme_flags": ["commodities", "fx_passthrough", "dollar", "external_rates", "tariffs", "credibility"]
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "external_rates",
+      "fx_passthrough",
+      "dollar",
+      "commodities",
+      "tariffs",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 0, "push": "neutral"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "neutral"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

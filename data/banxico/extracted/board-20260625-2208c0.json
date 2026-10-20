@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{F6667DDE-E87D-68A3-0EBB-A4DF9048E403}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "hold", "rate": "6.50%", "vote": "5-0", "dissents": []},
-  "summary": "Banxico's Board held the policy rate at 6.50% by a unanimous 5-0 vote with all members present, delivering the hold it had signaled in May and reiterating that going forward it will be appropriate to keep the rate at its current level, judging the monetary stance adequate for the macro challenges ahead. Versus the 7 May communique (a 25bp cut passed 3-2 that closed the easing cycle, composite -0.5), this is a modest hawkish step: the promised pause is now executed, and unanimously rather than by a divided majority. The inflation backdrop improved on the headline -- general inflation fell from 4.45% to 3.55% between April and the first half of June and the Q2 headline forecast was revised down -- but core only edged from 4.26% to 4.12%, core forecasts were nudged up for Q2-Q4, longer-term expectations stayed above target, and the balance of risks remains tilted to the upside. The hold leaned on the observed exchange-rate levels, the absence of demand-side pressures and continued slack, and the degree of monetary restriction already in place, with convergence to target still expected in Q2 2027. Net, an unanimous hold with an upside-tilted risk balance and continued emphasis on the priority price-stability mandate scores a mildly hawkish +0.5, up from -0.5 in May.",
+  "decision": {
+    "action": "hold",
+    "rate": "6.50%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "Banxico held the overnight rate at 6.50% by a unanimous 5-0 vote, delivering the pause it had signaled when it closed the easing cycle in May, and guided that it will be appropriate to keep the rate at its current level, judging the stance adequate for the macro environment. Versus the 7 May communique, a divided 3-2 cut that ended the cycle, the message turns from last-cut-with-pause-ahead to a firm, unanimous hold with no easing bias. The hold rests on the observed exchange-rate levels, the absence of demand pressures and the degree of restriction already in place; headline inflation fell to 3.55%, but core is still above 4%, core forecasts were nudged up for Q2-Q4, longer-term expectations stay above target and the balance of risks remains tilted to the upside. Slack and important downside risks to activity are acknowledged but are not used to keep the door to cuts open: a comfortable, data-dependent hold with upside-risk emphasis.",
   "key_quotes": [
-    {"quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.", "context": "The decision: a unanimous hold at 6.50% with all members present -- a shift from the divided 3-2 majority that delivered the final cut in May", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance reaffirms a firm hold at the current level, judging the stance adequate for the macro environment -- the pause promised in May is now the base case", "dimension": "near_term_bias"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Despite the sharp headline decline, the inflation risk balance stays tilted to the upside, with core sticky above 4%, core forecasts revised up for Q2-Q4 and longer-term expectations above target -- the rationale for holding", "dimension": "inflation_conviction"},
-    {"quote": "Se siguen previendo condiciones de holgura a lo largo del horizonte de pronóstico y persisten importantes riesgos a la baja para la actividad económica.", "context": "Persistent slack and material downside risks to activity (Q1 contracted, Q2 expected to expand) are acknowledged but are not enough to reopen the easing cycle", "dimension": "labor_concern"}
+    {
+      "quote": "con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 6.50%.",
+      "context": "Unanimous hold, after the divided 3-2 vote that delivered May's final cut",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Hacia delante, la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.",
+      "context": "Forward guidance: firm hold at the current level, no easing bias",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "Despite the drop in headline, the risk balance stays tilted up (core above 4%, expectations above target)",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Se siguen previendo condiciones de holgura a lo largo del horizonte de pronóstico y persisten importantes riesgos a la baja para la actividad económica.",
+      "context": "Slack and downside activity risks acknowledged, but not enough to keep cuts on the table",
+      "dimension": "labor_concern"
+    }
   ],
   "llm_scores": {
     "composite_hawk_dove": 0.5,
     "mandate_weight": 1.0,
-    "inflation_conviction": 3.0,
-    "labor_concern": 2.5,
-    "policy_stance_read": 2.0,
-    "near_term_bias": {"direction": "hold", "pace": "patient"},
-    "theme_flags": ["commodities", "fx_passthrough", "dollar", "external_rates", "tariffs", "credibility"]
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.0,
+    "policy_stance_read": 2.5,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "patient"
+    },
+    "theme_flags": [
+      "commodities",
+      "fx_passthrough",
+      "dollar",
+      "external_rates",
+      "tariffs",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 0, "push": "neutral"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "neutral"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "neutral"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

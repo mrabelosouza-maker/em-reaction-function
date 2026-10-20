@@ -10,32 +10,83 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{5701F165-479A-EF00-AFC5-8D2BA594692E}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "hold", "rate": "7.00%", "vote": "5-0", "dissents": []},
-  "summary": "The minutes of the 5 February meeting record a unanimous pause, holding the rate at 7.00% after five consecutive 25bp cuts, with Heath rejoining the majority (his only dissent is on the communique's wording, not the rate). Read against the 5 February communique (composite +0.5), the minutes come across meaningfully MORE DOVISH: three of the five members frame the pause as a temporary interruption and explicitly signal room to resume easing -- one says the pause 'pudiera incluso ser mas corta de lo previsto' and another that 'existe espacio para continuar con los recortes' -- because they judge the January IEPS and tariff increases to be one-off, focalized relative-price adjustments without second-round effects, supported by ample slack, a cooling labor market (weakest IMSS hiring since 2020), peso appreciation and a less restrictive Fed. Versus the previous ata (Minuta 2025-12-18, a 4-1 cut, composite -1.0), the board has stepped from active easing to a pause, so the collective message is a notch LESS dovish than December even as the underlying bias stays toward resuming cuts. The clear hawkish counterweight is Jonathan Heath, who argues 2025 saw no real disinflation progress despite a restrictive stance, that the 3% target has been met only twice in 23 years, and that a single-meeting pause is insufficient -- calling instead for a prolonged pause and patience through at least H1 2026. Core dynamics remain the binding concern (core rose to 4.47% and convergence to 3% was pushed out to Q2 2027), which keeps the pause unanimous, but the majority's emphasis on transitory shocks and space to keep cutting tilts the minutes to a mildly dovish -0.5.",
+  "decision": {
+    "action": "hold",
+    "rate": "7.00%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "The minutes of the 5 February meeting record a unanimous hold at 7.00%, with Heath voting with the majority but dissenting on the communique's wording, and they reveal a Board more dovish than the communique: the majority treats the January IEPS and tariff increases as a one-off relative-price adjustment with no second-round effects, backed by ample slack, the weakest IMSS hiring since 2020 and a strong peso. Three members actively discuss resuming cuts -- one says the pause 'pudiera incluso ser más corta de lo previsto', another that the Board should communicate 'existe espacio para continuar con los recortes', a third points to the next meeting and the Programa Monetario's 'continuar con los ajustes' -- while a fourth wants to keep the current stance and watch the data. Heath is the lone hawk, arguing 2025 brought no disinflation progress, that a single-meeting pause is not enough and that patience through at least H1 2026 should be signalled; his dissent objects that dropping 'el momento' signals a premature cut. Versus the December minutes, where the Board was still cutting but stressing gradualism and caution, the action has moved to a pause, yet the majority's bias toward resuming cuts soon is, if anything, more explicit.",
   "key_quotes": [
-    {"quote": "Así, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 7.00%.", "context": "Collegial decision: unanimous pause holding the rate at 7.00% after five straight 25bp cuts; Heath rejoins the majority (his dissent is only on the communique text)", "dimension": "composite_hawk_dove"},
-    {"quote": "Consideró que ante las repercusiones hasta ahora acotadas y focalizadas de las nuevas medidas, lo cual mitiga los riesgos de observar efectos de segundo orden, la pausa actual pudiera incluso ser más corta de lo previsto.", "context": "A member frames the pause as possibly shorter than expected given the contained, focalized fiscal shock -- a dovish tilt to the forward path not conveyed by the neutral communique", "dimension": "near_term_bias"},
-    {"quote": "Consideró adecuado comunicar que existe espacio para continuar con los recortes, procurando la convergencia eficiente a la meta y un ajuste ordenado de la economía.", "context": "A member argues the board should communicate there is room to continue cutting, given slack, dollar weakness/peso appreciation and a less restrictive Fed; signals an underlying easing bias", "dimension": "near_term_bias"},
-    {"quote": "Mencionó que el pausar solamente en esta ocasión no es suficiente, sino que se debe hacer una pausa prolongada hasta obtener evidencia de avances adicionales en la convergencia.", "context": "Heath (hawkish counterweight): a single-meeting pause is insufficient; wants a prolonged pause and patience through at least H1 2026 until there is evidence of further convergence", "dimension": "inflation_conviction"}
+    {
+      "quote": "la pausa actual pudiera incluso ser más corta de lo previsto.",
+      "context": "One member: contained, focalized fiscal shock means the pause could be shorter than expected",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Consideró adecuado comunicar que existe espacio para continuar con los recortes, procurando la convergencia eficiente a la meta y un ajuste ordenado de la economía.",
+      "context": "Another member wants the Board to signal room to keep cutting (slack, weak dollar, less restrictive Fed)",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "la entrada en vigor de las modificaciones tributarias y arancelarias constituye principalmente un ajuste de precios relativos.",
+      "context": "The majority looks through the IEPS and tariff shock; no second-round effects expected",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Mencionó que el pausar solamente en esta ocasión no es suficiente, sino que se debe hacer una pausa prolongada hasta obtener evidencia de avances adicionales en la convergencia.",
+      "context": "Heath, the hawkish counterweight: wants a prolonged pause and patience through H1 2026",
+      "dimension": "composite_hawk_dove"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -0.5,
-    "mandate_weight": 1.0,
-    "inflation_conviction": 3.0,
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 2.5,
     "labor_concern": 2.5,
     "policy_stance_read": 2.5,
-    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
-    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "minimum_wage", "credibility", "food_prices"]
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fiscal",
+      "fx_passthrough",
+      "dollar",
+      "external_rates",
+      "minimum_wage",
+      "credibility",
+      "food_prices"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "dovish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "dovish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "hawkish"}
+    "supply_shocks": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "neutral"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

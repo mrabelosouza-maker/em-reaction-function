@@ -24,17 +24,25 @@ a nota da ata só a partir do texto da ata, sem abrir o JSON do comunicado. Se o
 próprio `summary` disser que a ata é mais dovish ou mais hawkish que o comunicado,
 o composto tem que refletir isso (diferença de pelo menos 0.5).
 
-**Régua para comunicados do Banxico** (use como ordem de grandeza, reavalie pelo texto;
-a régua cobre a escala inteira — não comprima tudo em torno de −1.5 a +0.5):
-- corte grande ou aceleração do ritmo (ex.: 50bp) sinalizando novos cortes de magnitude
-  similar: **−3**
-- corte grande, sem sinalizar repetição, ou corte de 25bp com guidance claramente
-  de continuidade e maioria folgada: **−2 a −2.5**
-- corte com porta aberta para mais cortes, maioria dividida: **−1.5**
-- corte sinalizado como último / pausa à frente: **−0.5**
-- manutenção neutra, dependente de dados: **0**
-- manutenção com balanço de riscos inclinado para cima e ênfase em inflação: **+0.5**
-- alta ou viés explícito de alta: **+2 ou mais**
+**Régua para documentos colegiados** (escala −5 a +5; o lado dovish espelha a calibração
+da skill bc-hawk-dove; aprovada pelo analista em 2026-10-20). A nota vale pelo que o documento
+PEDE/SINALIZA PARA A POLÍTICA, não pelo quanto reclama da inflação. Antes de dar a nota, leia
+2 ou 3 JSON colegiados já gravados em fases parecidas do ciclo e mantenha a escala:
+- corte grande (ex.: 50bp) com sinalização explícita de novos cortes de magnitude similar: **−4.5**
+- corte grande com mais afrouxamento como cenário claro; ou 25bp com urgência/aceleração: **−4.0**
+- corte com mais cortes como cenário base (guidance explícito de continuidade): **−3.5**
+- corte com espaço para algum afrouxamento adicional modesto: **−3.0**
+- corte com guidance mais cauteloso ou Junta dividida sobre seguir; ritmo desacelerando: **−2.5**
+- corte sinalizado como último / pausa à frente; ou manutenção em que a maioria já discute
+  ativamente o próximo corte: **−1.5 a −2.0**
+- manutenção com a porta aberta a corte (ex.: ata de 24/09/2026): **−1.0**
+- manutenção confortável, dependente de dados: **0**; com balanço de riscos para cima e
+  ênfase em inflação, sem viés de corte: **+0.5**
+- manutenção com a suficiência da política em questão / viés de alta: **+1.0 a +2.0**
+- alta ou endosso de alta: **+2.5 ou mais**
+Votos divergentes contam (um dissidente pedindo manter num corte puxa ~0.5 para cima; 3-2, mais).
+Diferenças de 0.5 são ruído; o que importa é o ranking entre reuniões e a direção da mudança.
+No `summary`, descreva a mudança vs o documento anterior de forma qualitativa, sem citar a nota dele.
 
 **Saída — `data/<bc>/extracted/<speech_id>.json`:**
 ```json

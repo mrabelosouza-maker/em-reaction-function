@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{7774AEE4-AF2E-9A74-A34C-EDB53F483361}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "8.00%", "vote": "4-1", "dissents": ["Heath (hold)"]},
-  "summary": "Banxico's Board cut the policy rate 50bp to 8.00%, but the decision was a divided 4-1 (Heath dissenting for a hold at 8.50%) and the forward guidance was softened to 'valorara recortes adicionales' without the previous commitment to a similar-magnitude move, so the message is a dovish action carrying a distinctly more cautious, hawkish tilt. Versus the 27 March communique (a unanimous 50bp cut that explicitly signaled another adjustment of similar magnitude), the two key changes are the return of Heath's dissent and the dropping of the 50bp guidance, alongside a deterioration in the inflation data. Headline inflation rose from 3.93% to 4.51% and core from 3.93% to 4.20%, 2025 headline expectations increased and the forecasts were revised up, with services disinflation more gradual and goods inflation higher than expected. The balance of inflation risks remains tilted to the upside (though judged less pronounced than in 2021-2024), while the cut is justified by peso appreciation, economic slack/weak activity and trade-policy uncertainty. Trade tensions and US policy remain the dominant external theme, with two-sided inflation effects flagged.",
+  "decision": {
+    "action": "cut",
+    "rate": "8.00%",
+    "vote": "4-1",
+    "dissents": [
+      "Heath (hold at 8.50%)"
+    ]
+  },
+  "summary": "Banxico cut the policy rate by 50bp to 8.00% by a 4-1 majority, with Heath dissenting for a hold at 8.50%, and kept an explicit easing bias: 'la Junta de Gobierno valorará recortes adicionales'. The cut is justified by the peso's appreciation, the weakness of activity (persistent slack, important downside risks) and the still-prevailing degree of restriction, while the inflation picture deteriorated: headline rose to 4.51%, core to 4.20%, forecasts were revised up and the risk balance stays tilted upward, though less than in 2021-2024. Versus the May communique, which was unanimous and left the door open to another cut of similar magnitude, the Board dropped the 'similar magnitude' reference and the vote split again, so the message is still a large cut with more easing ahead but with a noticeably more cautious guidance.",
   "key_quotes": [
-    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por mayoría reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 8.00%.", "context": "Corte de 50bp, agora por maioria (não mais unânime como em março)", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, la Junta de Gobierno valorará recortes adicionales a la tasa de referencia.", "context": "Guidance suavizado: avaliará cortes adicionais, sem a promessa anterior de magnitude similar (50bp)", "dimension": "near_term_bias"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza, si bien este es menos pronunciado que el enfrentado entre 2021 y 2024.", "context": "Balanço de riscos inflacionários segue de alta; inflação surpreendeu para cima e pronósticos revisados ao alza", "dimension": "inflation_conviction"},
-    {"quote": "Votó a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 8.50% Jonathan Heath.", "context": "Retorno da dissidência de Heath, que preferia manter a taxa", "dimension": "composite_hawk_dove"}
+    {
+      "quote": "Hacia delante, la Junta de Gobierno valorará recortes adicionales a la tasa de referencia.",
+      "context": "Easing bias kept, but without May's reference to a cut of similar magnitude",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "La Junta de Gobierno juzgó oportuno continuar con la calibración de la postura monetaria. Ello considerando el comportamiento del tipo de cambio, la debilidad de la actividad económica e incluyendo el posible impacto de los cambios de las políticas comerciales a nivel global.",
+      "context": "Justification for the 50bp cut: peso, weak activity, trade policy",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza, si bien este es menos pronunciado que el enfrentado entre 2021 y 2024.",
+      "context": "Upside risk balance kept after forecasts were revised up",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Votó a favor de mantener el objetivo para la Tasa de Interés Interbancaria a un día en un nivel de 8.50% Jonathan Heath.",
+      "context": "Heath dissents for a hold; the vote is no longer unanimous",
+      "dimension": "composite_hawk_dove"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -2,
-    "mandate_weight": 1,
-    "inflation_conviction": 3,
-    "labor_concern": 2,
-    "policy_stance_read": 3.5,
-    "near_term_bias": {"direction": "cut", "pace": "data-dependent"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility"]
+    "composite_hawk_dove": -3.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 2.5,
+    "labor_concern": 2.5,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "dollar",
+      "external_rates"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 1, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "neutral"},
-    "labor_market": {"intensity": 1, "push": "dovish"},
-    "growth_demand": {"intensity": 2, "push": "dovish"},
-    "other": {"intensity": 2, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

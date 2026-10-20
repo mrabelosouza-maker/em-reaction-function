@@ -10,32 +10,82 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{4AB9F868-2AB8-102D-ED38-1D40F1AD51DF}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "9.00%", "vote": "5-0", "dissents": []},
-  "summary": "The minutes of the 27 March meeting document a unanimous 50bp cut to 9.00%, with forward guidance repeating that the Board could keep calibrating and consider a similar-magnitude (50bp) adjustment while insisting the stance stays restrictive, so the dovish, easing-biased message of the communique is confirmed. Versus the 6 February minutes (a 4-1 cut with Heath dissenting for 25bp), the Board has coalesced: the decision was unanimous with Heath aboard, and several members explicitly endorse continued equal-magnitude cuts, with one judging another 50bp move plausible at the next meeting. The discussion is dominated by a weakening economy - a Q4 contraction, rising recession probability, a negative and widening output gap and a cooling labor market - which the majority now says has made downside risks to inflation gain relevance, even as the official balance stays tilted up. Disinflation is seen as advancing (headline 3.67%, core 3.56% near its pre-pandemic average), though progress toward the 3% target has stalled since the start of the year and expectations remain above 3%. One member cautions that the room for further easing may narrow and that policy cannot be loosened as much as markets price, and the whole Board keeps stressing a restrictive stance, so on balance the minutes read broadly in line with the communique.",
+  "decision": {
+    "action": "cut",
+    "rate": "9.00%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "The minutes of the 27 March meeting confirm a unanimous 50bp cut to 9.00% and the guidance to consider further adjustments of similar magnitude, and four of the five members individually back that path: one says the ex-ante real rate (5.6%, two points above the top of the neutral range) leaves room to keep calibrating, another finds it plausible to cut by the same amount at the next meeting, and the majority says downside risks to inflation have gained relevance as activity contracts, slack widens and the labor market cools. Versus the February minutes, which showed a split Board with a dissent against the faster pace, the Board has coalesced around 50bp moves. The minutes are nonetheless slightly less dovish than the unanimous communique: one member warns that the space for easing may be smaller ahead, that policy cannot be loosened as much as the market prices if inflation stalls near current levels, that the rate differential with the US cannot eventually fall far below its historical average, and asks that guidance stress taking new information 'sin premura y con cautela'. That lone note of caution keeps the minutes half a point above the communique.",
   "key_quotes": [
-    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por unanimidad reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 9.00%.", "context": "Terceiro corte de 50bp, agora por unanimidade (Heath aderiu ao ritmo)", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance mantendo viés de novos cortes de magnitude similar (50bp)", "dimension": "near_term_bias"},
-    {"quote": "Sin embargo, la mayoría indicó que los riesgos a la baja han cobrado relevancia. Agregó que esto último obedece a la pérdida de dinamismo de la actividad económica.", "context": "Maioria vê riscos de baixa para a inflação ganhando relevância pela fraqueza da atividade — nuance mais dovish revelada na minuta", "dimension": "inflation_conviction"},
-    {"quote": "la tasa real ex ante se ubicó en un nivel de 5.6%, aún visiblemente por encima del intervalo de neutralidad de 1.8 a 3.6%.", "context": "Postura julgada claramente restritiva, com espaço para seguir cortando", "dimension": "policy_stance_read"}
+    {
+      "quote": "es plausible que en la siguiente reunión pudiera implementarse un recorte de igual magnitud.",
+      "context": "One member sees another 50bp cut as plausible at the next meeting",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Sin embargo, la mayoría indicó que los riesgos a la baja han cobrado relevancia. Agregó que esto último obedece a la pérdida de dinamismo de la actividad económica.",
+      "context": "Majority sees downside inflation risks gaining weight on weak activity",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Estimó que el espacio para el relajamiento de la postura monetaria podría ser menor hacia delante.",
+      "context": "The lone cautious member: room to ease may narrow",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "la tasa real ex ante se ubicó en un nivel de 5.6%, aún visiblemente por encima del intervalo de neutralidad de 1.8 a 3.6%.",
+      "context": "Stance judged clearly restrictive, room to keep cutting",
+      "dimension": "policy_stance_read"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -3,
-    "mandate_weight": 1,
-    "inflation_conviction": 2,
-    "labor_concern": 2.5,
-    "policy_stance_read": 4,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility", "dollar"]
+    "composite_hawk_dove": -4.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": 4.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "r_star",
+      "credibility",
+      "financial_stability"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "dovish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 3, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

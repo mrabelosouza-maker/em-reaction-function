@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{8F4D3113-637F-2920-42DE-6A5866416A4F}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "9.50%", "vote": "4-1", "dissents": ["Heath (25bp cut)"]},
-  "summary": "Banxico's Board cut the policy rate 50bp to 9.50%, accelerating from the prior 25bp pace, judging that the significant progress in resolving the global inflationary episode allows lower rates than the shocks once demanded. Forward guidance says it could continue calibrating the stance and consider adjusting it by a similar magnitude, while keeping the stance restrictive, so the message signals further sizeable cuts ahead. Inflation printed near 3.7% (headline 3.69%, core 3.72%) with the balance of inflation risks still tilted up, but the Board leaned on Q4 economic contraction, a decelerating labor market and an activity risk balance tilted down to justify the larger move. The vote was 4-1, with Jonathan Heath dissenting in favor of a smaller 25bp cut. US tariff threats and peso volatility feature as the main external risks.",
+  "decision": {
+    "action": "cut",
+    "rate": "9.50%",
+    "vote": "4-1",
+    "dissents": [
+      "Heath (25bp cut)"
+    ]
+  },
+  "summary": "Banxico's Board cut the policy rate 50bp to 9.50%, stepping up from the 25bp pace of 2024 on the argument that, with the global inflation episode largely resolved and headline (3.69%) and core (3.72%) back near pre-pandemic averages, the restriction the shocks demanded is no longer needed. The guidance is explicitly dovish: the Board could keep calibrating and 'consider adjusting it by a similar magnitude', and expects the environment to allow the cutting cycle to continue, only qualified by keeping the stance restrictive. The case leans on a Q4 GDP contraction, a decelerating labor market and an activity risk balance tilted down, while the inflation risk balance stays tilted up and US tariff threats and peso volatility are flagged as two-sided risks. Jonathan Heath dissented for a 25bp cut, the one hawkish brake on an otherwise accelerating easing message. This is the first collegiate document of 2025 in the base, so there is no prior communique to compare against.",
   "key_quotes": [
-    {"quote": "Tomando en cuenta el actual panorama inflacionario y el grado de restricción monetaria prevaleciente, la Junta de Gobierno consideró apropiado una reducción de la tasa de referencia de mayor magnitud.", "context": "Justificativa para acelerar o ritmo para 50bp", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance sinalizando novos cortes de magnitude similar", "dimension": "near_term_bias"},
-    {"quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.", "context": "Ciclo de cortes continua, mas postura ainda restritiva", "dimension": "policy_stance_read"},
-    {"quote": "El balance de riesgos para la actividad económica se encuentra sesgado a la baja.", "context": "Fraqueza da atividade sustentando o corte maior", "dimension": "labor_concern"}
+    {
+      "quote": "Tomando en cuenta el actual panorama inflacionario y el grado de restricción monetaria prevaleciente, la Junta de Gobierno consideró apropiado una reducción de la tasa de referencia de mayor magnitud.",
+      "context": "Rationale for accelerating to a 50bp cut",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.",
+      "context": "Guidance signalling further cuts of similar (50bp) size",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.",
+      "context": "Cutting cycle continues, while stance stays restrictive",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "En el cuarto trimestre se acentuó la debilidad de la actividad económica nacional, al registrarse una contracción.",
+      "context": "Activity weakness backing the larger move",
+      "dimension": "labor_concern"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -3,
-    "mandate_weight": 1,
-    "inflation_conviction": 2,
-    "labor_concern": 2.5,
-    "policy_stance_read": 4,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates"]
+    "composite_hawk_dove": -4.0,
+    "mandate_weight": -0.5,
+    "inflation_conviction": 1.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": 4.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "urgent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 1, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 2, "push": "dovish"},
-    "fx_external": {"intensity": 2, "push": "hawkish"},
-    "labor_market": {"intensity": 1, "push": "dovish"},
-    "growth_demand": {"intensity": 2, "push": "dovish"},
-    "other": {"intensity": 2, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

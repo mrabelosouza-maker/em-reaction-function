@@ -10,32 +10,86 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{7EFA29F5-D827-0AA7-5D7A-55C06B82161A}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "7.25%", "vote": "4-1", "dissents": ["Heath (hold at 7.50%)"]},
-  "summary": "The minutes of the 6 November decision (a fourth consecutive 25bp cut to 7.25%, again split 4-1 with Heath dissenting for a hold at 7.50%) keep the board on its gradual easing path, but the collegial tone reads modestly LESS dovish than the September minutes. The key change is the forward guidance: the board dropped the prior 'valorara recortes adicionales' and now only says it 'valorara recortar la tasa de referencia', with two members (Heath and one aligned) explicitly arguing the guidance must be modified so it stops pre-committing to further cuts and instead signals full data-dependence and an unconditional commitment to the 3% point target rather than merely staying inside the variability range. The dovish pillars are, if anything, stronger: activity outright contracted in Q3 with the output gap widening in negative territory, domestic demand (consumption and fixed investment) is clearly weakening, the labor market keeps cooling and wages moderating, the peso is up ~12% year-to-date and the Fed's cutting cycle gives room 'without compressing the differential'. The persistent counterweight is unchanged and now flagged more sharply: core inflation is stuck around 4.24% with above-anticipated persistence, its forecast was revised up again, the whole board judges the inflation balance of risks still tilted up (though 'less pronounced than 2021-2024'), and members note the real ex-ante rate (~3.36%) has reached the upper range of neutrality (midpoint 2.7%), leaving limited room. A new one-off upside is the IEPS tax increase, seen as transitory. Net, the board is still cutting gradually with the door open, but the softened guidance and the caution camp tilt it a touch back from the September minutes.",
+  "decision": {
+    "action": "cut",
+    "rate": "7.25%",
+    "vote": "4-1",
+    "dissents": [
+      "Heath (hold at 7.50%)"
+    ]
+  },
+  "summary": "The minutes of the 6 November meeting (25bp cut to 7.25%, 4-1 with Heath dissenting for a hold) show a Board more divided on the path than the communique suggests. Three members still argue for gradual easing: one says the real ex-ante rate (3.36%, upper end of the neutral range) 'debe adentrarse en dicho intervalo', another that the Fed's cut allows lowering the rate 'sin seguir comprimiendo el diferencial', a third that past restriction will keep operating even with cuts. But beyond Heath, who wants the guidance to stop signaling any further reduction and a commitment to the 3% point target, a second member who voted for the cut says the persistent core and upside risks 'sugiere mantener mayor cautela' and that the guidance must be modified for flexibility, so on the next step the Board is closer to 3-2. Versus the September minutes, where four of five backed continuing the cycle with more cuts as the base case, the easing camp has shrunk and the neutral-rate constraint is binding; versus this meeting's communique, the minutes read somewhat less dovish because they expose the second cautious voice.",
   "key_quotes": [
-    {"quote": "la Junta de Gobierno, con la presencia de todos sus miembros, decidió por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 7.25%.", "context": "Collegial decision: fourth straight 25bp cut to 7.25% by majority, one dissent (Heath, hold at 7.50%)", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante, la Junta de Gobierno valorará recortar la tasa de referencia.", "context": "Softened forward guidance: 'will weigh cutting', dropping the prior 'valorara recortes adicionales' and no longer pre-committing to further cuts", "dimension": "near_term_bias"},
-    {"quote": "Todos consideraron que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.", "context": "Unanimous read that the inflation balance of risks stays tilted up; the majority adds it is less pronounced than in 2021-2024", "dimension": "inflation_conviction"},
-    {"quote": "La mayoría señaló que la contracción de la actividad fue producto de la caída de la producción industrial.", "context": "Majority on the Q3 activity contraction driven by falling industrial output; output gap widening in negative territory", "dimension": "labor_concern"}
+    {
+      "quote": "hacia delante la tasa real debe adentrarse en dicho intervalo.",
+      "context": "A dovish member wants the real rate to move inside the neutral range, i.e. further cuts",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Externó que este panorama sugiere mantener mayor cautela hacia delante.",
+      "context": "A member who voted for the cut asks for more caution and a modified guidance -- the second brake besides Heath",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Todos consideraron que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "Unanimous upside tilt to inflation risks, though the majority says it is less pronounced than in 2021-2024",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "nuestra guía prospectiva debe dejar de señalizar una reducción adicional en la tasa objetivo.",
+      "context": "Heath's dissent: stop signaling further cuts absent clear evidence of convergence",
+      "dimension": "composite_hawk_dove"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -1.5,
-    "mandate_weight": 1.0,
+    "composite_hawk_dove": -2.0,
+    "mandate_weight": 0.5,
     "inflation_conviction": 3.0,
     "labor_concern": 3.0,
-    "policy_stance_read": 2.5,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "dollar", "food_prices", "minimum_wage", "fiscal", "credibility"]
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "food_prices",
+      "minimum_wage",
+      "fiscal",
+      "r_star",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 3, "push": "dovish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "dovish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "hawkish"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "hawkish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

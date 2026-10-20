@@ -10,32 +10,85 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{DFAB243C-74BE-4DFE-CD46-302D844E68EA}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "9.50%", "vote": "4-1", "dissents": ["Heath (25bp cut)"]},
-  "summary": "The minutes of the 6 February decision document a 50bp cut to 9.50% approved 4-1, framed as a recalibration of a still-clearly-restrictive stance (real ex-ante rate above 6% and above neutral) rather than the start of a rush toward neutrality. Forward guidance repeats that the Board could keep calibrating and consider a similar-magnitude adjustment while keeping policy restrictive, so the easing bias is intact. Relative to the communique, the minutes read a touch less dovish: they reveal a more divided Board - Jonathan Heath dissented for a smaller 25bp cut arguing there are severe doubts about the continuation of disinflation and that the pace should not be increased, and another member emphatically ruled out a cycle of 50bp cuts to neutrality - alongside repeated insistence on preserving a restrictive stance and the 3% credibility. The dovish case rests on notable disinflation progress (headline 3.69%, core 3.72% back near its pre-pandemic average), a Q4 GDP contraction and a decelerating labor market, while US tariff threats, peso depreciation risk and minimum-wage/cost pressures are the main two-sided risks.",
+  "decision": {
+    "action": "cut",
+    "rate": "9.50%",
+    "vote": "4-1",
+    "dissents": [
+      "Heath (25bp cut)"
+    ]
+  },
+  "summary": "The minutes of the 6 February meeting confirm the 50bp cut to 9.50% (4-1), justified by notable disinflation progress, core near its pre-pandemic average, a Q4 contraction and a real ex-ante rate still above 6% and well above neutral. Two members explicitly say a similar 50bp cut could be contemplated at the next meeting and a third wants calibration to proceed at higher speed in some decisions, so the easing bias is strong. But the minutes read somewhat less dovish than the communique: the member backing the second 50bp move stresses emphatically that this does not mean a cycle of 50bp cuts toward neutrality, another wants the stance kept restrictive throughout the year, and Heath's dissent is sharp, citing 'severe doubts' about continued disinflation, calling growth worries secondary and asking for very gradual easing with the real rate kept between 5% and 6%. This is the first minutes of 2025 in the base, so the comparison is with the communique of the same meeting, where the 'similar magnitude' guidance read as an open-ended acceleration.",
   "key_quotes": [
-    {"quote": "decidió por mayoría reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 9.50%.", "context": "Decisão da reunião: corte de 50bp por maioria, com dissidência", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guidance mantendo viés de novos cortes de magnitude similar", "dimension": "near_term_bias"},
-    {"quote": "no prevé un ciclo de recortes de esa magnitud que lleve la tasa a un nivel de neutralidad próximamente.", "context": "Membro ressalva enfaticamente que 50bp não é o ritmo padrão rumo à neutralidade — minuta menos dovish que o comunicado", "dimension": "near_term_bias"},
-    {"quote": "Prevé que el entorno inflacionario permita seguir con el ciclo de recortes a la tasa de referencia, si bien manteniendo una postura restrictiva.", "context": "Ciclo de cortes segue, mas insistência na postura restritiva", "dimension": "policy_stance_read"}
+    {
+      "quote": "Agregó que en la siguiente reunión podría contemplarse un recorte de igual tamaño.",
+      "context": "A member backs a second 50bp cut at the next meeting",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Comentó de manera enfática que no prevé un ciclo de recortes de esa magnitud que lleve la tasa a un nivel de neutralidad próximamente.",
+      "context": "Same member caps the message: no 50bp cycle to neutrality",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Señaló que pese al avance desinflacionario, en su opinión existen severas dudas sobre su continuación.",
+      "context": "The dissenter (Heath) doubts continued disinflation",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Indicó que en los próximos meses el relajamiento de la postura debería ser muy gradual, para que la tasa real ex ante se ubique entre 5 y 6%, procurando no cruzar la cota inferior de dicho rango.",
+      "context": "Dissenter asks for very gradual easing and a real-rate floor",
+      "dimension": "composite_hawk_dove"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -2.5,
-    "mandate_weight": 2,
-    "inflation_conviction": 2,
-    "labor_concern": 2.5,
-    "policy_stance_read": 4,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "credibility", "minimum_wage"]
+    "composite_hawk_dove": -3.5,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 2.0,
+    "labor_concern": 3.0,
+    "policy_stance_read": 4.0,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "credibility",
+      "minimum_wage",
+      "fiscal",
+      "r_star"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "dovish"},
-    "underlying_inflation": {"intensity": 3, "push": "dovish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 3, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

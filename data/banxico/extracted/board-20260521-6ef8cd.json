@@ -10,32 +10,88 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{3F15F7F1-3E5A-4FD4-E0C0-B4BEA1703FAF}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "6.50%", "vote": "3-2", "dissents": ["Borja (hold)", "Heath (hold)"]},
-  "summary": "The minutes of the 7 May meeting record a 25bp cut to 6.50% that the board explicitly frames as the LAST move -- 'concluir el ciclo iniciado en marzo de 2024' -- with forward guidance that it will now be appropriate to hold the rate at its current level. The cut passed by the tightest 3-2 majority (Rodriguez, Cuadra, Mejia in favor; Borja and Heath dissenting to hold at 6.75%), the majority justifying easing on peso appreciation, a sharp Q1 GDP contraction (-0.77% qoq) implying no demand-side pressures, and the degree of restriction already delivered, while treating the Middle East oil shock and the jitomate/food spike as transitory relative-price adjustments buffered by the federal gasoline price cap. Versus the previous ata (Minuta 2026-03-26, an open-door cut, composite -1.0), the collective message turns markedly more hawkish: the easing cycle is now declared over, the guidance shifts from weighing 'an additional cut' to firmly holding, several members judge the stance has reached NEUTRAL and one argues the margin for further cuts is 'practicamente nulo' given the near-historic-low rate differential to a Fed on hold, core has stayed above 4.2% for eleven consecutive months, services inflation is persistent around a ~4% structural floor, and short- and medium-term expectations were revised up. Read against the same meeting's communique, the minutes are somewhat MORE HAWKISH: they expose the two hold dissents, Heath's call for a 'pausa prolongada', and the divided debate over whether policy is now merely neutral rather than restrictive -- color the bare end-of-cycle decision does not convey. Net, a divided cut that closes the easing cycle with firm hold guidance scores a balanced 0.0.",
+  "decision": {
+    "action": "cut",
+    "rate": "6.50%",
+    "vote": "3-2",
+    "dissents": [
+      "Borja (hold at 6.75%)",
+      "Heath (hold at 6.75%)"
+    ]
+  },
+  "summary": "The minutes of the 7 May meeting confirm a 3-2 cut to 6.50% that closes the easing cycle, and the member-by-member discussion is more hawkish than the communique: none of the five members argues for further cuts, the majority members describe the cut as the last one or as a fine-tuning with the rate held at the new level, and the two dissenters argue the stance was already neutral. Heath says the margin for additional cuts is 'practicamente nulo' with the real rate in the neutral range and the rate differential to the US near historic lows, and wants a prolonged pause; Borja says cutting could hinder convergence given persistent services inflation and unfavourable base effects. The majority's case rests on a sharper-than-expected Q1 contraction, widening slack, a stronger peso and the view that the oil and jitomate shocks are transitory relative-price adjustments, while the risk balance stays tilted to the upside and short- and medium-term expectations moved up. Versus the March minutes, where the majority still weighed an additional cut and the debate was about timing, the Board now unanimously looks to a hold and the hawkish wing frames the remaining restriction as exhausted; read against the same meeting's communique, the minutes are half a point more hawkish because they show how firmly the door to more easing is shut.",
   "key_quotes": [
-    {"quote": "La Junta de Gobierno juzgó apropiado realizar un recorte adicional a la tasa de referencia y con esto concluir el ciclo iniciado en marzo de 2024.", "context": "Collegial decision: a 25bp cut to 6.50% (by a 3-2 majority, Borja and Heath dissenting to hold) that the board explicitly frames as the END of the easing cycle begun in March 2024", "dimension": "composite_hawk_dove"},
-    {"quote": "Hacia delante la Junta de Gobierno considera que será apropiado mantener la tasa de referencia en su nivel actual.", "context": "Forward guidance: a firm signal to hold going forward, judging the stance adequate for the macro challenges -- a clear shift from the prior ata's promise to weigh 'an additional cut'", "dimension": "near_term_bias"},
-    {"quote": "Aseveró que, ante ambos factores, el margen para recortes adicionales en la tasa objetivo sin que con ello se comprometa la convergencia a la meta es prácticamente nulo.", "context": "One (hawkish) member: with the real ex-ante rate in neutral range for over six months and the rate differential to the US near historic lows, there is essentially no room for further cuts -- a case for pausing", "dimension": "policy_stance_read"},
-    {"quote": "Otro advirtió que, pese a haberse reducido en abril, la inflación subyacente anual ha permanecido por arriba de 4.2% por once meses consecutivos.", "context": "Core persistence: despite the April decline, annual core inflation has stayed above 4.2% for eleven consecutive months, underpinning the upside-tilted risk balance and the end-of-cycle caution", "dimension": "inflation_conviction"}
+    {
+      "quote": "Aseveró que, ante ambos factores, el margen para recortes adicionales en la tasa objetivo sin que con ello se comprometa la convergencia a la meta es prácticamente nulo.",
+      "context": "Heath: real ex-ante rate in neutral range and rate differential near historic lows leave no room for cuts",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "la pausa planteada en principio debería ser de naturaleza prolongada.",
+      "context": "Heath's dissent calls for a prolonged pause",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "el ajuste debe entenderse como un ajuste fino dentro de un contexto de restricción monetaria y no como la adopción de una postura acomodaticia.",
+      "context": "A majority member frames the cut as fine-tuning within a still-restrictive stance, with the rate held at the new level afterwards",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "considero que reducir la tasa podría dificultar el proceso de convergencia.",
+      "context": "Borja's dissent: supply shocks, services persistence and base effects argue for caution and a hold",
+      "dimension": "inflation_conviction"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": 0.0,
-    "mandate_weight": 1.5,
-    "inflation_conviction": 3.5,
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 3.0,
     "labor_concern": 3.0,
-    "policy_stance_read": 1.5,
-    "near_term_bias": {"direction": "hold", "pace": "patient"},
-    "theme_flags": ["tariffs", "fiscal", "fx_passthrough", "dollar", "external_rates", "commodities", "food_prices", "minimum_wage", "credibility", "r_star"]
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "patient"
+    },
+    "theme_flags": [
+      "commodities",
+      "food_prices",
+      "fx_passthrough",
+      "dollar",
+      "external_rates",
+      "tariffs",
+      "fiscal",
+      "minimum_wage",
+      "r_star",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 3, "push": "dovish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "hawkish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 2, "push": "hawkish"}
+    "supply_shocks": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "neutral"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

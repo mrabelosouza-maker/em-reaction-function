@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/{318D71D0-F37D-869C-E8B4-8E58FD9D3648}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "hold", "rate": "7.00%", "vote": "5-0", "dissents": []},
-  "summary": "Banxico's Board unanimously paused the easing cycle, holding the policy rate at 7.00% after five consecutive 25bp cuts, judging the pause appropriate given the inflation outlook. The big change versus the 18 December communique (a 25bp cut to 7.00%, split 4-1, composite -0.5) is twofold: the split becomes unanimous with Heath no longer dissenting, and the guidance shifts from 'valorara el momento de realizar ajustes adicionales' to an explicit pause, keeping only a generic, two-sided 'valorara realizar ajustes adicionales' path ahead. The data mix deteriorated on the core: headline eased slightly (3.80 to 3.77%) but core inflation rose again to 4.47% (from 4.43%, and up from 4.33% in December), and the Board revised its headline and core forecasts up between Q1 2026 and Q1 2027, pushing expected convergence to the 3% target all the way out to Q2 2027 from Q3 2026 previously. The Board now calls the inflation balance of risks 'mas equilibrado' but still tilted to the upside, cites the peso's appreciation and lower domestic yields as supports, and flags fiscal adjustments and services stickiness as reasons for caution. Net, the same 7.00% rate but a decisive pivot from cutting to a data-dependent pause with worse core dynamics and a delayed convergence lifts the composite to +0.5.",
+  "decision": {
+    "action": "hold",
+    "rate": "7.00%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "Banxico's Board unanimously held the policy rate at 7.00%, framing the move explicitly as a pause 'en esta ocasión' in the easing cycle after a run of 25bp cuts, to assess the January IEPS and tariff changes, the peso and the degree of restriction already in place. Versus the 18 December communique (a split cut, with Heath dissenting for a hold), the action turns from cutting to holding and the vote becomes unanimous, but the guidance does not close the cycle: the Board drops the emphasis on 'el momento' and says only that it will assess 'ajustes adicionales', which reads as a temporary pause with further cuts still the expected direction. The hawkish counterweight is in the data: core inflation rose to 4.47%, headline and core forecasts were revised up and convergence to 3% was pushed out to Q2 2027, though the balance of risks is called 'más equilibrado' with an upside tilt. Net, a hold with the door clearly open to resuming cuts, restrained by the worse core and forecast picture.",
   "key_quotes": [
-    {"quote": "Así, la Junta de Gobierno, con la presencia de todos sus miembros, decidió por unanimidad mantener el objetivo para la Tasa de Interés Interbancaria a un día en 7.00%.", "context": "Unanimous hold at 7.00%, ending the 4-1 splits of the cutting cycle; Heath no longer dissents", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno juzgó apropiado en esta ocasión hacer una pausa en el ciclo de disminuciones de la tasa de referencia.", "context": "Explicit pause of the easing cycle after five straight 25bp cuts, in line with the inflation outlook and fiscal/FX uncertainty", "dimension": "policy_stance_read"},
-    {"quote": "Hacia delante, la Junta de Gobierno valorará realizar ajustes adicionales a la tasa de referencia.", "context": "Guidance neutralized to a generic, two-sided 'will assess additional adjustments', dropping December's 'el momento de realizar ajustes' emphasis and keeping the path open both ways", "dimension": "near_term_bias"},
-    {"quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico es más equilibrado, pero mantiene un sesgo al alza.", "context": "Inflation balance of risks called more balanced but still tilted up; core rose to 4.47% and convergence pushed to Q2 2027", "dimension": "inflation_conviction"}
+    {
+      "quote": "La Junta de Gobierno juzgó apropiado en esta ocasión hacer una pausa en el ciclo de disminuciones de la tasa de referencia.",
+      "context": "Explicit, one-off framing of the pause within an easing cycle that is not declared over",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Hacia delante, la Junta de Gobierno valorará realizar ajustes adicionales a la tasa de referencia.",
+      "context": "Guidance drops December's emphasis on 'el momento', keeping further adjustments (cuts) on the table",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Ahora se espera que la inflación general converja a la meta en el segundo trimestre de 2027 (ver cuadro).",
+      "context": "Forecasts revised up on a higher core path; convergence delayed -- the main reason for the pause",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico es más equilibrado, pero mantiene un sesgo al alza.",
+      "context": "Risk balance softened to 'more balanced' though still tilted up",
+      "dimension": "inflation_conviction"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": 0.5,
+    "composite_hawk_dove": -1.0,
     "mandate_weight": 1.0,
-    "inflation_conviction": 3.5,
+    "inflation_conviction": 2.5,
     "labor_concern": 2.0,
     "policy_stance_read": 2.5,
-    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "fiscal", "credibility", "commodities"]
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fiscal",
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "neutral"},
-    "labor_market": {"intensity": 0, "push": "neutral"},
-    "growth_demand": {"intensity": 2, "push": "dovish"},
-    "other": {"intensity": 2, "push": "hawkish"}
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "hawkish"
+    },
+    "fx_external": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "hawkish"
+    }
   },
-  "extractor_model": "claude-opus-4-8",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }

@@ -10,32 +10,81 @@
   "url": "https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/{095C9D00-95A9-1AB7-2E95-61F66587B73B}.pdf",
   "source": "banxico",
   "non_policy": false,
-  "decision": {"action": "cut", "rate": "8.50%", "vote": "5-0", "dissents": []},
-  "summary": "The minutes of the 15 May meeting document a unanimous 50bp cut to 8.50%, with forward guidance repeating that the Board could keep calibrating the stance and consider a similar-magnitude adjustment while insisting policy stays restrictive, so the easing-biased message is intact. Versus the 27 March minutes (also a unanimous 50bp cut, to 9.00%), the discussion reads a touch less dovish and more divided about the pace: one member explicitly argued it is time to drop the 'similar-magnitude' reference from the guidance and make it conditional on disinflation resuming, and another warned that as the US-Mexico rate differential narrows, relative policy will demand more gradualism ahead. Inflation concern has resurfaced at the margin - core stuck at 3.93% since November, merchandise inflation up ~100bp in five months and short-term headline/core forecasts revised up - even as the Board still expects convergence to 3% by Q3 2026 and sees expectations anchored. The dovish case rests on a notably weak economy (a possible mild recession, a clearly negative output gap, deepening investment weakness and a cooling labor market) plus a firmer peso and broad dollar weakness that open room to ease, with tariffs read mainly as a demand shock. On balance the minutes sit a touch below the communique, which carried the same 50bp cut and continuation guidance without exposing the internal push to soften the forward guidance.",
+  "decision": {
+    "action": "cut",
+    "rate": "8.50%",
+    "vote": "5-0",
+    "dissents": []
+  },
+  "summary": "The minutes of the 15 May meeting record a unanimous 50bp cut to 8.50% and repeat the guidance that a similar-magnitude adjustment could follow, but they reveal a Board somewhat less uniformly dovish than the communique. Four members back the 50bp pace on weak activity (stagnation, a possible mild recession, deeper investment weakness, a cooling labor market), a firmer peso and a still-high ex-ante real rate, and one goes as far as saying further similar cuts are warranted even after the calibration ends. Against that, one member argues it is time to drop the 'similar magnitude' reference and make the current pace conditional on disinflation resuming, citing core stuck since November, upside risks and the gap with analysts' forecasts as a credibility issue, while another warns that a narrowing rate differential with the US will demand more gradualism later. Versus the March minutes, the majority's easing case is intact but the internal push to soften the forward guidance is new, which places the minutes a notch less dovish than the communique.",
   "key_quotes": [
-    {"quote": "la Junta de Gobierno con la presencia de todos sus miembros, decidió por unanimidad reducir en 50 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 8.50%.", "context": "Decisión unánime de la Junta (5-0).", "dimension": "composite_hawk_dove"},
-    {"quote": "La Junta de Gobierno estima que hacia delante podría continuar con la calibración de la postura monetaria y considerar ajustarla en magnitud similar.", "context": "Guía prospectiva mantiene el sesgo de baja con posibilidad de otro ajuste de magnitud similar (50bp).", "dimension": "policy_stance_read"},
-    {"quote": "Agregó que la guía prospectiva debe reflejar cautela y mencionar que el ritmo actual de recortes continuaría solo si se retoma el proceso desinflacionario de convergencia a la meta de 3%.", "context": "Un miembro pide retirar la referencia a la magnitud similar y condicionar la continuidad del ritmo al avance de la desinflación.", "dimension": "inflation_conviction"},
-    {"quote": "Uno destacó que actualmente la economía pasa por un periodo de estancamiento y que pudiera materializarse una ligera recesión.", "context": "Debilidad marcada de la actividad y riesgo de recesión leve, principal soporte del corte.", "dimension": "labor_concern"}
+    {
+      "quote": "Agregó que la guía prospectiva debe reflejar cautela y mencionar que el ritmo actual de recortes continuaría solo si se retoma el proceso desinflacionario de convergencia a la meta de 3%.",
+      "context": "One member wants the guidance to drop the similar-magnitude reference and make the pace conditional on disinflation resuming",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Expresó que ajustes adicionales de magnitud similar a los implementados en las reuniones anteriores, aun concluido dicho proceso de calibración, son congruentes con la evolución reciente de las condiciones macroeconómicas.",
+      "context": "The most dovish member sees further 50bp cuts even after calibration ends",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Mencionó que lo anterior terminará implicando, más adelante en el horizonte, una mayor gradualidad para las decisiones de política monetaria.",
+      "context": "Another member flags that the narrowing differential will require more gradualism later",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Uno destacó que actualmente la economía pasa por un periodo de estancamiento y que pudiera materializarse una ligera recesión.",
+      "context": "Weak activity is the core of the easing case",
+      "dimension": "labor_concern"
+    }
   ],
   "llm_scores": {
-    "composite_hawk_dove": -2.5,
-    "mandate_weight": 1,
+    "composite_hawk_dove": -4.0,
+    "mandate_weight": -0.5,
     "inflation_conviction": 2.5,
-    "labor_concern": 3,
-    "policy_stance_read": 4,
-    "near_term_bias": {"direction": "cut", "pace": "gradual"},
-    "theme_flags": ["tariffs", "fx_passthrough", "external_rates", "dollar", "credibility", "food_prices"]
+    "labor_concern": 3.5,
+    "policy_stance_read": 3.5,
+    "near_term_bias": {
+      "direction": "cut",
+      "pace": "gradual"
+    },
+    "theme_flags": [
+      "tariffs",
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "credibility",
+      "food_prices"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 3, "push": "hawkish"},
-    "fx_external": {"intensity": 3, "push": "dovish"},
-    "labor_market": {"intensity": 2, "push": "dovish"},
-    "growth_demand": {"intensity": 3, "push": "dovish"},
-    "other": {"intensity": 3, "push": "dovish"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "neutral"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "growth_demand": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "dovish"
+    }
   },
-  "extractor_model": "claude-opus-4-8[1m]",
-  "extracted_at": "2026-09-28T00:00:00Z",
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-20T00:00:00Z",
   "rubric_version": "1.0-generic"
 }
