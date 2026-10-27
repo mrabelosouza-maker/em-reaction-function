@@ -1,0 +1,57 @@
+{
+  "speech_id": "board-20261027-cd50f6",
+  "bc": "bcch",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-10-27",
+  "date": "2026-10-27",
+  "meeting_date": "2026-10-27",
+  "url": "https://www.bcentral.cl/documents/33528/8728153/Comunicado+RPM+octubre+2026.pdf/c04e2f7b-1a4e-4dc5-881c-84c8e4610d17?t=1793133291280",
+  "source": "bcch",
+  "non_policy": false,
+  "decision": {"action": "hold", "rate": "4.50%", "vote": "5-0", "dissents": []},
+  "summary": "The BCCh Council unanimously held the policy rate at 4.5%, but the risk assessment turned clearly toward inflation: inflation risks 'have increased relevantly' and near-term CPI projections now sit significantly above the September IPoM path, driven by oil up around 25% since the IPoM, an unusually strong El Niño hitting food prices, a weaker peso and a significant rise in short-term market expectations (the EOF two-year measure rose to 3.2%). Versus the September communique, which was balanced and leaned slightly toward activity, the Council now says it will be particularly alert to signs of greater transmission and/or persistence of the shocks into inflation, and adds that alternative scenarios may require changes in monetary policy, which in this context reads as an opening to tightening. Activity concern remains (mining-led Imacec miss, weak consumption and investment, slightly higher unemployment, possible persistent weakness), so this is not an explicit hiking bias, but the reaction function has shifted from a comfortable hold to a hold with an upside-risk tilt.",
+  "key_quotes": [
+    {
+      "quote": "Los riesgos para la inflación han aumentado de forma relevante.",
+      "context": "New, explicit upside inflation-risk assessment; absent in September",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Si bien en su conjunto los datos de IPC han estado en línea con lo previsto, las proyecciones para los próximos meses aumentan significativamente, ubicándose por sobre la trayectoria del escenario central del IPoM.",
+      "context": "Near-term CPI path now above the September IPoM central scenario",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "En este contexto de incertidumbre mayor que el habitual, el Consejo estará particularmente atento a señales de mayor transmisión y/o persistencia a la inflación de los shocks que se están enfrentando.",
+      "context": "Council flags second-round effects of the energy/food shocks as the trigger to watch",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "El Consejo estima que será necesaria la constante evaluación de escenarios alternativos en que la respuesta de la economía mundial y local pueda configurar trayectorias de la inflación distintas de las esperadas y requiera cambios en la política monetaria.",
+      "context": "New guidance sentence: policy changes possible under alternative inflation paths; meeting-by-meeting kept",
+      "dimension": "composite_hawk_dove"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.0,
+    "mandate_weight": 2.0,
+    "inflation_conviction": 3.0,
+    "labor_concern": 2.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "food_prices", "external_rates", "dollar", "fx_passthrough", "ai_productivity", "fiscal"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 3, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "hawkish"},
+    "fx_external": {"intensity": 2, "push": "hawkish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-27T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
