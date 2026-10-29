@@ -9,7 +9,7 @@
   "url": "https://www.resbank.co.za",
   "source": "sarb",
   "non_policy": false,
-  "summary": "Speaking at a business dinner, Governor Kganyago devoted most of the speech to South Africa's structural low-growth trap (state capacity, electricity, logistics, low investment) and to drawing a hard line on what monetary policy cannot do: price stability is a necessary but not sufficient condition for growth, and the 33% unemployment rate is structural, not cyclical. The policy section is short but clear: after a cumulative 50bp of hikes since March, the SARB's modelling indicates that prevailing settings are sufficient to return inflation to the 3% target once the fuel shock passes, while the bank will act as needed to prevent second-round effects. This is the first Kganyago speech in the base; versus the September MPC statement he delivered (unanimous hike, with risk scenarios implying one or two more), the message leans on the baseline of a stable rate rather than on the upside scenarios, without dropping the hawkish conditional. Read as a hold with a tightening bias kept in reserve; the low score reflects a format dominated by structural themes rather than any softening.",
+  "summary": "Speaking at a business dinner, Governor Kganyago devoted most of the speech to South Africa's structural low-growth trap (state capacity, electricity, logistics, low investment) and to drawing a hard line on what monetary policy cannot do: price stability is a necessary but not sufficient condition for growth, and the 33% unemployment rate is structural, not cyclical. The policy section is short but clear: after a cumulative 50bp of hikes since March, the SARB's modelling indicates that prevailing settings are sufficient to return inflation to the 3% target once the fuel shock passes, while the bank will act as needed to prevent second-round effects. This is the first Kganyago speech in the base; versus the September MPC statement he delivered (unanimous hike, with risk scenarios implying one or two more), the message leans on the baseline of a stable rate rather than on the upside scenarios, without dropping the hawkish conditional. Read as a hold with a tightening bias kept in reserve: the speech is mostly about structural growth, but its policy section (stance, baseline path, conditional) is complete and its rebuttal of easing for growth leans hawkish, so the format does not pull the score down.",
   "key_quotes": [
     {
       "quote": "So far, our modelling indicates that prevailing policy settings are sufficient to return inflation to target after the initial shock has passed. We remain firmly focused on our mandate, and will act as needed to prevent higher inflation from becoming entrenched.",
@@ -33,21 +33,46 @@
     }
   ],
   "llm_scores": {
-    "composite_hawk_dove": 1.0,
+    "composite_hawk_dove": 2.0,
     "mandate_weight": 3.0,
-    "inflation_conviction": 1.5,
+    "inflation_conviction": 2.0,
     "labor_concern": 1.5,
-    "policy_stance_read": 3.0,
-    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
-    "theme_flags": ["commodities", "fiscal", "credibility"]
+    "policy_stance_read": 3.5,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "data-dependent"
+    },
+    "theme_flags": [
+      "commodities",
+      "fiscal",
+      "credibility"
+    ]
   },
   "drivers": {
-    "supply_shocks": {"intensity": 2, "push": "hawkish"},
-    "underlying_inflation": {"intensity": 1, "push": "neutral"},
-    "fx_external": {"intensity": 1, "push": "dovish"},
-    "labor_market": {"intensity": 1, "push": "neutral"},
-    "growth_demand": {"intensity": 2, "push": "neutral"},
-    "other": {"intensity": 3, "push": "hawkish"}
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "hawkish"
+    },
+    "underlying_inflation": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "fx_external": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "other": {
+      "intensity": 3,
+      "push": "hawkish"
+    }
   },
   "extractor_model": "claude-opus-5-5",
   "extracted_at": "2026-10-29T00:00:00Z",
