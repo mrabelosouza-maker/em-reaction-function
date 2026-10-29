@@ -1,0 +1,8 @@
+{
+  "verified_at": "2026-10-29",
+  "source": "https://www.resbank.co.za",
+  "note": "Roster parcial: só membros com fala na base. Acrescentar os vice-governadores quando entrar a primeira fala de cada um.",
+  "members": [
+    {"member_id": "kganyago", "name": "Lesetja Kganyago", "role": "Governor"}
+  ]
+}

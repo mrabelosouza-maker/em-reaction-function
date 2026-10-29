@@ -1,0 +1,55 @@
+{
+  "speech_id": "kganyago-20261029-479085",
+  "bc": "sarb",
+  "track": "membro",
+  "doc_type": "fala_publica",
+  "member_id": "kganyago",
+  "title": "Italian-SA Chamber Dinner: Policy Settings Sufficient, Monetary Policy Cannot Fix Low Growth",
+  "date": "2026-10-29",
+  "url": "https://www.resbank.co.za",
+  "source": "sarb",
+  "non_policy": false,
+  "summary": "Speaking at a business dinner, Governor Kganyago devoted most of the speech to South Africa's structural low-growth trap (state capacity, electricity, logistics, low investment) and to drawing a hard line on what monetary policy cannot do: price stability is a necessary but not sufficient condition for growth, and the 33% unemployment rate is structural, not cyclical. The policy section is short but clear: after a cumulative 50bp of hikes since March, the SARB's modelling indicates that prevailing settings are sufficient to return inflation to the 3% target once the fuel shock passes, while the bank will act as needed to prevent second-round effects. This is the first Kganyago speech in the base; versus the September MPC statement he delivered (unanimous hike, with risk scenarios implying one or two more), the message leans on the baseline of a stable rate rather than on the upside scenarios, without dropping the hawkish conditional. Read as a hold with a tightening bias kept in reserve; the low score reflects a format dominated by structural themes rather than any softening.",
+  "key_quotes": [
+    {
+      "quote": "So far, our modelling indicates that prevailing policy settings are sufficient to return inflation to target after the initial shock has passed. We remain firmly focused on our mandate, and will act as needed to prevent higher inflation from becoming entrenched.",
+      "context": "Central policy signal: current rate is enough in the baseline, with the hawkish conditional kept.",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Monetary policy cannot prevent the initial price increase caused by the fuel shock. But it must ensure that the temporary rise in inflation does not become entrenched in expectations, wage formation and broader price-setting behaviour.",
+      "context": "Supply shock framed as temporary first-round effect; policy targets second-round effects.",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "Price stability supports long-term growth. But it cannot produce growth on its own. It is a necessary condition, not a sufficient one.",
+      "context": "Rebuts the case for easing to support growth; price stability as binding mandate.",
+      "dimension": "mandate_weight"
+    },
+    {
+      "quote": "High unemployment has persisted when interest rates were high and when they were low. Clearly the problem is much bigger than cyclical fluctuations that are responsive to monetary policy.",
+      "context": "Unemployment and low growth treated as structural, not a reason for monetary easing.",
+      "dimension": "labor_concern"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.0,
+    "mandate_weight": 3.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "fiscal", "credibility"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 1, "push": "neutral"},
+    "fx_external": {"intensity": 1, "push": "dovish"},
+    "labor_market": {"intensity": 1, "push": "neutral"},
+    "growth_demand": {"intensity": 2, "push": "neutral"},
+    "other": {"intensity": 3, "push": "hawkish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-10-29T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
