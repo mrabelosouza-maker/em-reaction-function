@@ -1,0 +1,72 @@
+{
+  "speech_id": "board-20261105-8d19d6",
+  "bc": "banxico",
+  "track": "colegiado",
+  "doc_type": "comunicado",
+  "member_id": "board",
+  "title": "Comunicado 2026-11-05",
+  "date": "2026-11-05",
+  "meeting_date": "2026-11-05",
+  "url": "https://www.banxico.org.mx/canales/%7B13B102AD-C237-17C0-0F39-65F9B35326DE%7D.pdf",
+  "source": "banxico",
+  "non_policy": false,
+  "decision": {
+    "action": "cut",
+    "rate": "6.25%",
+    "vote": "3-2",
+    "dissents": ["Borja (hold)", "Heath (hold)"]
+  },
+  "summary": "Banxico's Board resumed easing with a 25bp cut to 6.25%, but framed it as a one-off 'ajuste puntual' and immediately closed the door: the new guidance says keeping the rate 'por un tiempo prolongado' at the level reached will support convergence, so the cut comes with a pause signalled up front. The decision was split 3-2, with Borja and Heath voting to hold at 6.50%, which caps how dovish the message reads. The rationale leans on continued disinflation, slack, the absence of demand pressures, limited FX pass-through despite a weaker peso and restriction still operating, while the upside tilt to the inflation risk balance is kept and the Q4 2026 headline and core forecasts were revised up. Versus the 24 September communique, which held unanimously and only quietly reopened the easing path, the Board moves from a hold with an easing tilt to an actual cut, but the explicit pause guidance and two dissents make it a hawkish cut rather than the start of a new cycle.",
+  "key_quotes": [
+    {
+      "quote": "decidió realizar un ajuste puntual y por mayoría reducir en 25 puntos base el objetivo para la Tasa de Interés Interbancaria a un día a un nivel de 6.25%",
+      "context": "The cut is framed as a one-off adjustment, approved by majority (3-2)",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Hacia delante, la Junta de Gobierno considera que mantener la tasa por un tiempo prolongado en el nivel alcanzado apoyará la convergencia de la inflación a su meta y será adecuado para enfrentar los retos macroeconómicos externos.",
+      "context": "New guidance signals an extended pause after the cut",
+      "dimension": "near_term_bias"
+    },
+    {
+      "quote": "Estimó que actualmente no se perciben presiones de demanda en la economía y que el grado de restricción monetaria implementado aún sigue operando.",
+      "context": "Rationale for the cut: no demand pressures and restriction still working",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "Se considera que el balance de riesgos respecto de la trayectoria prevista para la inflación en el horizonte de pronóstico mantiene un sesgo al alza.",
+      "context": "Upside risk balance kept despite the cut",
+      "dimension": "inflation_conviction"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 2.0,
+    "labor_concern": 2.5,
+    "policy_stance_read": 2.0,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "patient"
+    },
+    "theme_flags": [
+      "fx_passthrough",
+      "external_rates",
+      "dollar",
+      "commodities",
+      "tariffs",
+      "credibility"
+    ]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 2, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "dovish"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 2, "push": "dovish"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-11-05T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
