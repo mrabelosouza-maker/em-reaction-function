@@ -1,7 +1,7 @@
 {
   "verified_at": "2026-10-29",
   "source": "https://www.resbank.co.za",
-  "note": "Roster parcial: só membros com fala na base. Acrescentar os vice-governadores quando entrar a primeira fala de cada um. Fowkes incluído em 2026-11-06 (call privado JGP; cargo informado pelo analista como membro do MPC).",
+  "note": "Roster parcial: só membros com fala na base. Acrescentar os vice-governadores quando entrar a primeira fala de cada um. Fowkes incluído em 2026-11-06 (call privado JGP; cargo informado pelo analista como membro do MPC). Ruch incluído em 2026-11-06 (membro do MPC recém-indicado, segundo o analista).",
   "members": [
     {
       "member_id": "kganyago",
@@ -12,6 +12,11 @@
       "member_id": "fowkes",
       "name": "David Fowkes",
       "role": "MPC member"
+    },
+    {
+      "member_id": "ruch",
+      "name": "Franz Ruch",
+      "role": "MPC member (newly appointed)"
     }
   ]
 }

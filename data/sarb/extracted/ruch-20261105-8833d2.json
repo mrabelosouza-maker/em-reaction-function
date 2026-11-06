@@ -1,0 +1,76 @@
+{
+  "speech_id": "ruch-20261105-8833d2",
+  "bc": "sarb",
+  "track": "membro",
+  "doc_type": "call_privado",
+  "member_id": "ruch",
+  "title": "JGP Call (with Fowkes): Stance Still Moderately Restrictive; Midterm Repricing Must Feed the Forecast First",
+  "date": "2026-11-05",
+  "url": "https://www.resbank.co.za",
+  "source": "notas próprias",
+  "non_policy": false,
+  "summary": "In the same private JGP call led by David Fowkes, newly appointed MPC member Franz Ruch made a handful of short, technical interventions, scored here only on his own words. He defended the 'moderately restrictive' characterisation against JGP's challenge, arguing that it is normal for some real-rate measures to look low during a supply shock because expected inflation rises temporarily by design, and that over the policy horizon the stance still reads as moderately restrictive, while conceding that any estimate of neutral is always wrong. He cautioned against reading the Governor's 'settings are sufficient' line as settling the bar for further tightening: the US midterm result and the market repricing that followed must first feed through into the forecast. He treats El Niño as a risk-assessment issue that will only be clearer by January-February, and suggests the inflation-regime threshold estimated over earlier, higher-target samples has probably fallen, although that will take time to show in the data. This is his first record in the base; there is no explicit rate path, so the read is a data-dependent hold with no lean towards either cuts or hikes.",
+  "key_quotes": [
+    {
+      "quote": "If you look at the stance in a broader sense, over the monetary policy horizon, you can still arrive at a moderately restrictive characterization.",
+      "context": "Defends the MPC's stance description against JGP's challenge.",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "It's also quite normal for some measures of the real interest rate to look relatively low when you're facing a supply shock.",
+      "context": "Low ex-ante real rates read as a supply-shock artefact, not loose policy.",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "That information has to feed through into the forecast before you can really assess whether the bar for additional tightening is higher or lower.",
+      "context": "Midterm repricing; declines to call the bar for more hikes before the November forecast.",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "At this stage, it's really a risk-assessment issue.",
+      "context": "El Niño as a risk, not baseline, until the planting season is clearer.",
+      "dimension": "composite_hawk_dove"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.5,
+    "mandate_weight": null,
+    "inflation_conviction": 1.5,
+    "labor_concern": null,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "data-dependent"
+    },
+    "theme_flags": ["commodities", "r_star", "external_rates"]
+  },
+  "drivers": {
+    "supply_shocks": {
+      "intensity": 2,
+      "push": "neutral"
+    },
+    "underlying_inflation": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "fx_external": {
+      "intensity": 1,
+      "push": "neutral"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "neutral"
+    }
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-11-06T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
