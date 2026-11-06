@@ -1,0 +1,76 @@
+{
+  "speech_id": "rodriguez-20261105-76a0bc",
+  "bc": "banxico",
+  "track": "membro",
+  "doc_type": "fala_publica",
+  "member_id": "rodriguez",
+  "title": "Entrevistas con Alicia Salgado: Punctual Adjustment Driven by Domestic Outlook, Not the Fed",
+  "date": "2026-11-05",
+  "url": "https://www.banxico.org.mx/",
+  "source": "entrevista (transcrição Whisper revisada pelo analista)",
+  "non_policy": false,
+  "summary": "In a post-decision interview with Alicia Salgado, Governor Rodríguez defends the 25bp cut to 6.25% (3-2 vote) as a 'punctual adjustment' that the Board had been weighing since the previous meeting, grounded in core inflation's decline from around 4.5% to 3.78%, the easing of inertial services prices, a headline uptick fully explained by base effects in agricultural prices, slack despite a stronger Q3, and restriction that keeps operating with lags. Pressed on whether a narrower Mexico-US differential could accelerate peso depreciation, she decouples the decision from the Fed: the peso has adjusted in an orderly way and remains below its 2025 average, pass-through is low, the energy shock's impact on Mexican inflation has been 'really contained', the two economies are at different points of the cycle, the differential is a consequence of each central bank reacting to domestic conditions, and Mexico's volatility-adjusted carry remains relatively high among EMs. Versus the August El Financiero interview, where she said Banxico had 'not declared victory' and judged 6.50% clearly restrictive and appropriate for now, the message flips to easing on the back of core and services disinflation, although 'punctual' signals a calibrated move rather than a new cycle and she still describes the stance as restrictive. She offers no explicit forward guidance in this interview beyond the domestic reaction function.",
+  "key_quotes": [
+    {
+      "quote": "desde nuestra anterior decisión se venía valorando que había espacio para discutir la conveniencia de un ajuste puntual en la tasa de referencia",
+      "context": "Frames the cut as a one-off adjustment already under discussion since September.",
+      "dimension": "composite_hawk_dove"
+    },
+    {
+      "quote": "Esto es importante destacarlo, porque los precios de los servicios suelen ser muy inerciales.",
+      "context": "Services ex-housing/education disinflation as the reason core will keep falling.",
+      "dimension": "inflation_conviction"
+    },
+    {
+      "quote": "la política monetaria en nuestro país, apoyada en la solidez de la postura actual, cuenta con margen para la conducción de la política monetaria conforme al desarrollo del panorama inflacionario doméstico, como siempre lo hemos hecho",
+      "context": "Domestic reaction function; room to act given the stance is still solid/restrictive.",
+      "dimension": "policy_stance_read"
+    },
+    {
+      "quote": "el diferencial de tasas de interés ajustado por volatilidad de México se encuentra en un nivel relativamente alto respecto a otras economías emergentes",
+      "context": "Dismisses the narrowing Mexico-US differential as a constraint.",
+      "dimension": "mandate_weight"
+    }
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": -1.5,
+    "mandate_weight": 1.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 1.5,
+    "policy_stance_read": 3.0,
+    "near_term_bias": {
+      "direction": "hold",
+      "pace": "patient"
+    },
+    "theme_flags": ["fx_passthrough", "external_rates", "commodities", "dollar"]
+  },
+  "drivers": {
+    "supply_shocks": {
+      "intensity": 1,
+      "push": "dovish"
+    },
+    "underlying_inflation": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "fx_external": {
+      "intensity": 3,
+      "push": "dovish"
+    },
+    "labor_market": {
+      "intensity": 0,
+      "push": "neutral"
+    },
+    "growth_demand": {
+      "intensity": 2,
+      "push": "dovish"
+    },
+    "other": {
+      "intensity": 2,
+      "push": "dovish"
+    }
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-11-06T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
