@@ -1,0 +1,39 @@
+{
+  "speech_id": "naudon-20261119-3d9785",
+  "member_id": "naudon",
+  "title": "HSBC Global Economic Seminar (slides): Weak Growth, Volatile-Driven Inflation, Two-Sided Risks",
+  "date": "2026-11-19",
+  "bc": "bcch",
+  "track": "membro",
+  "doc_type": "fala_publica",
+  "url": "https://www.bcentral.cl",
+  "source": "bcch (apresentação em PDF colada pelo analista; só slides)",
+  "non_policy": false,
+  "summary": "Naudon's HSBC deck is organised around weak growth, above-target inflation and their policy consequences, and the balance tilts toward activity: Q3 GDP fell 1.1% y/y mainly on mining, non-mining growth is weak, domestic demand has been weaker than expected and investment fell 6.7% y/y. Inflation is framed as heavily driven by volatile prices, with headline at 4.5% but ex-volatiles core at 3.3%, an implicit look-through argument, although the charts also show 11-month expectations drifting up. He spends a third of the deck on the external side, attributing the near-zero real-rate differential with the US to different cycles and higher US term premia, and arguing that it has weighed on the real exchange rate but is not the whole story. On policy he only shows the September IPoM corridor with 'risks in both directions', with no explicit path. This is his first speech in the base; it reads as a balanced hold, softer than Céspedes (17/11) and clearly softer than the October minutes, where a 25bp hike was on the table, although the slides-only format limits the read.",
+  "key_quotes": [
+    {"quote": "La demanda interna ha estado más débil de lo esperado. La inversión cae 6,7 % anual en T3.", "context": "Slide title on domestic demand and investment", "dimension": "labor_concern"},
+    {"quote": "La inflación continua muy afectada por el precio de algunos volátiles.", "context": "Slide title on inflation; headline 4.5% vs ex-volatiles 3.3%", "dimension": "inflation_conviction"},
+    {"quote": "El diferencial de tasas reales ha presionado el TCR, pero no es toda la historia.", "context": "Slide title on the real exchange rate and the US-Chile real-rate differential", "dimension": "mandate_weight"},
+    {"quote": "Corredor de la TPM del IPoM: riesgos en ambas direcciones", "context": "Only policy slide: September IPoM corridor, no explicit path", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 0.0,
+    "mandate_weight": 0.0,
+    "inflation_conviction": 1.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "hold", "pace": "data-dependent"},
+    "theme_flags": ["commodities", "external_rates", "ai_productivity", "fx_passthrough"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "dovish"},
+    "underlying_inflation": {"intensity": 1, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 0, "push": "neutral"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-11-20T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}
