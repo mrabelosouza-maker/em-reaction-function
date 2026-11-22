@@ -1,0 +1,39 @@
+{
+  "speech_id": "costa-20261122-671b46",
+  "member_id": "costa",
+  "title": "El Mercurio interview: Investment Surprise May Delay Recovery, RPM Inflation-Risk Message Stands",
+  "date": "2026-11-22",
+  "bc": "bcch",
+  "track": "membro",
+  "doc_type": "fala_publica",
+  "url": "https://digital.elmercurio.com/2026/11/22/B/5G4MNBAE/774MR3RH",
+  "source": "el_mercurio (press interview, Q&A, by Jessica Marticorena)",
+  "non_policy": false,
+  "summary": "In a long El Mercurio Q&A after the Q3 GDP drop and the IEF, Costa spends most of the time on activity: Q3 surprised on mining and on investment, which keeps falling with no clear signs of a turn, so the recovery 'may take somewhat longer', with the full reassessment left to the December IPoM. On inflation she does not soften the October RPM: she restates that its main message was the relevant rise in inflation risks, with near-term projections up significantly, and treats the fuel-price freeze as conditional on oil (pass-through later if international prices stay above the cap). On the peso above 1,000 she sees moves driven by copper and the global dollar, calls it a necessary adjustment, rules out intervention and deflects Quiroz's remarks on a firmer stance and on the rate differential, giving no rate path. This is her first entry in the base; it reads as a hold that keeps the October hawkish guidance intact despite weaker activity, close to Céspedes (17/11) and firmer than Naudon (19/11), though the interview format gives no explicit next step.",
+  "key_quotes": [
+    {"quote": "El principal mensaje de la última Reunión de Política Monetaria fue el relevante aumento de los riesgos para la inflación, destacando que las proyecciones para los próximos meses aumentaban significativamente.", "context": "Asked whether the fuel freeze lets inflation close the year below the 4.3% IPoM estimate", "dimension": "inflation_conviction"},
+    {"quote": "Vemos que la inversión siguió más débil de lo esperado en el tercer trimestre, y ese es un elemento importante que está presente", "context": "On the Q3 GDP contraction; non-mining activity in line with the September IPoM", "dimension": "labor_concern"},
+    {"quote": "Puede tardar algo más la recuperación, aunque no la esperábamos en el tercer trimestre, pero sí esperábamos una recuperación hacia 2027.", "context": "On whether the weakness may last longer than expected", "dimension": "labor_concern"},
+    {"quote": "Los mercados están funcionando normalmente y el dólar está respondiendo a las condiciones globales", "context": "Asked whether the BCCh will intervene with the dollar above 1,000 pesos", "dimension": "composite_hawk_dove"}
+  ],
+  "llm_scores": {
+    "composite_hawk_dove": 1.0,
+    "mandate_weight": 0.5,
+    "inflation_conviction": 2.5,
+    "labor_concern": 3.0,
+    "policy_stance_read": null,
+    "near_term_bias": {"direction": "unclear", "pace": "data-dependent"},
+    "theme_flags": ["dollar", "commodities", "external_rates", "financial_stability", "cb_independence", "minimum_wage"]
+  },
+  "drivers": {
+    "supply_shocks": {"intensity": 2, "push": "hawkish"},
+    "underlying_inflation": {"intensity": 0, "push": "neutral"},
+    "fx_external": {"intensity": 2, "push": "neutral"},
+    "labor_market": {"intensity": 2, "push": "dovish"},
+    "growth_demand": {"intensity": 3, "push": "dovish"},
+    "other": {"intensity": 1, "push": "neutral"}
+  },
+  "extractor_model": "claude-opus-5-5",
+  "extracted_at": "2026-11-22T00:00:00Z",
+  "rubric_version": "1.0-generic"
+}

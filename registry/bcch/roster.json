@@ -1,8 +1,13 @@
 {
-  "verified_at": "2026-11-20",
+  "verified_at": "2026-11-22",
   "source": "https://www.bcentral.cl",
   "note": "Roster parcial: só membros com fala na base (falas de consejeros do BCCh entraram em 2026-11-17, com a primeira fala de Céspedes). Os cinco consejeros votam na RPM. Acrescentar os demais quando entrar a primeira fala de cada um.",
   "members": [
+    {
+      "member_id": "costa",
+      "name": "Rosanna Costa",
+      "role": "Presidenta"
+    },
     {
       "member_id": "cespedes",
       "name": "Luis Felipe Céspedes",
