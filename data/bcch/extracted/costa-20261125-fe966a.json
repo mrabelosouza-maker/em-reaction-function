@@ -9,7 +9,7 @@
   "url": "https://www.t13.cl/radio",
   "source": "tele13_radio (radio interview, Mesa Central; auto-caption transcript)",
   "non_policy": false,
-  "summary": "A radio interview centred on the IEF, in which Costa again gives no rate path but leans a little more on the inflation side than in El Mercurio three days earlier. Asked about the Economy minister's call for a more expansionary policy, she deflects to the Finance minister as the government's only voice at the RPM and stresses that the rate is set by inflation convergence to the 3% target, recalling that the October RPM was 'bien enfáticos' on upside inflation risks and a higher short-term inflation path. The activity tone is less alarmed than on 22/11: weakness is concentrated in mining, non-mining sectors were in line in Q3, and the investment miss is 'una mala cifra' but not a change of trend, with the investment-led recovery still expected toward 2027-28. On the peso she repeats that it moves with fundamentals (copper, global dollar), acts as a shock absorber and needs no intervention, acknowledging only in passing the short-run pass-through; the rest of the interview covers the IEF stress tests, the 1% countercyclical buffer, structural labor factors (costs, automation) and the AFP swap margin-call warning.",
+  "summary": "A radio interview centred on the IEF, in which Costa again gives no explicit rate path but frames every policy question (Fed, peso, activity) within the framework of inflation converging to target over the policy horizon, a message compatible with an extended hold; versus El Mercurio three days earlier she sounds somewhat less dovish on activity, though not a dramatic change in tone. Asked about the Economy minister's call for a more expansionary policy, she deflects to the Finance minister as the government's only voice at the RPM and stresses that the rate is set by inflation convergence to the 3% target, recalling that the October RPM was 'bien enfáticos' on upside inflation risks and a higher short-term inflation path. The activity tone is less alarmed than on 22/11: weakness is concentrated in mining, non-mining sectors were in line in Q3, and the investment miss is 'una mala cifra' but not a change of trend, with the investment-led recovery still expected toward 2027-28. On the peso she repeats that it moves with fundamentals (copper, global dollar), acts as a shock absorber and needs no intervention, acknowledging only in passing the short-run pass-through; the rest of the interview covers the IEF stress tests, the 1% countercyclical buffer, structural labor factors (costs, automation) and the AFP swap margin-call warning.",
   "key_quotes": [
     {
       "quote": "Y en la última reunión de política monetaria, nosotros fuimos bien enfáticos, dijimos claramente en el informe, estamos viendo en las circunstancias que se dio esa reunión eh riesgos de inflación al alta al alza.",
@@ -39,7 +39,7 @@
     "labor_concern": 2.0,
     "policy_stance_read": null,
     "near_term_bias": {
-      "direction": "unclear",
+      "direction": "hold",
       "pace": "data-dependent"
     },
     "theme_flags": [
